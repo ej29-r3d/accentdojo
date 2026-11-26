@@ -4,6 +4,9 @@ English pronunciation practice that runs on your own machine. You hear a phrase 
 American voice, say it, and get a score, the words to fix, and the sounds you swapped.
 Speech synthesis and scoring both run locally on CPU; no audio leaves the server.
 
+Run it on your own computer, or self-host it on a home server and practise from your phone,
+for yourself or your household. No accounts, no subscription, no cloud.
+
 It is a rehearsal tool for the time between lessons, not an assessment and not a teacher.
 
 <p>
@@ -28,14 +31,6 @@ Screenshots are from mock mode (see below), so the score shown is an example.
 - "Could not score" with a reason (too short, too quiet, too noisy, different phrase)
   when the audio is not good enough to judge.
 - Mobile first, installable as a PWA.
-
-## What it does not do
-
-- American English only, adult voices only.
-- No accounts and no progress history. Access control is one optional shared password.
-- One inference at a time: fine for a household, not for a classroom.
-- The 1,200 built-in phrases were written by an AI model and have not been reviewed by a
-  native speaker.
 
 ## How good is the scoring
 
@@ -67,9 +62,13 @@ VITE_API=mock npm run dev      # http://127.0.0.1:5173
 
 ## Run it for real
 
-Requirements: Linux, Python 3.10-3.12 (Kokoro does not support 3.13 yet),
-Node 20.19 or newer (or 22.12+), `ffmpeg` on the PATH, about 6 GB of disk. No GPU needed. macOS may work
-but is untested.
+Works on Linux and macOS. Windows is untested (see below).
+
+Requirements: Python 3.10-3.12 (Kokoro does not support 3.13 yet), Node 20.19 or newer
+(or 22.12+), `ffmpeg` on the PATH, about 6 GB of disk. No GPU needed.
+
+On macOS, `brew install python@3.11 node ffmpeg` covers them. On Debian or Ubuntu,
+`sudo apt install ffmpeg` plus Python 3.11 and Node from your usual source.
 
 ```sh
 # backend
@@ -97,6 +96,35 @@ Open http://127.0.0.1:8000.
   just slower. Later starts take seconds.
 - Browsers only allow the microphone on `localhost` or over HTTPS. To use it from a phone,
   put an HTTPS reverse proxy in front (Caddy, nginx, `tailscale serve`) and set a password.
+
+### Windows (untested)
+
+Nobody has run AccentDojo on Windows yet. Two ways that should work; reports welcome.
+
+**WSL 2 (simpler).** Install WSL with `wsl --install` in an administrator PowerShell, open
+the Ubuntu shell, and follow the Linux steps above inside it. Open http://localhost:8000 in
+your Windows browser; WSL forwards localhost.
+
+**Native, in PowerShell.**
+
+```powershell
+winget install Python.Python.3.11 OpenJS.NodeJS.LTS Gyan.FFmpeg
+# open a new terminal so the PATH changes apply
+
+cd backend
+py -3.11 -m venv .venv
+.venv\Scripts\pip install --index-url https://download.pytorch.org/whl/cpu torch
+.venv\Scripts\pip install -e ".[dev]"
+
+cd ..\frontend
+npm install
+npm run build
+
+cd ..\backend
+.venv\Scripts\uvicorn kole.app:app --host 127.0.0.1 --port 8000
+```
+
+Environment variables are set with `$env:KOLE_PASSWORD = "..."` before starting.
 
 ### Configuration
 
