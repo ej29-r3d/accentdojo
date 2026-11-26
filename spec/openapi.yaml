@@ -1,0 +1,467 @@
+openapi: 3.1.0
+info:
+  title: AccentDojo API
+  version: 0.1.0
+  description: |
+    Contract between the AccentDojo frontend and the FastAPI backend.
+    The frontend's `frontend/src/api/types.ts` mirrors these schemas and
+    `frontend/src/api/client.ts` (interface `KoleApi`) maps one method to each operation.
+    JSON uses camelCase. All paths are served under `/api` on the same origin as the app.
+servers:
+  - url: /api
+
+paths:
+  /session:
+    get:
+      operationId: session
+      summary: Whether a password is needed and whether this browser has a session
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [required, authenticated]
+                properties:
+                  required: { type: boolean }
+                  authenticated: { type: boolean }
+
+  /login:
+    post:
+      operationId: login
+      summary: Exchange the shared password for a session cookie (kole_session)
+      description: Every other /api route except /health and /session answers 401 without it.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [password]
+              properties:
+                password: { type: string }
+      responses:
+        "200": { description: Cookie set }
+        "401": { description: Wrong password (answered after a delay), or no password is configured }
+        "429": { description: Too many wrong guesses queued; retry after `Retry-After` seconds }
+        "413": { $ref: "#/components/responses/TooLarge" }
+        "422": { $ref: "#/components/responses/Invalid" }
+
+  /health:
+    get:
+      operationId: health
+      summary: Liveness and model readiness
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ok, ttsReady, scorerReady]
+                properties:
+                  ok: { type: boolean }
+                  ttsReady: { type: boolean }
+                  scorerReady: { type: boolean }
+
+  /topics:
+    get:
+      operationId: listTopics
+      summary: All topics with phrase counts per level
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/Topic" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+
+  /topics/{topicId}:
+    get:
+      operationId: getTopic
+      parameters:
+        - $ref: "#/components/parameters/TopicId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Topic" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+
+  /topics/{topicId}/phrases:
+    get:
+      operationId: listPhrases
+      summary: Phrases of a topic at one level, in practice order
+      parameters:
+        - $ref: "#/components/parameters/TopicId"
+        - $ref: "#/components/parameters/Level"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/Phrase" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "422": { $ref: "#/components/responses/Invalid" }
+
+  /phrases/random:
+    get:
+      operationId: randomPhrase
+      parameters:
+        - $ref: "#/components/parameters/Level"
+        - name: exclude
+          in: query
+          required: false
+          description: Phrase id to avoid repeating.
+          schema: { type: string }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Phrase" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "422": { $ref: "#/components/responses/Invalid" }
+
+  /phrases/prepare:
+    post:
+      operationId: preparePhrase
+      summary: Turn free text typed by the user into a practisable phrase
+      description: |
+        Normalises whitespace, splits into words and runs G2P. Returns a phrase with
+        `level: null` and `topicId: null`. The id is stable for the same text so the
+        reference audio can be cached; it encodes the text, so it stays valid across
+        server restarts. At most 15 words (the scorer is tuned on short sentences);
+        longer text, or text with no word, is a 422. Words missing from the
+        pronouncing dictionary get guessed phonemes and are never flagged.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [text]
+              properties:
+                text: { type: string, minLength: 1, maxLength: 140 }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Phrase" }
+        "422": { $ref: "#/components/responses/Invalid" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "413": { $ref: "#/components/responses/TooLarge" }
+
+  /phrases/{phraseId}/reference:
+    get:
+      operationId: referenceAudio
+      summary: Reference voice for a phrase
+      description: Generates (or returns cached) TTS audio and tells the client where to fetch it.
+      parameters:
+        - $ref: "#/components/parameters/PhraseId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ReferenceAudio" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "503": { description: Voice still loading; retry after `Retry-After` seconds }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+
+  /audio/{file}:
+    get:
+      operationId: getAudio
+      summary: Cached reference audio file (URL comes from /reference)
+      parameters:
+        - name: file
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Audio
+          content:
+            audio/wav: {}
+        "404": { $ref: "#/components/responses/NotFound" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+
+  /phrases/{phraseId}/score:
+    post:
+      operationId: scoreAttempt
+      summary: Score one recording of a phrase
+      description: |
+        Accepts the browser's MediaRecorder output (webm/opus on Chrome and Android,
+        mp4/aac on iOS Safari). The server decodes to 16 kHz mono, runs quality gates,
+        and either scores or returns `status: unscorable`. Recordings are discarded after scoring unless the server
+        runs with `KOLE_KEEP_TAKES=1`.
+      parameters:
+        - $ref: "#/components/parameters/PhraseId"
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [audio]
+              properties:
+                audio:
+                  type: string
+                  format: binary
+                durationMs:
+                  type: integer
+                  description: Client-measured length, for logging only.
+      responses:
+        "200":
+          description: Scored or unscorable (both are normal outcomes)
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ScoreResult" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "413": { description: Recording too large (over 2 MB or 15 s) }
+        "422": { $ref: "#/components/responses/Invalid" }
+        "503": { description: Scorer still loading or busy; retry after `Retry-After` seconds }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+
+components:
+  parameters:
+    TopicId:
+      name: topicId
+      in: path
+      required: true
+      schema: { type: string, example: travel }
+    PhraseId:
+      name: phraseId
+      in: path
+      required: true
+      schema: { type: string, example: travel.beginner.0 }
+    Level:
+      name: level
+      in: query
+      required: true
+      schema: { $ref: "#/components/schemas/Level" }
+
+  responses:
+    NotFound:
+      description: Unknown id
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/Error" }
+    Invalid:
+      description: Invalid input
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/Error" }
+    Unauthorized:
+      description: A password is set and this request has no valid session cookie
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/Error" }
+    TooLarge:
+      description: Request body over the limit (4 KB for /login, 3 MB elsewhere)
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/Error" }
+
+  schemas:
+    Level:
+      type: string
+      enum: [beginner, intermediate, advanced]
+      description: "CEFR-like bands: beginner A1-A2, intermediate B1-B2, advanced C1-C2."
+
+    Topic:
+      type: object
+      required: [id, group, name, blurb, counts]
+      properties:
+        id: { type: string }
+        group:
+          type: string
+          enum: [situations, pairs, sounds]
+          description: "situations: everyday phrases; pairs: contrasting-pair drills for one contrast; sounds: phrases loaded with one American sound."
+        name: { type: string, example: Travel }
+        blurb: { type: string, example: "Stations, tickets, hotels" }
+        symbol:
+          type: [string, "null"]
+          description: IPA symbol of a sound topic, shown beside its name; null for other groups.
+          example: "ɹ"
+        counts:
+          type: object
+          description: Number of phrases per level.
+          required: [beginner, intermediate, advanced]
+          properties:
+            beginner: { type: integer }
+            intermediate: { type: integer }
+            advanced: { type: integer }
+
+    Word:
+      type: object
+      required: [text, phonemes]
+      properties:
+        text:
+          type: string
+          description: The word as written in the phrase, punctuation included.
+          example: "station?"
+        phonemes:
+          type: array
+          description: |
+            Reference phonemes (US, CMUdict via the scorer's own symbol set). A stress mark
+            sits on the first sound of the stressed syllable; one-syllable words have none.
+          items: { type: string }
+          example: ["ˈs", "t", "eɪ", "ʃ", "ə", "n"]
+
+    Phrase:
+      type: object
+      required: [id, text, level, topicId, words]
+      properties:
+        id: { type: string }
+        text: { type: string }
+        level:
+          description: Null for phrases the user typed.
+          oneOf:
+            - $ref: "#/components/schemas/Level"
+            - type: "null"
+        topicId: { type: [string, "null"] }
+        words:
+          type: array
+          items: { $ref: "#/components/schemas/Word" }
+
+    ReferenceAudio:
+      type: object
+      required: [url, durationMs, words]
+      properties:
+        url: { type: string, example: /api/audio/3f9a2c.wav }
+        durationMs: { type: integer }
+        words:
+          type: array
+          description: |
+            One entry per phrase.words item: where that word sits in the clip, from forced
+            alignment of the clip (cached). Nulls while the scorer is still loading.
+          items: { $ref: "#/components/schemas/WordTime" }
+
+    WordTime:
+      type: object
+      required: [startMs, endMs]
+      properties:
+        startMs: { type: [integer, "null"] }
+        endMs: { type: [integer, "null"] }
+
+    Band:
+      type: integer
+      enum: [1, 2, 3, 4]
+      description: "1 Hard to follow, 2 Getting there, 3 Clear, 4 Very clear. Same scale at every level."
+
+    WordIssue:
+      type: object
+      required: [index, severity, kinds, sounds, stress, heard, startMs, endMs]
+      properties:
+        index: { type: integer, description: Index into phrase.words. }
+        severity:
+          type: string
+          enum: [minor, major]
+        kinds:
+          type: array
+          description: |
+            sound: a learner substitution or a dropped sound (see `sounds`); swallowed: not
+            said, or said much shorter / with most sounds missing; stress: another syllable
+            is clearly more prominent (see `stress`); unclear: the trained model doubts the
+            word but no specific reason was found.
+          items: { type: string, enum: [sound, swallowed, stress, unclear] }
+        sounds:
+          type: array
+          items:
+            type: object
+            required: [at, expected, heard]
+            properties:
+              at: { type: integer, description: Index into the word's phonemes. }
+              expected: { type: string }
+              heard: { type: [string, "null"], description: null when the sound was dropped. }
+        stress:
+          oneOf:
+            - type: object
+              required: [expectedAt, heardAt]
+              properties:
+                expectedAt: { type: integer, description: Phoneme index of the vowel that should be stressed. }
+                heardAt: { type: integer, description: Phoneme index of the vowel that was stressed instead. }
+            - type: "null"
+        heard:
+          type: array
+          items: { type: string }
+          description: Sounds the recogniser heard in this word (no stress marks).
+        startMs:
+          type: [integer, "null"]
+          description: Where the word sits in the uploaded take (null when it was not said).
+        endMs: { type: [integer, "null"] }
+
+    ScoreResult:
+      oneOf:
+        - type: object
+          required: [status, phraseId, score, band, words, pauses, pace, intonation]
+          properties:
+            status: { const: scored }
+            phraseId: { type: string }
+            score:
+              type: integer
+              minimum: 0
+              maximum: 100
+              description: |
+                100 = as clear as Kokoro's own reading of the same phrase (the raters'
+                total divided by the reference's), minus a few points per problem the
+                detectors found (capped). About ±8 points of noise.
+            band: { $ref: "#/components/schemas/Band" }
+            words:
+              type: array
+              description: Every word with a problem, weakest first.
+              items: { $ref: "#/components/schemas/WordIssue" }
+            pauses:
+              type: array
+              description: Long pauses inside the phrase, much longer than in the reference.
+              items:
+                type: object
+                required: [after, ms]
+                properties:
+                  after: { type: integer, description: Index of the word before the pause. }
+                  ms: { type: integer }
+            pace:
+              description: '"slow" when the phrase took 1.6x the reference or more (pauses excluded).'
+              oneOf:
+                - { type: string, enum: [slow] }
+                - { type: "null" }
+            intonation:
+              type: object
+              required: [flat, you, reference]
+              properties:
+                flat: { type: boolean, description: Pitch range far narrower than the reference's. }
+                you:
+                  type: array
+                  description: 48 pitch points over the spoken part, semitones from the speaker's median; null = unvoiced.
+                  items: { type: [number, "null"] }
+                reference:
+                  type: array
+                  items: { type: [number, "null"] }
+        - type: object
+          required: [status, phraseId, reason]
+          properties:
+            status: { const: unscorable }
+            phraseId: { type: string }
+            reason:
+              type: string
+              enum: [too_short, too_quiet, noisy, off_phrase]
+      discriminator:
+        propertyName: status
+
+    Error:
+      type: object
+      required: [code, message]
+      properties:
+        code: { type: string, enum: [not_found, invalid, unauthorized, unknown] }
+        message: { type: string }

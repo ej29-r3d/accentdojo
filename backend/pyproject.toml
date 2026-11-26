@@ -1,0 +1,37 @@
+[project]
+name = "kole-backend"
+version = "0.1.0"
+description = "AccentDojo API: Kokoro reference voice and OpenPronounce scoring"
+license = "AGPL-3.0-or-later"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "python-multipart>=0.0.9",
+  "soundfile>=0.12",
+  "numpy",
+  "librosa>=0.10",
+  "torch",                # CPU wheel: --index-url https://download.pytorch.org/whl/cpu
+  "openpronounce==1.1.0", # AGPL-3.0-or-later; pinned, scales change between releases
+  "kokoro==0.9.4",        # Apache-2.0
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx", "ruff"]
+
+[tool.ruff]
+line-length = 140
+
+[tool.ruff.lint]
+# Ruff's long-standing defaults, pinned so a newer ruff with a wider default set does not fail the check.
+select = ["E4", "E7", "E9", "F"]
+
+[tool.ruff.lint.per-file-ignores]
+# One-off measurement scripts, written as `t = ...; step(); print(...)` lines on purpose.
+"scripts/*" = ["E702"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.setuptools]
+packages = ["kole"]

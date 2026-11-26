@@ -1,0 +1,1904 @@
+{
+  "topics": [
+    {
+      "id": "greetings",
+      "group": "situations",
+      "name": "Greetings",
+      "blurb": "Meeting and introducing people",
+      "phrases": {
+        "beginner": [
+          "Pleased to meet you, Heather.",
+          "This is my brother, Arthur.",
+          "How's everything with you?",
+          "Welcome! We're thrilled you're here.",
+          "Have a wonderful Thursday!",
+          "Where were you born?",
+          "These are my three daughters.",
+          "Lovely weather, isn't it?",
+          "I'm thirty-three years old.",
+          "Thanks, and you as well."
+        ],
+        "intermediate": [
+          "I've heard wonderful things about you.",
+          "We've worked together since February.",
+          "Haven't we met somewhere before?",
+          "Let me introduce my colleague, Virginia.",
+          "What brought you to Philadelphia?",
+          "It's a pleasure to finally meet you.",
+          "I didn't quite catch your surname.",
+          "We were introduced at the conference.",
+          "I'm originally from a rural area.",
+          "I'm thrilled to be working with you."
+        ],
+        "advanced": [
+          "Forgive me, your name escapes me entirely.",
+          "We're absolutely delighted you could join us.",
+          "Our paths crossed briefly in Zurich.",
+          "Allow me to introduce our entrepreneur-in-residence.",
+          "I've been meaning to introduce myself properly.",
+          "Your reputation certainly precedes you, Professor.",
+          "Give my warmest regards to your colleagues.",
+          "It's been ages since we last caught up.",
+          "I gather you were raised in rural Vermont.",
+          "I believe we're mutual acquaintances of Arthur's."
+        ]
+      }
+    },
+    {
+      "id": "small-talk",
+      "group": "situations",
+      "name": "Small talk",
+      "blurb": "Weather, weekends, plans",
+      "phrases": {
+        "beginner": [
+          "Lovely weather this Thursday!",
+          "It's freezing this morning.",
+          "Any plans for the weekend?",
+          "I love your purple sweater.",
+          "The traffic was terrible.",
+          "Was your trip worth it?",
+          "I'm exhausted, honestly.",
+          "We watched three movies.",
+          "Winter is my favorite.",
+          "It's really windy, isn't it?"
+        ],
+        "intermediate": [
+          "The weather's been pretty unpredictable lately.",
+          "Have you tried that Vietnamese restaurant?",
+          "We went hiking through the valley.",
+          "I've been swamped with work recently.",
+          "Apparently it'll thunder throughout the afternoon.",
+          "Are you watching anything worthwhile these days?",
+          "My daughter turned thirteen on Wednesday.",
+          "We're visiting relatives over Thanksgiving.",
+          "This humidity is absolutely unbearable.",
+          "Did you catch the championship game?"
+        ],
+        "advanced": [
+          "This drizzle is thoroughly dreary, isn't it?",
+          "The foliage is breathtaking this autumn.",
+          "We barely weathered that brutal blizzard.",
+          "I'm cautiously optimistic about the forecast.",
+          "Rush-hour gridlock was particularly excruciating today.",
+          "That documentary was unexpectedly thought-provoking.",
+          "We squeezed in a whirlwind trip to Zurich.",
+          "The neighborhood has changed beyond recognition.",
+          "I'm utterly worn out after the marathon.",
+          "Their anniversary celebration was wonderfully extravagant."
+        ]
+      }
+    },
+    {
+      "id": "home",
+      "group": "situations",
+      "name": "Home & daily life",
+      "blurb": "Routines, chores, where you live",
+      "phrases": {
+        "beginner": [
+          "I wake up at six thirty.",
+          "We live on the third floor.",
+          "Please wash the vegetables.",
+          "The fridge is empty again.",
+          "Where are the clean towels?",
+          "I'll vacuum the living room.",
+          "Turn the heater on, please.",
+          "My brother shares the bathroom.",
+          "Throw the garbage out.",
+          "The shower isn't working."
+        ],
+        "intermediate": [
+          "The washing machine is leaking everywhere.",
+          "We're renovating the kitchen this February.",
+          "Our neighbors are unbelievably loud at night.",
+          "I usually iron my shirts on Thursdays.",
+          "The refrigerator is making a weird noise.",
+          "Could you empty the dishwasher, please?",
+          "We're thinking of moving to the suburbs.",
+          "The landlord raised the rent again.",
+          "I scrubbed the oven thoroughly yesterday.",
+          "There's a drawer full of spare batteries."
+        ],
+        "advanced": [
+          "The radiator rattles relentlessly every winter.",
+          "Our mortgage is refreshingly affordable, thankfully.",
+          "The dryer shrank my woolen sweater irreversibly.",
+          "We're meticulously reorganizing the entire garage.",
+          "A burst pipe drenched the whole hallway.",
+          "The thermostat is stubbornly unresponsive again.",
+          "Mildew thrives in poorly ventilated bathrooms.",
+          "I'd prefer a quieter, more rural neighborhood.",
+          "The upholstery urgently requires professional cleaning.",
+          "Our lease prohibits structural alterations entirely."
+        ]
+      }
+    },
+    {
+      "id": "food",
+      "group": "situations",
+      "name": "Food & drink",
+      "blurb": "Cafés and restaurants",
+      "phrases": {
+        "beginner": [
+          "A glass of water, please.",
+          "I'd like the grilled chicken.",
+          "Three iced teas, please.",
+          "Is this dish very spicy?",
+          "The soup was wonderful.",
+          "Could we have another fork?",
+          "I'm allergic to shellfish.",
+          "Just a small salad, thanks.",
+          "Where's the restroom, please?",
+          "The check, please."
+        ],
+        "intermediate": [
+          "Could I have the dressing on the side?",
+          "I'd recommend the roasted vegetables.",
+          "We reserved a table for three at eight thirty.",
+          "Is the salmon grilled or fried?",
+          "I'll have the mushroom risotto, please.",
+          "This sauce is surprisingly sweet and sour.",
+          "Could you wrap up the leftovers?",
+          "The steak is slightly overcooked, I'm afraid.",
+          "What's the vegetarian special this Thursday?",
+          "An espresso and the chocolate dessert, please."
+        ],
+        "advanced": [
+          "The broth is exquisitely rich and aromatic.",
+          "I'd prefer the sourdough lightly toasted.",
+          "Their Worcestershire glaze is ridiculously flavorful.",
+          "The asparagus arrived lukewarm and rubbery.",
+          "Could you substitute quinoa for the rice?",
+          "This dressing is refreshingly sharp and bitter.",
+          "The appetizers were underwhelming, regrettably.",
+          "A medium-rare ribeye with horseradish, please.",
+          "The waiter recommended a rather earthy burgundy.",
+          "Unfortunately, the yogurt has curdled entirely."
+        ]
+      }
+    },
+    {
+      "id": "shopping",
+      "group": "situations",
+      "name": "Shopping",
+      "blurb": "Sizes, paying, returns",
+      "phrases": {
+        "beginner": [
+          "How much are these shoes?",
+          "Do you have a larger size?",
+          "Where are the fitting rooms?",
+          "I'll take three of these.",
+          "It's thirty-five dollars.",
+          "Is everything on sale?",
+          "These jeans are too tight.",
+          "Could I have a receipt?",
+          "I'm looking for warm gloves.",
+          "Cash or credit card?"
+        ],
+        "intermediate": [
+          "These trousers are slightly too loose.",
+          "I'd like to exchange this sweater.",
+          "Is the warranty included in the price?",
+          "Do you offer free delivery on furniture?",
+          "This zipper was already broken.",
+          "The clothes shrank after the first wash.",
+          "Could you gift-wrap the jewelry, please?",
+          "I'm comparing these two wireless headphones.",
+          "The advertised discount wasn't applied.",
+          "Is this leather genuine or synthetic?"
+        ],
+        "advanced": [
+          "I'm requesting a reimbursement, not store credit.",
+          "This fabric frays ridiculously easily.",
+          "The embroidery is exquisitely intricate.",
+          "Their return policy is unreasonably restrictive.",
+          "The merchandise arrived visibly scratched and dented.",
+          "Is the surcharge refundable under the warranty?",
+          "These prices are outrageously inflated, frankly.",
+          "I'd prefer something subtler and less extravagant.",
+          "The cashmere version is temporarily unavailable.",
+          "Authentic vintage jewelry is increasingly scarce."
+        ]
+      }
+    },
+    {
+      "id": "travel",
+      "group": "situations",
+      "name": "Travel",
+      "blurb": "Stations, hotels, directions",
+      "phrases": {
+        "beginner": [
+          "Where's the nearest subway?",
+          "Three tickets to Seattle, please.",
+          "Which platform is ours?",
+          "Is this the right terminal?",
+          "The flight leaves at twelve thirty.",
+          "Turn left at the traffic light.",
+          "A window seat, please.",
+          "How far is the airport?",
+          "We're traveling through Europe.",
+          "My luggage is very heavy."
+        ],
+        "intermediate": [
+          "Our departure was delayed by thunderstorms.",
+          "Is breakfast included with the reservation?",
+          "The itinerary changed at the last minute.",
+          "Could you recommend a reliable taxi service?",
+          "We're transferring through Frankfurt tomorrow.",
+          "The ferry leaves every thirty minutes.",
+          "I'd prefer an aisle seat, if possible.",
+          "Which route avoids the highway traffic?",
+          "My suitcase never arrived in Vancouver.",
+          "The elevator's on the right, past reception."
+        ],
+        "advanced": [
+          "Turbulence rattled the aircraft throughout the descent.",
+          "Our layover in Zurich was mercifully brief.",
+          "The concierge arranged a chauffeur surprisingly swiftly.",
+          "Customs scrutinized our carry-on luggage relentlessly.",
+          "The scenic route winds through rugged terrain.",
+          "We're circumnavigating the archipelago by ferry.",
+          "Jet lag wreaked havoc on our schedule.",
+          "The itinerary is unrealistically ambitious, frankly.",
+          "Unfortunately, the reservation was inadvertently cancelled.",
+          "Rural roads are virtually impassable in winter."
+        ]
+      }
+    },
+    {
+      "id": "health",
+      "group": "situations",
+      "name": "Health",
+      "blurb": "Doctors and pharmacies",
+      "phrases": {
+        "beginner": [
+          "My throat really hurts.",
+          "I have a terrible headache.",
+          "I feel dizzy and weak.",
+          "Where's the nearest pharmacy?",
+          "I've had a fever since Thursday.",
+          "My right shoulder is sore.",
+          "I need something for a cough.",
+          "Breathe in deeply, please.",
+          "I'm allergic to this medicine.",
+          "I twisted my ankle."
+        ],
+        "intermediate": [
+          "I've been wheezing throughout the night.",
+          "The prescription should be ready by tomorrow.",
+          "My wrist is swollen and terribly stiff.",
+          "I'd like to schedule a routine checkup.",
+          "The rash worsened after the antibiotics.",
+          "Are there any serious side effects?",
+          "I sprained my ankle rather badly.",
+          "My vision's been blurry since the surgery.",
+          "The physical therapist recommended daily stretches.",
+          "This ointment relieves the itching quickly."
+        ],
+        "advanced": [
+          "The anesthesiologist thoroughly reviewed my allergies.",
+          "My arthritis flares up in humid weather.",
+          "The diagnosis was reassuringly straightforward.",
+          "Chronic fatigue has deteriorated my concentration.",
+          "The surgeon prescribed anti-inflammatory tablets.",
+          "I've been experiencing intermittent heart palpitations.",
+          "My respiratory symptoms worsened considerably overnight.",
+          "The dermatologist recommended a hypoallergenic moisturizer.",
+          "Physiotherapy gradually restored the shoulder's mobility.",
+          "A rigorous examination revealed nothing worrisome."
+        ]
+      }
+    },
+    {
+      "id": "calls",
+      "group": "situations",
+      "name": "Phone & video calls",
+      "blurb": "Calls, messages, bad connections",
+      "phrases": {
+        "beginner": [
+          "Hello, this is Arthur speaking.",
+          "Who's calling, please?",
+          "You're on mute, Heather.",
+          "The line is very bad.",
+          "Could you speak louder?",
+          "I'll call back at three.",
+          "Is your camera working?",
+          "Sorry, wrong number.",
+          "Please hold for a minute.",
+          "Can everyone hear me clearly?"
+        ],
+        "intermediate": [
+          "Your voice keeps breaking up.",
+          "Could you share your screen with everyone?",
+          "I'm calling regarding Thursday's appointment.",
+          "There's a terrible echo on the line.",
+          "Let me transfer you to our supervisor.",
+          "The connection froze for several seconds.",
+          "Would you rather switch to a video call?",
+          "Sorry, I was speaking while muted.",
+          "Could you spell your surname slowly?",
+          "I'll forward the recording afterwards."
+        ],
+        "advanced": [
+          "Your audio is intermittently garbled, unfortunately.",
+          "There's a noticeable lag throughout the call.",
+          "We're experiencing severe interference this morning.",
+          "Could you articulate that figure more clearly?",
+          "The bandwidth can't handle simultaneous screen sharing.",
+          "I inadvertently disconnected everyone; my apologies.",
+          "Let's reschedule; the reception here is atrocious.",
+          "Her voicemail greeting was hilariously formal.",
+          "Kindly refrain from interrupting the interpreter.",
+          "The teleconference overran by three quarters of an hour."
+        ]
+      }
+    },
+    {
+      "id": "plans",
+      "group": "situations",
+      "name": "Plans & invitations",
+      "blurb": "Meeting up, saying yes or no",
+      "phrases": {
+        "beginner": [
+          "Are you free this Thursday?",
+          "Let's watch a movie together.",
+          "What time works for you?",
+          "I'd love to, thanks!",
+          "Sorry, I'm busy on Wednesday.",
+          "We're throwing a birthday party.",
+          "Meet me at the theater.",
+          "Would you like to join us?",
+          "How about brunch tomorrow?",
+          "See you there at three thirty."
+        ],
+        "intermediate": [
+          "Are you available the weekend after Thanksgiving?",
+          "Let's grab brunch somewhere downtown.",
+          "We're celebrating our anniversary on Saturday.",
+          "I'd rather postpone until the weather improves.",
+          "Unfortunately, something urgent came up.",
+          "Would Saturday evening suit everyone?",
+          "We're organizing a surprise for Victoria.",
+          "Count me in for the barbecue.",
+          "I'll probably arrive a quarter past seven.",
+          "Let's reschedule for the first of February."
+        ],
+        "advanced": [
+          "I'm tentatively available, barring unforeseen circumstances.",
+          "Regrettably, I've a prior engagement that evening.",
+          "Let's improvise rather than over-schedule the weekend.",
+          "We're orchestrating an elaborate surprise celebration.",
+          "I'd wholeheartedly welcome a spontaneous getaway.",
+          "Could we reconvene sometime after the holidays?",
+          "The itinerary is deliberately flexible throughout.",
+          "I'm reluctant to commit this far ahead.",
+          "Her housewarming coincides with our rehearsal, unfortunately.",
+          "Rain or shine, the regatta proceeds regardless."
+        ]
+      }
+    },
+    {
+      "id": "feelings",
+      "group": "situations",
+      "name": "Feelings & reactions",
+      "blurb": "Good news, bad news, sympathy",
+      "phrases": {
+        "beginner": [
+          "That's wonderful news!",
+          "I'm thrilled for you both.",
+          "I'm really sorry about that.",
+          "That's terrible. Are you alright?",
+          "I'm worried about the results.",
+          "We're very proud of you.",
+          "I feel a little nervous.",
+          "What a lovely surprise!",
+          "I'm so tired and thirsty.",
+          "That's really weird."
+        ],
+        "intermediate": [
+          "I'm absolutely thrilled about the promotion.",
+          "That must've been incredibly frustrating.",
+          "I was terrified throughout the entire flight.",
+          "Honestly, I'm rather disappointed with the result.",
+          "She's understandably anxious about the surgery.",
+          "We were pleasantly surprised by the verdict.",
+          "I'm genuinely grateful for everything you've done.",
+          "He seemed thoroughly embarrassed afterwards.",
+          "It's overwhelming, but I'm coping.",
+          "I'm relieved the interview is finally over."
+        ],
+        "advanced": [
+          "I'm utterly bewildered by their reluctance.",
+          "Her resilience throughout was genuinely awe-inspiring.",
+          "I felt humiliated and irrationally furious.",
+          "We're cautiously euphoric about the breakthrough.",
+          "His indifference was frankly infuriating.",
+          "I'm overwhelmed with nostalgia whenever I return.",
+          "Their generosity left us virtually speechless.",
+          "A lingering sense of dread overshadowed everything.",
+          "She was visibly exasperated but remained courteous.",
+          "I'm wrestling with entirely contradictory emotions."
+        ]
+      }
+    },
+    {
+      "id": "requests",
+      "group": "situations",
+      "name": "Requests & apologies",
+      "blurb": "Asking, offering, saying sorry",
+      "phrases": {
+        "beginner": [
+          "Could you help me with this?",
+          "Would you hold the door?",
+          "Sorry, I'm terribly late.",
+          "Thanks, that's very thoughtful.",
+          "Please throw this away.",
+          "Could I borrow your charger?",
+          "Excuse me, is this yours?",
+          "Would you repeat that slowly?",
+          "Sorry to bother you.",
+          "Thank you for everything."
+        ],
+        "intermediate": [
+          "Would you mind lowering the volume slightly?",
+          "Could you forward the schedule by Thursday?",
+          "I sincerely apologize for the inconvenience.",
+          "Would it be alright to leave early?",
+          "Could you squeeze me in before three?",
+          "Sorry, I completely misread your message.",
+          "I'd appreciate a quick reply, if possible.",
+          "Could you proofread this paragraph for me?",
+          "Forgive me for interrupting your lunch.",
+          "Would you water the plants while we're away?"
+        ],
+        "advanced": [
+          "I'd be tremendously grateful for your discretion.",
+          "Might I trouble you for a brief clarification?",
+          "Please accept my wholehearted apologies for the oversight.",
+          "Would you conceivably reconsider the deadline?",
+          "I regret the misunderstanding; it was entirely inadvertent.",
+          "Could you expedite the paperwork, by any chance?",
+          "Forgive the intrusion; this is rather urgent.",
+          "I'd appreciate your rigorous yet swift review.",
+          "Kindly disregard my earlier, erroneous request.",
+          "I'm profoundly indebted to you for covering."
+        ]
+      }
+    },
+    {
+      "id": "clarifying",
+      "group": "situations",
+      "name": "Clarifying",
+      "blurb": "When you didn't catch it",
+      "phrases": {
+        "beginner": [
+          "Sorry, what was that?",
+          "Could you repeat the third word?",
+          "What does this word mean?",
+          "How do you spell Thursday?",
+          "Did you say thirty or thirteen?",
+          "I didn't hear the question.",
+          "Is that right or wrong?",
+          "Please speak more slowly.",
+          "Which one, this or that?",
+          "Sorry, I'm a little lost."
+        ],
+        "intermediate": [
+          "Sorry, I didn't quite catch the address.",
+          "Could you rephrase the question, please?",
+          "Do you literally mean this Thursday?",
+          "I'm not sure I followed that entirely.",
+          "What exactly does the abbreviation stand for?",
+          "So we're starting earlier, correct?",
+          "Could you clarify the third requirement?",
+          "Was that fifteen or fifty percent?",
+          "Let me verify I understood correctly.",
+          "Which version are we referring to?"
+        ],
+        "advanced": [
+          "Could you elaborate on that particular nuance?",
+          "I'm afraid the distinction eludes me entirely.",
+          "Was that hypothetical, or are we committed?",
+          "Forgive me; I've evidently misconstrued your point.",
+          "Let me paraphrase to verify my interpretation.",
+          "The terminology here is rather ambiguous.",
+          "Are those figures approximate or precisely verified?",
+          "Could you reiterate the rationale behind that?",
+          "I'd appreciate a more explicit illustration.",
+          "So, essentially, the criteria remain unchanged?"
+        ]
+      }
+    },
+    {
+      "id": "opinions",
+      "group": "situations",
+      "name": "Opinions",
+      "blurb": "Agreeing and disagreeing politely",
+      "phrases": {
+        "beginner": [
+          "I think that's right.",
+          "I agree with both of you.",
+          "I'm not sure about that.",
+          "That's a wonderful idea.",
+          "I prefer the first version.",
+          "It's probably worth trying.",
+          "Really? I thought otherwise.",
+          "You're absolutely right.",
+          "That's rather expensive, though.",
+          "What are your thoughts?"
+        ],
+        "intermediate": [
+          "Personally, I'd rather wait until February.",
+          "I strongly disagree with that argument.",
+          "That's a reasonable point, but it's risky.",
+          "I'm fairly convinced the alternative is worse.",
+          "Frankly, the evidence isn't very persuasive.",
+          "I see the advantages, though I'm skeptical.",
+          "That's precisely what worries me.",
+          "It's arguably the worst approach available.",
+          "I wholeheartedly support the third proposal.",
+          "Honestly, either version would work."
+        ],
+        "advanced": [
+          "That's a thoroughly unconvincing rationale, frankly.",
+          "I'm unequivocally opposed to the restructuring.",
+          "The argument is superficially plausible but flawed.",
+          "I'd characterize it as recklessly shortsighted.",
+          "Admittedly, their reasoning is remarkably rigorous.",
+          "It's a legitimate grievance, albeit exaggerated.",
+          "I remain deeply ambivalent about the merger.",
+          "That's an extraordinarily sweeping generalization.",
+          "Their hypothesis is intriguing yet fundamentally unverifiable.",
+          "With respect, I vehemently disagree."
+        ]
+      }
+    },
+    {
+      "id": "meetings",
+      "group": "situations",
+      "name": "Meetings",
+      "blurb": "Updates, decisions, next steps",
+      "phrases": {
+        "beginner": [
+          "Let's start with the first item.",
+          "Sorry, I have a question.",
+          "Who's writing this down?",
+          "Three things are urgent.",
+          "Let's vote right now.",
+          "I'll share the results tomorrow.",
+          "Are there further thoughts?",
+          "We're over time already.",
+          "That's everything for this week.",
+          "Thanks, everyone. Very helpful."
+        ],
+        "intermediate": [
+          "Let's review the agenda before we start.",
+          "Could you summarize the previous quarter?",
+          "We're slightly behind schedule on the rollout.",
+          "I'd like to raise a separate issue.",
+          "Who's responsible for the third deliverable?",
+          "Let's circle back to the budget afterwards.",
+          "The priorities have shifted since February.",
+          "Could everyone confirm their availability?",
+          "We've covered the first three items thoroughly.",
+          "I'll circulate the minutes by Wednesday."
+        ],
+        "advanced": [
+          "Let's adjourn and reconvene after the recess.",
+          "The stakeholders remain stubbornly unconvinced.",
+          "We're prioritizing ruthlessly this quarter.",
+          "Could we table the peripheral issues temporarily?",
+          "The preliminary projections are worryingly optimistic.",
+          "Let's delegate the logistics to the regional coordinators.",
+          "I'd reiterate that the threshold is non-negotiable.",
+          "Our bottleneck is primarily procedural, not technical.",
+          "The consensus was reluctantly but unanimously reached.",
+          "Please circulate the revised itinerary beforehand."
+        ]
+      }
+    },
+    {
+      "id": "presentations",
+      "group": "situations",
+      "name": "Presentations",
+      "blurb": "Slides, numbers, trends",
+      "phrases": {
+        "beginner": [
+          "Thank you all for coming.",
+          "Look at the third slide.",
+          "Sales grew thirty percent.",
+          "This chart shows our growth.",
+          "Here are the three results.",
+          "The numbers were higher in winter.",
+          "Revenue dropped in February.",
+          "Let's review the first quarter.",
+          "Any questions so far?",
+          "That's the whole picture."
+        ],
+        "intermediate": [
+          "Revenue rose throughout the third quarter.",
+          "This graph illustrates the overall trend.",
+          "Our growth accelerated after the relaunch.",
+          "Roughly three quarters of users returned.",
+          "The figures fluctuated between thirty and forty.",
+          "Let me briefly summarize the methodology.",
+          "Conversion rates gradually recovered by February.",
+          "There's a visible spike every Thursday.",
+          "The red curve represents our competitors.",
+          "We exceeded the target by twelve percent."
+        ],
+        "advanced": [
+          "Revenue plateaued before plummeting precipitously.",
+          "The correlation is statistically negligible.",
+          "Quarterly earnings outstripped even optimistic forecasts.",
+          "This anomaly is attributable to seasonal volatility.",
+          "Growth decelerated but remained remarkably resilient.",
+          "The trajectory is unequivocally upward.",
+          "Let me extrapolate from the preliminary figures.",
+          "Profitability deteriorated throughout the fiscal year.",
+          "A threefold increase is realistically achievable.",
+          "These outliers skew the average considerably."
+        ]
+      }
+    },
+    {
+      "id": "work",
+      "group": "situations",
+      "name": "Your work",
+      "blurb": "Interviews and your job",
+      "phrases": {
+        "beginner": [
+          "I work with three colleagues.",
+          "I'm a software engineer.",
+          "I've worked here for three years.",
+          "My shift starts at eight thirty.",
+          "I'm responsible for the reports.",
+          "Our firm is rather small.",
+          "I studied law at university.",
+          "I travel regularly for work.",
+          "My supervisor is very helpful.",
+          "I'd like a different career."
+        ],
+        "intermediate": [
+          "I've specialized in analytics for several years.",
+          "I supervise thirteen regional representatives.",
+          "My strength is thorough, careful research.",
+          "I previously worked for a pharmaceutical firm.",
+          "I'm pursuing a leadership role.",
+          "I regularly collaborate with the marketing department.",
+          "The workload varies throughout the quarter.",
+          "I thrive under pressure, generally.",
+          "I'm particularly proud of our latest project.",
+          "I'd welcome more responsibility and variety."
+        ],
+        "advanced": [
+          "I spearheaded a remarkably successful restructuring.",
+          "My repertoire spans statistics and strategy.",
+          "I thrive in relentlessly fast-paced environments.",
+          "I'm meticulous, occasionally to a fault.",
+          "I orchestrated the firm's transatlantic expansion.",
+          "Entrepreneurial ventures have sharpened my resilience.",
+          "I liaise regularly with regulatory authorities.",
+          "My predecessor left an extraordinarily thorough archive.",
+          "I'm pursuing a more intellectually rigorous role.",
+          "Versatility is arguably my foremost strength."
+        ]
+      }
+    },
+    {
+      "id": "follow-ups",
+      "group": "situations",
+      "name": "Follow-ups",
+      "blurb": "Checking in and keeping in touch",
+      "phrases": {
+        "beginner": [
+          "Thanks for the quick reply.",
+          "I'll write to you on Thursday.",
+          "Did you receive my email?",
+          "Here's the third version.",
+          "Please reply by Wednesday.",
+          "The file is attached below.",
+          "Sorry for the late answer.",
+          "Let's talk further tomorrow.",
+          "Thanks for your patience.",
+          "I'll forward it right away."
+        ],
+        "intermediate": [
+          "I'm following up on Thursday's conversation.",
+          "Have you reviewed the revised proposal?",
+          "I've attached the spreadsheet we discussed.",
+          "Could you confirm the delivery address?",
+          "Thanks for responding so thoroughly.",
+          "I'll forward the invoice this afternoon.",
+          "Apologies for the slightly delayed reply.",
+          "Let me know whether Wednesday works.",
+          "I'm still awaiting the signed paperwork.",
+          "We'll reach out early in February."
+        ],
+        "advanced": [
+          "I'm circling back regarding the outstanding reimbursement.",
+          "Kindly acknowledge receipt at your earliest convenience.",
+          "The revised draft incorporates your thoughtful feedback.",
+          "Further to our correspondence, the figures are enclosed.",
+          "I'd appreciate a definitive answer by the thirtieth.",
+          "Apologies for the belated and rather brief reply.",
+          "We're awaiting clearance from the regulatory authorities.",
+          "I'll relay your reservations to the committee.",
+          "The paperwork was inadvertently misfiled, regrettably.",
+          "Rest assured, we're prioritizing your inquiry."
+        ]
+      }
+    },
+    {
+      "id": "problems",
+      "group": "situations",
+      "name": "Problems & complaints",
+      "blurb": "When something goes wrong",
+      "phrases": {
+        "beginner": [
+          "Something is wrong here.",
+          "This doesn't work properly.",
+          "I've lost my wallet.",
+          "The water is freezing cold.",
+          "There's an error on the bill.",
+          "My order never arrived.",
+          "The room is very dirty.",
+          "I was charged three times.",
+          "The internet isn't working.",
+          "Who's the right person to ask?"
+        ],
+        "intermediate": [
+          "The air conditioner rattles throughout the night.",
+          "I was overcharged by thirty dollars.",
+          "My reservation seems to have disappeared.",
+          "The package arrived completely crushed.",
+          "I've been waiting three quarters of an hour.",
+          "This is the third error this month.",
+          "The refrigerator arrived with a broken shelf.",
+          "I'd like to speak with a supervisor.",
+          "The repair worsened the original problem.",
+          "Nobody's responded to my earlier complaints."
+        ],
+        "advanced": [
+          "This is wholly unacceptable, frankly.",
+          "The discrepancy remains unresolved despite repeated assurances.",
+          "I'm escalating this grievance to your headquarters.",
+          "The workmanship is shoddy and structurally unsound.",
+          "Your representative was dismissive and borderline rude.",
+          "The malfunction recurred within thirty-six hours.",
+          "I'm entitled to a thorough, unbiased investigation.",
+          "These recurring errors are eroding our trust.",
+          "The reimbursement was arbitrarily withheld, apparently.",
+          "I expect a swift and satisfactory resolution."
+        ]
+      }
+    },
+    {
+      "id": "pair-ee-i",
+      "group": "pairs",
+      "name": "ee vs i: sheep / ship",
+      "blurb": "Long ee and short i",
+      "phrases": {
+        "beginner": [
+          "sheep, ship",
+          "leave, live",
+          "seat, sit",
+          "feel, fill",
+          "cheap, chip",
+          "green, grin",
+          "Fill this seat, please.",
+          "He still lives in Greece."
+        ],
+        "intermediate": [
+          "reach, rich",
+          "sleep, slip",
+          "steal, still",
+          "least, list",
+          "These pills keep me asleep.",
+          "Did he leave his kids with Jean?",
+          "The beach is a bit windy this week.",
+          "Please fit these pieces in neatly."
+        ],
+        "advanced": [
+          "deed, did",
+          "wheeled, willed",
+          "feast, fist",
+          "The interim chief insisted on meeting weekly.",
+          "Phil feels the fees are still unreasonably steep.",
+          "Six weeks in Fiji seemed unbelievably brief.",
+          "Each critic agreed the sequel is a gimmick.",
+          "She deliberately skipped the easiest bits."
+        ]
+      }
+    },
+    {
+      "id": "pair-a-e",
+      "group": "pairs",
+      "name": "a vs e: bad / bed",
+      "blurb": "Open a and e",
+      "phrases": {
+        "beginner": [
+          "bad, bed",
+          "man, men",
+          "sad, said",
+          "pan, pen",
+          "had, head",
+          "bag, beg",
+          "Ten men sat on the bed.",
+          "Dad said yes."
+        ],
+        "intermediate": [
+          "land, lend",
+          "sand, send",
+          "bat, bet",
+          "gas, guess",
+          "Ben's hands are a mess.",
+          "I guess the gas tank is empty.",
+          "Pack the red jacket and the tan belt.",
+          "Jen sang better than Alice expected."
+        ],
+        "advanced": [
+          "pedal, paddle",
+          "shell, shall",
+          "expensive, expansive",
+          "The expansive estate was shamelessly expensive.",
+          "Stan's stepdad sketched a spectacular landscape.",
+          "The latter letter mentions a tax exemption.",
+          "Emma's camera captured every gesture exactly.",
+          "Ethan abandoned the ascent after an accident."
+        ]
+      }
+    },
+    {
+      "id": "pair-u-a",
+      "group": "pairs",
+      "name": "u vs a: cup / cap",
+      "blurb": "Short u and a",
+      "phrases": {
+        "beginner": [
+          "cup, cap",
+          "fun, fan",
+          "run, ran",
+          "but, bat",
+          "much, match",
+          "hut, hat",
+          "My uncle has a black truck.",
+          "Lunch was fun, thanks."
+        ],
+        "intermediate": [
+          "stuck, stack",
+          "truck, track",
+          "uncle, ankle",
+          "drunk, drank",
+          "My uncle sprained his ankle on Sunday.",
+          "The truck got stuck on the track.",
+          "Hang the damp rug in the sun.",
+          "Jack's younger brother juggles apples."
+        ],
+        "advanced": [
+          "crush, crash",
+          "mud, mad",
+          "rupture, rapture",
+          "The company's abrupt collapse was unexpected.",
+          "A sudden avalanche crushed the summit cabin.",
+          "Justin's husband adamantly rejected the budget.",
+          "Hundreds of anxious customers clutched their baggage.",
+          "The judge was puzzled by such a blatant blunder."
+        ]
+      }
+    },
+    {
+      "id": "pair-er-or",
+      "group": "pairs",
+      "name": "er vs or / ar: work / walk",
+      "blurb": "The ‘er’ sound",
+      "phrases": {
+        "beginner": [
+          "work, walk",
+          "bird, board",
+          "shirt, short",
+          "fur, four",
+          "heard, hard",
+          "firm, farm",
+          "I walk to work early.",
+          "Her first shirt was short."
+        ],
+        "intermediate": [
+          "burn, born",
+          "curse, course",
+          "worm, warm",
+          "hurt, heart",
+          "The girl was born on the third of March.",
+          "Her heart hurt after the first course.",
+          "Turn north at the church corner.",
+          "Thirty warm workers were served dessert."
+        ],
+        "advanced": [
+          "stir, star",
+          "purse, parse",
+          "were, wore",
+          "The surgeon performed a marvelous early-morning surgery.",
+          "Her award-winning research was largely circumstantial.",
+          "The world's worst journalists were barred from court.",
+          "A burly sergeant searched the dark warehouse first.",
+          "Certain words were purposely distorted or blurred."
+        ]
+      }
+    },
+    {
+      "id": "pair-oo-u",
+      "group": "pairs",
+      "name": "oo vs u: fool / full",
+      "blurb": "Long oo and short u",
+      "phrases": {
+        "beginner": [
+          "fool, full",
+          "pool, pull",
+          "Luke, look",
+          "boot, foot",
+          "food, good",
+          "suit, soot",
+          "Put your boots on.",
+          "The pool looks full."
+        ],
+        "intermediate": [
+          "who'd, hood",
+          "stewed, stood",
+          "cooed, could",
+          "wooed, would",
+          "Could you move the cookbook, too?",
+          "Luke took a good look at the room.",
+          "The butcher soon stood by the roof.",
+          "Who put sugar in the soup?"
+        ],
+        "advanced": [
+          "shooed, should",
+          "nuke, nook",
+          "Luke's, looks",
+          "The crew couldn't prove who took the jewels.",
+          "A bulletproof hood would be too gloomy.",
+          "Ruth mistook the brook for a smooth pool.",
+          "Truthfully, the woolen suit looked foolish.",
+          "June pushed through a room full of students."
+        ]
+      }
+    },
+    {
+      "id": "pair-o-aw",
+      "group": "pairs",
+      "name": "o vs aw: boat / bought",
+      "blurb": "The ‘o’ and ‘aw’ sounds",
+      "phrases": {
+        "beginner": [
+          "boat, bought",
+          "coat, caught",
+          "low, law",
+          "so, saw",
+          "woke, walk",
+          "bowl, ball",
+          "I saw the boat he bought.",
+          "Paul broke the bowl."
+        ],
+        "intermediate": [
+          "choke, chalk",
+          "coast, cost",
+          "loan, lawn",
+          "pose, pause",
+          "The cold coast cost us a fortune.",
+          "She paused, then posed for the photo.",
+          "Don't mow the lawn so slowly.",
+          "Joan thought the phone call was awful."
+        ],
+        "advanced": [
+          "node, gnawed",
+          "stoke, stalk",
+          "bold, bald",
+          "The bald author spoke boldly at the launch.",
+          "Nobody thought the motion was altogether flawed.",
+          "Those awkward moments dawned on Owen slowly.",
+          "The lawyer's opening proposal was almost overlooked.",
+          "An awesome snowstorm closed the Chicago boardwalk."
+        ]
+      }
+    },
+    {
+      "id": "pair-w-v",
+      "group": "pairs",
+      "name": "w vs v: wet / vet",
+      "blurb": "W and V",
+      "phrases": {
+        "beginner": [
+          "wet, vet",
+          "west, vest",
+          "wine, vine",
+          "worse, verse",
+          "while, vile",
+          "wheel, veal",
+          "We live very well.",
+          "Wear a warm vest."
+        ],
+        "intermediate": [
+          "wiper, viper",
+          "wary, vary",
+          "rowing, roving",
+          "wow, vow",
+          "We visit every winter weekend.",
+          "Vicky's view was well worth the wait.",
+          "Will Victor vote on Wednesday evening?",
+          "The waves were very violent overnight."
+        ],
+        "advanced": [
+          "wiser, visor",
+          "wail, veil",
+          "weird, veered",
+          "The versatile waiter volunteered without wavering.",
+          "We've evolved wonderfully vivid virtual worlds.",
+          "Vivian's vowels were woven with warmth.",
+          "Whatever varies widely is worth verifying twice.",
+          "Evidently, the wolves never wandered westward."
+        ]
+      }
+    },
+    {
+      "id": "pair-final",
+      "group": "pairs",
+      "name": "Final d vs t: bad / bat",
+      "blurb": "Voiced final sounds",
+      "phrases": {
+        "beginner": [
+          "bad, bat",
+          "bag, back",
+          "leave, leaf",
+          "eyes, ice",
+          "ride, right",
+          "prize, price",
+          "My bag is at the back.",
+          "She has big blue eyes."
+        ],
+        "intermediate": [
+          "peas, peace",
+          "save, safe",
+          "pig, pick",
+          "rise, rice",
+          "Leave the leaf on the bed.",
+          "The judge heard his bad news.",
+          "His dog begged for a big bone.",
+          "Five beds, five bags, five kids."
+        ],
+        "advanced": [
+          "lose, loose",
+          "prove, proof",
+          "advise, advice",
+          "Please advise; your advice is prized.",
+          "The crowd stood and applauded the brave bride.",
+          "A loose wire made the fridge lose its charge.",
+          "Rob grabbed his badge and rode abroad.",
+          "Five wolves lived beside the frozen ridge."
+        ]
+      }
+    },
+    {
+      "id": "pair-p-b",
+      "group": "pairs",
+      "name": "p, t, k vs b, d, g",
+      "blurb": "Puffs of air: pin / bin",
+      "phrases": {
+        "beginner": [
+          "pin, bin",
+          "pack, back",
+          "two, do",
+          "tie, die",
+          "coat, goat",
+          "cold, gold",
+          "Put the pen in the pocket.",
+          "Take two cups of tea."
+        ],
+        "intermediate": [
+          "pear, bear",
+          "town, down",
+          "came, game",
+          "curl, girl",
+          "Peter picked a perfect peach.",
+          "Can Kate keep the cat calm?",
+          "Tell Tom to take the ten o'clock train.",
+          "Pat bought a pretty but pricey present."
+        ],
+        "advanced": [
+          "tense, dense",
+          "crow, grow",
+          "plead, bleed",
+          "The typical tourist can't tolerate tepid tea.",
+          "Capable carpenters keep their countertops clean.",
+          "A particularly painful appointment was postponed.",
+          "Curiosity kept the committee contemplating the question.",
+          "Patricia attended a pointless but pleasant party."
+        ]
+      }
+    },
+    {
+      "id": "pair-th-s",
+      "group": "pairs",
+      "name": "th vs s: think / sink",
+      "blurb": "The ‘th’ in think",
+      "phrases": {
+        "beginner": [
+          "think, sink",
+          "thick, sick",
+          "thing, sing",
+          "mouth, mouse",
+          "path, pass",
+          "thumb, sum",
+          "I think I'm sick.",
+          "Thanks for both things."
+        ],
+        "intermediate": [
+          "faith, face",
+          "tenth, tense",
+          "worth, worse",
+          "theme, seem",
+          "Is this path worth the pass?",
+          "Seth's thumb seems thick and sore.",
+          "Thirty-six thin thieves sang something.",
+          "Both my teeth are sensitive this month."
+        ],
+        "advanced": [
+          "forth, force",
+          "myth, miss",
+          "thought, sought",
+          "Theoretically, three-sixths simplifies to a half.",
+          "The sixth thesis synthesizes several methods.",
+          "An authentic enthusiast sympathizes with the athletes.",
+          "Something thoroughly unsettling surfaced this month.",
+          "Ethics and aesthetics seldom share the same path."
+        ]
+      }
+    },
+    {
+      "id": "pair-th-z",
+      "group": "pairs",
+      "name": "th vs z / d: then / Zen",
+      "blurb": "The ‘th’ in this",
+      "phrases": {
+        "beginner": [
+          "then, Zen",
+          "they, day",
+          "those, doze",
+          "there, dare",
+          "though, dough",
+          "breathe, breeze",
+          "They came the other day.",
+          "This is the one."
+        ],
+        "intermediate": [
+          "clothing, closing",
+          "teethe, tease",
+          "than, Dan",
+          "worthy, wordy",
+          "These days, those doors stay closed.",
+          "My brother's there with the others.",
+          "Does this zipper go with that dress?",
+          "Breathe in the breeze, then rest."
+        ],
+        "advanced": [
+          "seethe, seize",
+          "lather, ladder",
+          "writhe, rise",
+          "Neither brother bothered to soothe their mother.",
+          "The southern weather is rather dazzling these days.",
+          "They'd rather gather the zebras themselves.",
+          "Nevertheless, the leather was smoother than those.",
+          "Although exhausted, the others breathed easily."
+        ]
+      }
+    },
+    {
+      "id": "pair-th-t",
+      "group": "pairs",
+      "name": "th vs t: three / tree",
+      "blurb": "‘th’ is not t",
+      "phrases": {
+        "beginner": [
+          "three, tree",
+          "thank, tank",
+          "thin, tin",
+          "both, boat",
+          "bath, bat",
+          "thought, taught",
+          "Thank you for the tea.",
+          "Three tall trees."
+        ],
+        "intermediate": [
+          "thick, tick",
+          "theme, team",
+          "math, mat",
+          "thread, tread",
+          "The team thought the theme was tired.",
+          "Ruth taught math to both teams.",
+          "Thirty-two teeth, two toothbrushes.",
+          "Tom threw the tin through the trees."
+        ],
+        "advanced": [
+          "tenth, tent",
+          "heath, heat",
+          "death, debt",
+          "Timothy's therapist tactfully tackled the theory.",
+          "The thrilled tourists trekked through thick terrain.",
+          "Truthfully, the treaty threatens their territory.",
+          "A thorough tutor teaches arithmetic patiently.",
+          "Thousands tolerated the theater's terrible temperature."
+        ]
+      }
+    },
+    {
+      "id": "pair-ng-n",
+      "group": "pairs",
+      "name": "ng vs n: sing / sin",
+      "blurb": "The ‘ng’ sound",
+      "phrases": {
+        "beginner": [
+          "sing, sin",
+          "thing, thin",
+          "wing, win",
+          "rang, ran",
+          "sung, sun",
+          "bang, ban",
+          "She ran when it rang.",
+          "The king can sing."
+        ],
+        "intermediate": [
+          "king, kin",
+          "rung, run",
+          "stung, stun",
+          "singer, sinner",
+          "Bring the long thin one along.",
+          "The king's kin are singing again.",
+          "I'm running, not ringing.",
+          "Young Ben's tongue went numb."
+        ],
+        "advanced": [
+          "banging, banning",
+          "tongues, tons",
+          "hanged, hand",
+          "The lingering evening song was strangely calming.",
+          "Ringing phones kept interrupting the morning briefing.",
+          "Among the singers, one's tone rang wrong.",
+          "Hanging lanterns were swinging in the incoming wind.",
+          "Nothing engaging is happening this evening, darling."
+        ]
+      }
+    },
+    {
+      "id": "pair-h",
+      "group": "pairs",
+      "name": "Soft h: hair / air",
+      "blurb": "A soft h, not ‘kh’",
+      "phrases": {
+        "beginner": [
+          "hair, air",
+          "hat, at",
+          "heat, eat",
+          "hear, ear",
+          "hold, old",
+          "high, eye",
+          "He has his hat.",
+          "How old is her house?"
+        ],
+        "intermediate": [
+          "harm, arm",
+          "hedge, edge",
+          "hate, eight",
+          "heart, art",
+          "Hannah hurt her arm in the hall.",
+          "Is Helen's art at the hotel?",
+          "Harry ate eight huge hamburgers.",
+          "Who owns the old house ahead?"
+        ],
+        "advanced": [
+          "hitch, itch",
+          "harbor, arbor",
+          "hair, heir",
+          "A humble heir inherited the whole household.",
+          "Honestly, he hesitated for half an hour.",
+          "Her husband habitually hums in the hallway.",
+          "Perhaps the inhabitants had hidden the heirloom.",
+          "An unhappy historian overheard the hilarious rehearsal."
+        ]
+      }
+    },
+    {
+      "id": "pair-o-u",
+      "group": "pairs",
+      "name": "o vs u: cot / cut",
+      "blurb": "Open o and short u",
+      "phrases": {
+        "beginner": [
+          "cot, cut",
+          "hot, hut",
+          "lock, luck",
+          "not, nut",
+          "boss, bus",
+          "dock, duck",
+          "My boss took the bus.",
+          "Good luck with the lock."
+        ],
+        "intermediate": [
+          "collar, color",
+          "shot, shut",
+          "rob, rub",
+          "stock, stuck",
+          "The color of his collar was odd.",
+          "John's son got a lot of sun.",
+          "Shut the box and lock the trunk.",
+          "Mom's job comes with tough problems."
+        ],
+        "advanced": [
+          "wander, wonder",
+          "model, muddle",
+          "fond, fund",
+          "The doctor's cousin was utterly astonished.",
+          "Our monthly budget is constantly under scrutiny.",
+          "A modest sum was promptly, publicly donated.",
+          "Robert wondered why Dustin wandered off.",
+          "Nothing compares to a properly buttered muffin."
+        ]
+      }
+    },
+    {
+      "id": "pair-ay-e",
+      "group": "pairs",
+      "name": "ay vs e: late / let",
+      "blurb": "Long a and short e",
+      "phrases": {
+        "beginner": [
+          "late, let",
+          "pain, pen",
+          "wait, wet",
+          "taste, test",
+          "gate, get",
+          "paper, pepper",
+          "Wait, let me get the gate.",
+          "The test was late today."
+        ],
+        "intermediate": [
+          "sale, sell",
+          "fail, fell",
+          "age, edge",
+          "trade, tread",
+          "They sell the best cakes on sale.",
+          "Wes waited at the west gate.",
+          "Did Fred say he's afraid again?",
+          "Take the main exit and then head left."
+        ],
+        "advanced": [
+          "whale, well",
+          "raid, red",
+          "saint, sent",
+          "The delegates debated the questionable legislation.",
+          "They sent the shipment straight to the estate.",
+          "An eccentric painter sketched the faded railway.",
+          "Jake's presentation definitely made a statement.",
+          "Reckless mistakes plagued their latest venture."
+        ]
+      }
+    },
+    {
+      "id": "pair-stress",
+      "group": "pairs",
+      "name": "Stress: desert / dessert",
+      "blurb": "Same sounds, different stress",
+      "phrases": {
+        "beginner": [
+          "desert, dessert",
+          "thirty, thirteen",
+          "fifty, fifteen",
+          "sixty, sixteen",
+          "hostel, hotel",
+          "ninety, nineteen",
+          "Thirteen hotels, thirty guests.",
+          "Dessert in the desert."
+        ],
+        "intermediate": [
+          "personal, personnel",
+          "photograph, photography",
+          "comedy, committee",
+          "economy, economic",
+          "The personnel office keeps personal records.",
+          "Photography requires a patient photographer.",
+          "A Japanese engineer designed the machine.",
+          "Sixteen employees, sixty volunteers."
+        ],
+        "advanced": [
+          "politics, political",
+          "analyze, analysis",
+          "origin, original",
+          "The analyst's analysis was analytically flawless.",
+          "Democracy depends on democratic participation.",
+          "A competent competitor relishes fierce competition.",
+          "Photographers photograph photogenic politicians.",
+          "Her vocabulary is extraordinarily sophisticated."
+        ]
+      }
+    },
+    {
+      "id": "sound-r",
+      "group": "sounds",
+      "name": "American R",
+      "blurb": "red, around, sorry",
+      "symbol": "ɹ",
+      "phrases": {
+        "beginner": [
+          "Really? Are you sure?",
+          "Red roses are rare.",
+          "Rice with carrots, please.",
+          "Right around the corner.",
+          "Sorry, wrong room.",
+          "Three grey rabbits."
+        ],
+        "intermediate": [
+          "Rachel rarely reads the reviews.",
+          "Our library requires a reservation.",
+          "Strawberries and raspberries are sold separately.",
+          "Arrive early to grab a front-row seat.",
+          "Traffic regularly ruins our Friday return.",
+          "Remember to bring your credit card."
+        ],
+        "advanced": [
+          "Rural jurors rarely err.",
+          "The brewery's refrigerator irreparably ruptured.",
+          "A rare aurora mirrored the river.",
+          "Her extraordinary career required rigorous preparation.",
+          "Harry's repertoire regularly irritates horror critics.",
+          "Rory's rarely wrong regarding regulatory errors."
+        ]
+      }
+    },
+    {
+      "id": "sound-er",
+      "group": "sounds",
+      "name": "Vowel + R",
+      "blurb": "her, car, more",
+      "symbol": "ɚ",
+      "phrases": {
+        "beginner": [
+          "Her first birthday.",
+          "Park the car here.",
+          "Four more, please.",
+          "The girl works early.",
+          "Where are your stairs?",
+          "Turn north at the corner."
+        ],
+        "intermediate": [
+          "The nurse returned on Thursday morning.",
+          "Our neighbors prefer their burgers rare.",
+          "Certain words were hard to hear.",
+          "The world's largest airport is nearby.",
+          "Her heart surgery starts at four.",
+          "Thirty birds circled over the harbor."
+        ],
+        "advanced": [
+          "The murderer's attorney urged further mercy.",
+          "Burglars ordinarily prefer darker corridors.",
+          "A stern northern governor averted the disaster.",
+          "Squirrels were stirring in the birch forest.",
+          "Her earnest journal entries were surprisingly absurd.",
+          "The courier hurried toward the terminal's barrier."
+        ]
+      }
+    },
+    {
+      "id": "sound-flap-t",
+      "group": "sounds",
+      "name": "Flap T",
+      "blurb": "water, better, city",
+      "symbol": "ɾ",
+      "phrases": {
+        "beginner": [
+          "A bottle of water.",
+          "What a pretty city!",
+          "Get it at eight.",
+          "A little bit better.",
+          "Not at all, buddy.",
+          "Put it on the table."
+        ],
+        "intermediate": [
+          "Peter got a lot of letters.",
+          "I ought to visit my daughter later.",
+          "What a beautiful Saturday for a party!",
+          "Could you write it out a bit bigger?",
+          "The meeting started thirty minutes late.",
+          "Betty bought a better computer battery."
+        ],
+        "advanced": [
+          "The editor noted a pattern of fatalities.",
+          "Pretty little cottages dotted the waterfront.",
+          "Out-of-date data creates critical liabilities.",
+          "Competitors capitalize on outdated metadata.",
+          "Whatever it is, get it out of the attic.",
+          "A veteran writer waited at the auditorium."
+        ]
+      }
+    },
+    {
+      "id": "sound-stop-t",
+      "group": "sounds",
+      "name": "Held T",
+      "blurb": "button, mountain, right",
+      "symbol": "ʔ",
+      "phrases": {
+        "beginner": [
+          "Press that button.",
+          "Not right now.",
+          "A white kitten.",
+          "What's that mountain?",
+          "I can't eat that.",
+          "Sit right there."
+        ],
+        "intermediate": [
+          "I've forgotten the curtains again.",
+          "Britain's written rules are important.",
+          "The fountain sits right outside the apartment.",
+          "He hasn't eaten cotton candy yet.",
+          "Put that hat back, Martin.",
+          "Wait, that didn't quite fit."
+        ],
+        "advanced": [
+          "The mittens were rotten and frostbitten.",
+          "Latin scholars certainly shortened the sentence.",
+          "An important patent went straight to Manhattan.",
+          "The frightened kitten bit that outstretched hand.",
+          "Fortunately, that department wasn't threatened outright.",
+          "It's not what that accountant meant, apparently."
+        ]
+      }
+    },
+    {
+      "id": "sound-dark-l",
+      "group": "sounds",
+      "name": "Dark L",
+      "blurb": "full, people, world",
+      "symbol": "ɫ",
+      "phrases": {
+        "beginner": [
+          "A full bottle.",
+          "Call me, Paul.",
+          "People feel well.",
+          "A small, cold apple.",
+          "Tell all the girls.",
+          "The whole world."
+        ],
+        "intermediate": [
+          "Carl sold the old metal table.",
+          "It's still a difficult goal to fulfill.",
+          "The school hall will fill up quickly.",
+          "Michael's uncle built a little hotel.",
+          "Several people fell ill at the hospital.",
+          "Help yourself to a bowl of noodles."
+        ],
+        "advanced": [
+          "The colonel's rural hospital is delightfully tranquil.",
+          "A skillful girl twirled the purple pearls.",
+          "Technical obstacles will inevitably multiply overall.",
+          "The world's wealthiest individuals exploit legal loopholes.",
+          "Controversial proposals are usually handled poorly.",
+          "Squirrels curl up in a cold, dull hole."
+        ]
+      }
+    },
+    {
+      "id": "sound-th",
+      "group": "sounds",
+      "name": "TH in think",
+      "blurb": "three, both, nothing",
+      "symbol": "θ",
+      "phrases": {
+        "beginner": [
+          "Thirty-three, thanks.",
+          "Both of my teeth.",
+          "Think about both things.",
+          "Happy birthday, Beth!",
+          "On the third Thursday.",
+          "North, then south."
+        ],
+        "intermediate": [
+          "Three months is nothing, I think.",
+          "Kathy's thirtieth birthday is on Thursday.",
+          "Both athletes are healthy and thirsty.",
+          "A thief went through the bathroom window.",
+          "Math is worth the effort, truthfully.",
+          "Nothing beats a thick cloth in the north."
+        ],
+        "advanced": [
+          "Three-fifths of the youths thought otherwise.",
+          "An enthusiastic anthropologist authored the hypothesis.",
+          "Thankfully, the anesthetic worked throughout the ordeal.",
+          "Ruthless thieves breathlessly threatened the pathologist.",
+          "Measure its length, width, depth, and strength.",
+          "Theoretically, empathy strengthens both faiths."
+        ]
+      }
+    },
+    {
+      "id": "sound-th-voiced",
+      "group": "sounds",
+      "name": "TH in this",
+      "blurb": "the, mother, breathe",
+      "symbol": "ð",
+      "phrases": {
+        "beginner": [
+          "This is my mother.",
+          "That's their brother.",
+          "These, not those.",
+          "They're over there.",
+          "The weather is fine.",
+          "Is this the other one?"
+        ],
+        "intermediate": [
+          "My father would rather stay there.",
+          "Although they tried, neither of them won.",
+          "Is that leather smoother than this?",
+          "They bathe the baby with their mother.",
+          "Those clothes are theirs, not mine.",
+          "Either way, gather them together."
+        ],
+        "advanced": [
+          "Nevertheless, they loathe the northern weather.",
+          "Neither feather is smoother than the other.",
+          "Their grandmother soothes the teething toddler rhythmically.",
+          "The other brethren gathered there nonetheless.",
+          "Whether they're worthy is another matter altogether.",
+          "Farther southward, the weather withered their clothing."
+        ]
+      }
+    },
+    {
+      "id": "sound-ae",
+      "group": "sounds",
+      "name": "Short A",
+      "blurb": "cat, hand, after",
+      "symbol": "æ",
+      "phrases": {
+        "beginner": [
+          "A black cat.",
+          "Thanks, Dad!",
+          "That's a bad plan.",
+          "Pack my bags, Sam.",
+          "Ask the man.",
+          "A happy family."
+        ],
+        "intermediate": [
+          "Can Alice stand on that ladder?",
+          "Sam's grandmother has a fantastic laugh.",
+          "The last exam was absolutely tragic.",
+          "Pack an apple and a ham sandwich.",
+          "The manager canceled half the classes.",
+          "Dan actually ran back to the cabin."
+        ],
+        "advanced": [
+          "The ambassador's lavish banquet was a catastrophe.",
+          "Angry passengers abandoned the stranded tram.",
+          "Practically every candidate lacked a tangible plan.",
+          "A fanatical mathematician analyzed the anagram.",
+          "The bankrupt landlord adamantly attacked the tax.",
+          "Her transatlantic accent has dramatically vanished."
+        ]
+      }
+    },
+    {
+      "id": "sound-ah",
+      "group": "sounds",
+      "name": "Open O",
+      "blurb": "hot, job, father",
+      "symbol": "ɑ",
+      "phrases": {
+        "beginner": [
+          "It's a hot pot.",
+          "Stop the clock.",
+          "Not a problem, Bob.",
+          "My job is odd.",
+          "A lot of rocks.",
+          "Lock the top box."
+        ],
+        "intermediate": [
+          "John's got a lot of documents.",
+          "The doctor's office opens at one o'clock.",
+          "Probably not, but it's possible.",
+          "Tom dropped his wallet in the parking lot.",
+          "The shop was robbed around five o'clock.",
+          "Honestly, I forgot about the concert."
+        ],
+        "advanced": [
+          "The economist's hypothesis was quite controversial.",
+          "Monstrous obstacles blocked the colossal project.",
+          "A prominent scholar adopted a novel policy.",
+          "Modern technology constantly conquers common problems.",
+          "The psychologist's response was a solid compromise.",
+          "Bob's hobby is collecting exotic tropical rocks."
+        ]
+      }
+    },
+    {
+      "id": "sound-schwa",
+      "group": "sounds",
+      "name": "Schwa",
+      "blurb": "about, banana, today",
+      "symbol": "ə",
+      "phrases": {
+        "beginner": [
+          "A banana, please.",
+          "About a minute ago.",
+          "Today and tomorrow.",
+          "A cup of tea.",
+          "The sofa is comfortable.",
+          "Again and again."
+        ],
+        "intermediate": [
+          "The official decision was a surprise.",
+          "A photographer took a picture of us.",
+          "Can you recommend a comfortable hotel?",
+          "The support was better than expected.",
+          "Tomorrow's lesson is about American history.",
+          "A professional musician performed for an hour."
+        ],
+        "advanced": [
+          "The president's proposal astonished the opposition.",
+          "A considerable percentage of applicants succeeded.",
+          "Apparently, the phenomenon is fundamentally unpredictable.",
+          "Occasional confusion is a natural reaction.",
+          "The pharmacist's assistant memorized the alphabetical catalog.",
+          "An economical alternative appealed to the committee."
+        ]
+      }
+    },
+    {
+      "id": "sound-w",
+      "group": "sounds",
+      "name": "W",
+      "blurb": "we, quick, always",
+      "symbol": "w",
+      "phrases": {
+        "beginner": [
+          "We want water.",
+          "Which way is west?",
+          "One quick question.",
+          "What a week!",
+          "Why wait, William?",
+          "Twelve white swans."
+        ],
+        "intermediate": [
+          "We were away all winter.",
+          "Would you walk with us on Wednesday?",
+          "The queen quietly wondered why.",
+          "Wow, what a wonderful swimming pool!",
+          "Language requires frequent, quiet work.",
+          "Which woman was wearing the sweater?"
+        ],
+        "advanced": [
+          "Wayward squirrels squabbled in the woodwork.",
+          "Whoever's unaware will be overwhelmed afterward.",
+          "The acquaintance's eloquent wit was bewildering.",
+          "We'd welcome a somewhat wider waterway.",
+          "Quality equipment was required everywhere westward.",
+          "Why would Dwight squander his reward so quickly?"
+        ]
+      }
+    },
+    {
+      "id": "sound-ng",
+      "group": "sounds",
+      "name": "NG",
+      "blurb": "sing, thinking, long",
+      "symbol": "ŋ",
+      "phrases": {
+        "beginner": [
+          "Good morning, king!",
+          "Sing a long song.",
+          "I'm thinking of something.",
+          "Bring the ring.",
+          "Spring is coming.",
+          "Hang it up, darling."
+        ],
+        "intermediate": [
+          "I'm looking for something interesting.",
+          "He's hanging the paintings this evening.",
+          "The young singer is touring all spring.",
+          "Are you bringing anything to the wedding?",
+          "Nothing's wrong with the washing machine.",
+          "Reading and writing keep me thinking."
+        ],
+        "advanced": [
+          "The lingering longing was strangely overwhelming.",
+          "Among the gathering, nothing was forthcoming.",
+          "Exhausting training is strengthening the youngsters' lungs.",
+          "Astonishingly, the buildings are sinking alarmingly.",
+          "Hummingbirds were darting along the winding railing.",
+          "The king's uncompromising thinking angered Washington."
+        ]
+      }
+    },
+    {
+      "id": "sound-i",
+      "group": "sounds",
+      "name": "Short I",
+      "blurb": "sit, busy, women",
+      "symbol": "ɪ",
+      "phrases": {
+        "beginner": [
+          "Sit with him.",
+          "It's a big ship.",
+          "Six quick minutes.",
+          "Is this milk?",
+          "A busy city.",
+          "Fish and chips."
+        ],
+        "intermediate": [
+          "Which women live in this building?",
+          "His sister's business is in Chicago.",
+          "This is a bit difficult to fix.",
+          "Bill didn't finish his dinner quickly.",
+          "The children will visit in the winter.",
+          "Give him the tickets in the kitchen."
+        ],
+        "advanced": [
+          "The physician's prescription was ridiculously illegible.",
+          "Six simplistic statistics intrigued the committee.",
+          "A vigilant citizen witnessed the incident.",
+          "His initial criticism diminished considerably.",
+          "Deliberately mischievous children interrupted the minister.",
+          "Its distinctive rhythm instills vivid imagery."
+        ]
+      }
+    },
+    {
+      "id": "sound-oo",
+      "group": "sounds",
+      "name": "Short OO",
+      "blurb": "good, could, put",
+      "symbol": "ʊ",
+      "phrases": {
+        "beginner": [
+          "A good book.",
+          "Look at my foot.",
+          "Could you cook?",
+          "Push, don't pull.",
+          "Good sugar cookies.",
+          "Would you look?"
+        ],
+        "intermediate": [
+          "Could you put the sugar back?",
+          "She took a good look at the bush.",
+          "The woman should push the wooden door.",
+          "I would if I could, honestly.",
+          "The butcher's cookbook looks really good.",
+          "He stood by the brook and shook."
+        ],
+        "advanced": [
+          "She mistook the bully's crooked look for goodwill.",
+          "The woolen cushion couldn't withstand the bushfire.",
+          "Understandably, the pudding should be cooked fully.",
+          "Brooklyn's neighborhoods wouldn't overlook a good butcher.",
+          "A crooked rookie took the bulletproof hood.",
+          "The childhood cookbook stood on a wooden footstool."
+        ]
+      }
+    }
+  ]
+}

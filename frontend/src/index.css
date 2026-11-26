@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/noto-sans";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  /* Geist lacks most IPA glyphs; Noto Sans has all of them. */
+  --font-ipa: "Noto Sans Variable", "Noto Sans", ui-sans-serif, sans-serif;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle-foreground: var(--subtle-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  /* The one accent colour in the app. Used only for score feedback. */
+  --color-score: var(--score);
+  --color-score-soft: var(--score-soft);
+  /* Accent on the record button, which is inverted relative to the page. */
+  --color-record-dot: var(--record-dot);
+  --color-on-score: var(--on-score);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* Light: Geist greys on white */
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
+  --primary: #0a0a0a;
+  --primary-foreground: #ffffff;
+  --secondary: #f2f2f2;
+  --secondary-foreground: #0a0a0a;
+  --muted: #f5f5f5;
+  --muted-foreground: #666666;
+  --subtle-foreground: #8f8f8f;
+  --accent: #f2f2f2;
+  --accent-foreground: #0a0a0a;
+  --destructive: #0a0a0a;
+  --border: #ebebeb;
+  --border-strong: #d4d4d4;
+  --input: #e5e5e5;
+  --ring: #a1a1a1;
+  --radius: 0.625rem;
+  --score: oklch(0.57 0.19 42); /* #cd4100, 4.8:1 on white */
+  --score-soft: oklch(0.57 0.19 42 / 12%);
+  --record-dot: #f99532; /* on the black record button */
+  --on-score: #ffffff;
+  color-scheme: light;
+}
+
+/* Dark: true black, Vercel style */
+.dark {
+  --background: #000000;
+  --foreground: #ededed;
+  --card: #0a0a0a;
+  --card-foreground: #ededed;
+  --popover: #0a0a0a;
+  --popover-foreground: #ededed;
+  --primary: #ededed;
+  --primary-foreground: #0a0a0a;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #ededed;
+  --muted: #111111;
+  --muted-foreground: #a1a1a1;
+  --subtle-foreground: #707070;
+  --accent: #1a1a1a;
+  --accent-foreground: #ededed;
+  --destructive: #ededed;
+  --border: #1f1f1f;
+  --border-strong: #2e2e2e;
+  --input: #2e2e2e;
+  --ring: #707070;
+  --score: oklch(0.76 0.16 60);
+  --score-soft: oklch(0.76 0.16 60 / 14%);
+  --record-dot: #cd4100; /* on the near-white record button */
+  --on-score: #0a0a0a;
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans antialiased;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overscroll-behavior-y: none;
+  }
+  ::selection {
+    background: var(--foreground);
+    color: var(--background);
+  }
+}
+
+@utility pt-safe {
+  padding-top: max(env(safe-area-inset-top), 0px);
+}
+@utility pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom), 0px);
+}
+
+@keyframes rec-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--foreground) 35%, transparent); }
+  100% { box-shadow: 0 0 0 22px transparent; }
+}
+.rec-pulse {
+  animation: rec-pulse 1.4s ease-out infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
