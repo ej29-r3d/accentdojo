@@ -146,8 +146,9 @@ later items (voice, speed, accent).
     shows each sound as its symbol only (the name, e.g. "u in cup", is the accessible label).
     Each sound has a `guide`: two or three plain sentences on lips, tongue and voice, the most
     common mistake with an example (written for any first language), and a mouth diagram for
-    25 of them (credited under the picture; see THIRD_PARTY_LICENSES.md). On the practice
-    screen a "How to say it" chip opens it.
+    25 of them (credited under the picture; see THIRD_PARTY_LICENSES.md). The practice
+    screen shows it below the phrase until the first take is scored; after that a "How to
+    say it" header chip opens it.
   - Written by AI, not yet reviewed by a native speaker.
 - **A harder level means harder sounds and words, not longer phrases** (a first, easier set proved too simple). Beginner keeps A1–A2 vocabulary but picks words that are hard to
   say (Thursday, throat, vegetables, thirty/thirteen); Intermediate uses B1–B2 words with
