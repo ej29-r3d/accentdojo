@@ -147,8 +147,7 @@ later items (voice, speed, accent).
     Each sound has a `guide`: two or three plain sentences on lips, tongue and voice, the most
     common mistake with an example (written for any first language). No mouth diagrams: the
     openly licensed ones look alike for most sounds. The practice
-    screen shows it below the phrase until the first take is scored; after that a "How to
-    say it" header chip opens it.
+    screen shows it below the phrase (and below the result once there is one).
   - Written by AI, not yet reviewed by a native speaker.
 - **A harder level means harder sounds and words, not longer phrases** (a first, easier set proved too simple). Beginner keeps A1–A2 vocabulary but picks words that are hard to
   say (Thursday, throat, vegetables, thirty/thirteen); Intermediate uses B1–B2 words with

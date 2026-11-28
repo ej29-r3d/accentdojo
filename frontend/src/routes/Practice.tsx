@@ -18,7 +18,7 @@ import { useRecorder, type Take } from "@/hooks/useRecorder"
 import { usePrefs } from "@/state/prefs"
 import { cn } from "@/lib/utils"
 import { GROUP } from "@/routes/Topics"
-import { SoundGuideButton, SoundGuideCard } from "@/components/SoundGuide"
+import { SoundGuideCard } from "@/components/SoundGuide"
 
 // ─── Mode wrappers: each one finds a phrase and says what "next" means ─────────
 
@@ -54,7 +54,6 @@ export function PracticeTopic() {
     <PracticeShell
       back={list}
       title={topic?.symbol ? <span className="font-ipa text-xl" aria-label={topic.name}>{topic.symbol}</span> : topic?.name}
-      right={topic?.guide ? <SoundGuideButton topic={topic} /> : undefined}
       guide={topic?.guide ? <SoundGuideCard topic={topic} /> : undefined}
       phrase={phrase}
       nextLabel={last ? "Finish topic" : "Next phrase"}
@@ -213,11 +212,10 @@ function Compose({ initial, onDone }: { initial: string; onDone: (text: string, 
 interface ShellProps {
   back: string
   title?: ReactNode
-  right?: ReactNode
   phrase?: Phrase
   autoRecord?: boolean
   onEdit?: () => void
-  /** Shown below the phrase until the first take is scored (a sound topic's guide). */
+  /** Shown below the phrase and any result (a sound topic's guide). */
   guide?: ReactNode
   nextLabel: string
   onNext: () => void
@@ -225,13 +223,12 @@ interface ShellProps {
   onRetry?: () => void
 }
 
-function PracticeShell({ back, title, right, phrase, onRetry, ...rest }: ShellProps) {
+function PracticeShell({ back, title, phrase, onRetry, ...rest }: ShellProps) {
   return (
     <div className="flex min-h-dvh flex-col">
       <TopBar
         back={back}
         title={title}
-        right={right}
         level
       />
       {phrase ? (
@@ -415,7 +412,7 @@ function Session({
             )}
             {phase.kind === "scoring" && <Scoring />}
             {result && <ResultView result={result} phrase={phrase} refAudio={ref} takeUrl={take?.url} audio={audio} />}
-            {phase.kind === "ready" && guide && <div className="[&:not(:first-child)]:mt-6">{guide}</div>}
+            {guide && <div className="[&:not(:first-child)]:mt-10">{guide}</div>}
           </section>
         </div>
 
