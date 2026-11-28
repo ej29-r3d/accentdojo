@@ -47,7 +47,7 @@ cd ../backend
 ```
 
 Then open http://127.0.0.1:8000. The first start downloads about 2.7 GB of models and then
-spends about 35 minutes on a 12-core CPU preparing the voice for every phrase. You can
+spends about 45 minutes on a 12-core CPU preparing the voice for every phrase. You can
 practise while it works.
 
 ## Use it from your phone
