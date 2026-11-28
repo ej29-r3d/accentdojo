@@ -18,7 +18,7 @@ import { useRecorder, type Take } from "@/hooks/useRecorder"
 import { usePrefs } from "@/state/prefs"
 import { cn } from "@/lib/utils"
 import { GROUP } from "@/routes/Topics"
-import { SoundGuideButton } from "@/components/SoundGuide"
+import { SoundGuideButton, SoundGuideCard } from "@/components/SoundGuide"
 
 // ─── Mode wrappers: each one finds a phrase and says what "next" means ─────────
 
@@ -55,6 +55,7 @@ export function PracticeTopic() {
       back={list}
       title={topic?.symbol ? <span className="font-ipa text-xl" aria-label={topic.name}>{topic.symbol}</span> : topic?.name}
       right={topic?.guide ? <SoundGuideButton topic={topic} /> : undefined}
+      guide={topic?.guide ? <SoundGuideCard topic={topic} /> : undefined}
       phrase={phrase}
       nextLabel={last ? "Finish topic" : "Next phrase"}
       onNext={() => (last ? navigate(list) : go(current + 1))}
@@ -216,6 +217,8 @@ interface ShellProps {
   phrase?: Phrase
   autoRecord?: boolean
   onEdit?: () => void
+  /** Shown below the phrase until the first take is scored (a sound topic's guide). */
+  guide?: ReactNode
   nextLabel: string
   onNext: () => void
   /** Set when the phrase could not be loaded: shows the error with a way to try again. */
@@ -271,12 +274,14 @@ function Session({
   onNext,
   autoRecord,
   onEdit,
+  guide,
 }: {
   phrase: Phrase
   nextLabel: string
   onNext: () => void
   autoRecord?: boolean
   onEdit?: () => void
+  guide?: ReactNode
 }) {
   const audio = useAudio()
   const [ref, setRef] = useState<ReferenceAudio>()
@@ -410,6 +415,7 @@ function Session({
             )}
             {phase.kind === "scoring" && <Scoring />}
             {result && <ResultView result={result} phrase={phrase} refAudio={ref} takeUrl={take?.url} audio={audio} />}
+            {phase.kind === "ready" && guide && <div className="[&:not(:first-child)]:mt-6">{guide}</div>}
           </section>
         </div>
 
