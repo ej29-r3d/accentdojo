@@ -6,9 +6,9 @@ function GuideBody({ topic }: { topic: Topic }) {
   return (
     <>
       <p className="text-[17px] leading-snug">{guide.how}</p>
-      <div className="rounded-2xl border p-4">
-        <p className="text-sm font-medium">Common mistake</p>
-        <p className="mt-1 text-[15px] leading-snug text-muted-foreground">{guide.tip}</p>
+      <div>
+        <p className="text-sm text-muted-foreground">Common mistake</p>
+        <p className="mt-1 text-[17px] leading-snug">{guide.tip}</p>
       </div>
     </>
   )
