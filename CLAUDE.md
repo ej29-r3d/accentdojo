@@ -62,7 +62,7 @@ Python 3.10–3.12 (Kokoro needs < 3.13). The microphone only works over HTTPS o
   "your voice" and key navigation cues. Never for errors. Keep light-mode contrast ≥ 4.5:1.
 - **No monospace UI text, no small uppercase letter-spaced labels, no "01 02 03" numbering.**
   Counters read "2 of 5". Phonemes use `font-ipa` (Noto Sans).
-- No instructional paragraphs, tutorials or step strips (the one exception: a sound topic's "How to say it" guide on its practice screen). Make controls self-explanatory;
+- No instructional paragraphs, tutorials or step strips (the one exception: a sound topic's "how to make it" guide on its practice screen). Make controls self-explanatory;
   every icon button has a short visible label.
 - Choices look like separate, equal, tappable cards. Keep flows short (topic → practice
   directly; typing happens on the practice screen).
