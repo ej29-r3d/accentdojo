@@ -9,7 +9,7 @@ contract).
 
 - `frontend/` — React 19 + Vite + TypeScript + Tailwind v4 + Base UI. Mobile first.
 - `backend/` — FastAPI service: Kokoro TTS + OpenPronounce scoring (AGPL). See `backend/README.md`.
-- `content/` — `topics.json`: 63 topics in three groups (18 situations, 17 contrasting pairs, 28 American sounds in sections), 1,452 phrases; read by the backend and the mock.
+- `content/` — `topics.json`: 82 topics in three groups (18 situations, 17 contrasting pairs, 47 American sounds in sections), 1,794 phrases; read by the backend and the mock.
 - `deploy/` — example systemd user unit for the backend.
 - `spec/` — product spec and OpenAPI contract. Update them in the same change as the code.
 

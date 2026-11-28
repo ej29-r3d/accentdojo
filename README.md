@@ -13,8 +13,8 @@ runs on an ordinary CPU.
 
 ## What you can practise
 
-Phrases for everyday situations, word pairs like sheep and ship, single American sounds like
-the R or the flap T, random phrases, or any text you type. There are three levels: beginner,
+Phrases for everyday situations, word pairs like sheep and ship, each of the 47 American
+sounds on its own, random phrases, or any text you type. There are three levels: beginner,
 intermediate and advanced.
 
 After each try you see your score, the words you got wrong and what went wrong in each one.

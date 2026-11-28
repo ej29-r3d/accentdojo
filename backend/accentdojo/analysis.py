@@ -47,13 +47,27 @@ FUNCTION_WORDS = {
     "i'm", "i've", "i'd", "i'll", "it's", "you're", "we're", "we'd", "they're", "what", "some", "than", "then",
 }
 
-#: Consonant substitutions that always count (expected -> heard). Common learner substitutions.
+#: Consonant substitutions that always count (expected -> heard): common learner substitutions
+#: across first languages. The recogniser's own normalisation already merges ɾ/t, ɫ/l and ɔ/ɑ,
+#: so those cannot be told apart here.
 CONSONANT_ERRORS = {
-    "θ": {"s", "t", "f", "z"}, "ð": {"z", "d", "v", "s"}, "w": {"v", "f"}, "v": {"w"}, "ŋ": {"n", "ŋk", "ŋɡ"},
-    "h": {"x"}, "ɹ": {"r"}, "dʒ": {"ʒ", "ʃ"}, "tʃ": {"ʃ", "ts"}, "ʃ": {"s", "ɕ"}, "ʒ": {"z"}, "l": {"ɫ"},
+    "θ": {"s", "t", "f", "z", "t̪"}, "ð": {"z", "d", "v", "s"},
+    "w": {"v", "f", "ʋ", "β"}, "v": {"w", "b", "β"}, "b": {"v", "β"},
+    "p": {"b"}, "f": {"p", "ɸ", "h"}, "t": {"ʈ"}, "d": {"ɖ"},
+    "ŋ": {"n", "ŋk", "ŋɡ"}, "h": {"x", "χ", "ħ"},
+    "ɹ": {"r", "l", "ʁ", "χ"}, "l": {"ɹ", "n"}, "n": {"l"},
+    "s": {"ʃ"}, "z": {"dʒ"}, "ʃ": {"s", "ɕ", "tʃ"}, "ʒ": {"z", "dʒ"},
+    "tʃ": {"ʃ", "ts"}, "dʒ": {"ʒ", "ʃ", "j", "z"}, "j": {"dʒ", "ʒ"},
 }
 #: Word-final devoicing (common in many first languages); only checked on the last consonant.
 FINAL_DEVOICING = {"z": "s", "d": "t", "b": "p", "ɡ": "k", "v": "f", "ʒ": "ʃ", "dʒ": "tʃ"}
+#: Devoiced anywhere else in a content word ("easy" as "eesy", "zoo" as "soo").
+DEVOICED_INSIDE = {"z": "s"}
+#: A dropped word-final consonant counts, except stops: clean speech often leaves them
+#: unreleased, and the recogniser cannot tell that from a dropped one.
+FINAL_DROP_EXEMPT = {"p", "b", "t", "d", "k", "ɡ", "ɹ"}
+#: Word-initial s-clusters that learners open with an extra vowel ("eschool", "estop").
+S_CLUSTER_NEXT = {"p", "t", "k", "m", "n", "l", "w"}
 #: Vowel pairs that are not errors even in a stressed syllable (recogniser / dialect variation).
 VOWEL_TOLERATED = {("ɑ", "ɔ"), ("ɔ", "ɑ"), ("ɚ", "ɜ"), ("ɜ", "ɚ"), ("oʊ", "o"), ("ə", "ʌ"), ("ʌ", "ə"),
                    ("i", "iː"), ("u", "uː"), ("eɪ", "e"), ("əl", "l"), ("ɚ", "ɹ")}
@@ -73,8 +87,13 @@ def _is_function(word: g2p.DisplayWord) -> bool:
 
 
 def _sub_cost(a: str, b: str) -> float:
-    """Vowel for vowel (or consonant for consonant) is cheaper than a gap; across the two, dearer."""
-    return 0.0 if a == b else (0.6 if _is_vowel(a) == _is_vowel(b) else 1.2)
+    """Vowel for vowel (or consonant for consonant) is cheaper than a gap; across the two, dearer.
+    A known learner substitution is cheaper still, so "usually" heard /judʒuli/ pairs ʒ with dʒ."""
+    if a == b:
+        return 0.0
+    if b in CONSONANT_ERRORS.get(a, ()):
+        return 0.4
+    return 0.6 if _is_vowel(a) == _is_vowel(b) else 1.2
 
 
 def _align(exp: list[str], heard: list[str]) -> list[tuple[int | None, int | None]]:
@@ -102,16 +121,24 @@ def _align(exp: list[str], heard: list[str]) -> list[tuple[int | None, int | Non
     return out[::-1]
 
 
-def sound_errors(word: g2p.DisplayWord, heard: list[str]) -> list[dict]:
-    """Learner errors in one word: [{at, expected, heard}] (heard None = dropped)."""
+def sound_errors(word: g2p.DisplayWord, heard: list[str], next_onset: str | None = None) -> list[dict]:
+    """Learner errors in one word: [{at, expected, heard}] (heard None = dropped).
+
+    An added vowel is reported on the consonant next to it, with ``heard`` holding both
+    ("s" heard as "ɛs"). ``next_onset`` is the first sound of the next word, if any.
+    """
     exp = [_bare(p) for p in word.phonemes]
     if not exp or not heard:
         return []
     function = _is_function(word)
     stressed = _stressed_vowels(word.phonemes)
+    last = len(exp) - 1
     last_cons = max((i for i, p in enumerate(exp) if not _is_vowel(p)), default=-1)
+    pairs = _align(exp, heard)
     errors = []
-    for i, j in _align(exp, heard):
+    if not function:
+        errors += _added_vowels(exp, heard, pairs, next_onset)
+    for i, j in pairs:
         if i is None:
             continue
         e = exp[i]
@@ -119,18 +146,71 @@ def sound_errors(word: g2p.DisplayWord, heard: list[str]) -> list[dict]:
         if h == e or _r_variant(e, h, exp[i + 1] if i + 1 < len(exp) else None):
             continue
         if h is None:
-            # A dropped consonant at the start of a content word, or a dropped stressed vowel.
-            if not function and ((i == 0 and not _is_vowel(e)) or i in stressed):
+            # A dropped consonant at the start or end of a content word, or a dropped stressed vowel.
+            if function:
+                continue
+            if (i == 0 and not _is_vowel(e)) or i in stressed or _final_drop(exp, i, next_onset):
                 errors.append({"at": i, "expected": e, "heard": None})
             continue
         if not _is_vowel(e):
             if h in CONSONANT_ERRORS.get(e, ()):
                 errors.append({"at": i, "expected": e, "heard": h})
-            elif i == last_cons == len(exp) - 1 and FINAL_DEVOICING.get(e) == h and not function:
+            elif i == last_cons == last and FINAL_DEVOICING.get(e) == h and not function:
+                errors.append({"at": i, "expected": e, "heard": h})
+            elif i != last and DEVOICED_INSIDE.get(e) == h and not function:
                 errors.append({"at": i, "expected": e, "heard": h})
         elif _is_vowel(h) and not function and i in stressed and (e, h) not in VOWEL_TOLERATED:
             errors.append({"at": i, "expected": e, "heard": h})
-    return errors
+    return sorted(errors, key=lambda x: x["at"])
+
+
+def _final_drop(exp: list[str], i: int, next_onset: str | None) -> bool:
+    """A dropped word-final consonant that clean speech keeps."""
+    e = exp[i]
+    if i != len(exp) - 1 or i == 0 or _is_vowel(e) or e in FINAL_DROP_EXEMPT:
+        return False
+    return next_onset != e  # "this sound": one long /s/
+
+
+def _added_vowels(exp: list[str], heard: list[str], pairs: list, next_onset: str | None) -> list[dict]:
+    """Vowels heard where the word has none: before an s-cluster ("eschool"), between two
+    consonants ("sutreet"), or after a final consonant ("bigu") unless the next word starts
+    with a vowel (its onset can be caught by the alignment)."""
+    out = []
+    for k, (i, j) in enumerate(pairs):
+        if i is not None or j is None or not _is_vowel(heard[j]):
+            continue
+        before = next((p for p in reversed(pairs[:k]) if p[0] is not None), None)
+        after = next((p for p in pairs[k + 1 :] if p[0] is not None), None)
+        if before is None and after is not None:  # word start
+            a = after[0]
+            if a == 0 and exp[0] == "s" and len(exp) > 1 and exp[1] in S_CLUSTER_NEXT and after[1] is not None:
+                out.append({"at": 0, "expected": "s", "heard": heard[j] + "s"})
+        elif after is None and before is not None:  # word end
+            b = before[0]
+            if (b == len(exp) - 1 and not _is_vowel(exp[b]) and before[1] is not None and heard[before[1]] == exp[b]
+                    and (next_onset is None or not _is_vowel(next_onset)) and len(exp) > 1):
+                out.append({"at": b, "expected": exp[b], "heard": exp[b] + heard[j]})
+        elif before is not None and after is not None:  # inside a consonant cluster
+            b, a = before[0], after[0]
+            if (a == b + 1 and not _is_vowel(exp[b]) and not _is_vowel(exp[a])
+                    and before[1] is not None and heard[before[1]] == exp[b]):
+                out.append({"at": b, "expected": exp[b], "heard": exp[b] + heard[j]})
+    return out
+
+
+def _vowel_before_s_cluster(word: g2p.DisplayWord, heard: list[str], prev: g2p.DisplayWord, prev_take: dict | None) -> list[dict]:
+    """"to eschool": the recogniser often hangs the added vowel on the end of the previous word."""
+    exp = [_bare(p) for p in word.phonemes]
+    if _is_function(word) or len(exp) < 2 or exp[0] != "s" or exp[1] not in S_CLUSTER_NEXT or heard[:1] != ["s"]:
+        return []
+    if not prev_take or prev_take["missing"] or not prev_take["heard"]:
+        return []
+    prev_heard = prev_take["heard"]
+    extra = sum(map(_is_vowel, prev_heard)) - sum(_is_vowel(_bare(p)) for p in prev.phonemes)
+    if extra > 0 and _is_vowel(prev_heard[-1]):
+        return [{"at": 0, "expected": "s", "heard": prev_heard[-1] + "s"}]
+    return []
 
 
 def _r_variant(e: str, h: str | None, nxt: str | None) -> bool:
@@ -302,7 +382,10 @@ def compare(phrase: Phrase, take: dict, ref: dict | None) -> dict:
             if short or sparse:
                 kinds.append("swallowed")
             if not word.guessed:
-                info["sounds"] = sound_errors(word, t["heard"])
+                nxt = phrase.words[i + 1].phonemes if i + 1 < len(phrase.words) else []
+                info["sounds"] = sound_errors(word, t["heard"], _bare(nxt[0]) if nxt else None)
+                if i and not info["sounds"]:
+                    info["sounds"] = _vowel_before_s_cluster(word, t["heard"], phrase.words[i - 1], take["words"][i - 1])
                 if info["sounds"]:
                     kinds.append("sound")
                 stress = _stress(word, t, r)

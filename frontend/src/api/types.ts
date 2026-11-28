@@ -71,7 +71,7 @@ export interface SoundIssue {
   /** Index into the word's phonemes. */
   at: number
   expected: string
-  /** null when the sound was dropped. */
+  /** null when the sound was dropped. An added vowel comes with the consonant next to it ("ɛs"). */
   heard: string | null
 }
 

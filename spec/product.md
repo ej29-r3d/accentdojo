@@ -65,9 +65,13 @@ Taps from home to speaking: topic, pair or sound 3, random 2, your own 1 + typin
   teacher would point at, not only what the trained raters' model marks down. Detectors in
   `backend/accentdojo/analysis.py`, each checked for false alarms on clean readings by four other
   Kokoro voices:
-  - **Sound**: a learner substitution (θ→s, w→v, ð→z, ɪ→i, æ→ɛ, final devoicing, …) or a
-    dropped sound, from the recognised phones; vowels only in stressed syllables of content
-    words. 2.9 % of clean words flagged.
+  - **Sound**: a learner substitution common across first languages (θ→s, w→v, v→b, l↔r,
+    p→b, f→p, j→dʒ, dʒ→j, ʃ→tʃ, ʒ→dʒ, retroflex t/d, ɪ→i, æ→ɛ, final devoicing, …), a dropped
+    sound (word start, stressed vowel, or a final consonant other than a stop), or an added
+    vowel (before an s-cluster, inside a cluster, after a final consonant), from the
+    recognised phones; vowels only in stressed syllables of content words. An added vowel is
+    reported on the consonant next to it, with `heard` holding both ("s" heard as "ɛs").
+    2.8 % of clean words flagged.
   - **Swallowed**: a word not said, or much shorter than in the reference / most sounds missing.
   - **Stress**: another syllable clearly more prominent (loudness, length, pitch) than the
     stressed one, relative to the reference. 2.3 % of clean words flagged.
@@ -125,7 +129,7 @@ later items (voice, speed, accent).
 ## Content
 
 - Phrases are written by us, tagged by topic and level, stored in `content/topics.json`
-  (shared by the backend and the frontend mock). 1,452 phrases in three groups, each with its
+  (shared by the backend and the frontend mock). 1,794 phrases in three groups, each with its
   own entry on the home screen:
   - **Situations** (`situations`): 18 everyday topics (American wording), 10 phrases per level.
   - **Contrasting pairs** (`pairs`): 17 contrasts: sheep/ship, bad/bed, cup/cap,
@@ -133,12 +137,12 @@ later items (voice, speed, accent).
     sing/sin, hair/air, cot/cut, late/let, three/tree and word stress (desert/dessert).
     8 items per level: word pairs first, then sentences that put both sides close together
     (6 + 2 at Beginner, 4 + 4 at Intermediate, 3 + 5 at Advanced).
-  - **American sounds** (`sounds`): 28 sounds, each a topic with an IPA `symbol` and a
-    `section`, listed in this order. Vowels: i ɪ ɛ æ ʌ ɑ ʊ u ə. Diphthongs: eɪ aɪ ɔɪ aʊ oʊ.
-    Vowels with R: ɝ (her), ɑɹ, ɔɹ, ɛɹ, ɪɹ. Consonants: ɹ ɫ θ ð w h ŋ. American T: ɾ (water),
-    ʔ (button). Not included yet: p b t d k g f
-    v s z ʃ ʒ ʧ ʤ m n j, and /ɔ/ (merged with /ɑ/ for many Americans). 6 phrases per level,
-    loaded with that sound.
+  - **American sounds** (`sounds`): 47 sounds, every sound of American English, each a topic
+    with an IPA `symbol` and a `section`, listed in this order. Vowels: i ɪ ɛ æ ʌ ɑ ɔ ʊ u ə.
+    Diphthongs: eɪ aɪ ɔɪ aʊ oʊ. Vowels with R: ɝ (her), ɑɹ, ɔɹ, ɛɹ, ɪɹ. Consonants: p b t d k ɡ
+    f v θ ð s z ʃ ʒ h tʃ dʒ m n ŋ l ɫ ɹ w j. American T: ɾ (water), ʔ (button). /ɔ/ is shown
+    apart from /ɑ/ because the reference voice keeps them apart; the scorer merges them, so
+    saying /ɑ/ there is not flagged. 6 phrases per level, loaded with that sound.
   - Written by AI, not yet reviewed by a native speaker.
 - **A harder level means harder sounds and words, not longer phrases** (a first, easier set proved too simple). Beginner keeps A1–A2 vocabulary but picks words that are hard to
   say (Thursday, throat, vegetables, thirty/thirteen); Intermediate uses B1–B2 words with

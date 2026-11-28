@@ -1643,6 +1643,40 @@
       }
     },
     {
+      "id": "sound-aw",
+      "group": "sounds",
+      "name": "aw in thought",
+      "blurb": "thought, walk, dog",
+      "symbol": "ɔ",
+      "section": "Vowels",
+      "phrases": {
+        "beginner": [
+          "I saw a small dog.",
+          "Call off the walk.",
+          "Too long, Paul.",
+          "It's all wrong.",
+          "Long, soft songs.",
+          "Walk, don't talk."
+        ],
+        "intermediate": [
+          "We talked all night on the lawn.",
+          "The office water always tastes salty.",
+          "My daughter lost her wallet.",
+          "I thought the song was too long.",
+          "Paul lost his voice last autumn.",
+          "Let's walk across the small bridge."
+        ],
+        "advanced": [
+          "The lawyer thought the audit was deeply flawed.",
+          "The analysts saw the fraud long before the launch.",
+          "A cautious, thoughtful author drafted the autumn report.",
+          "Exhausted, she sought a long, quiet walk.",
+          "Applause is a strong, often automatic gesture.",
+          "The broadcast's flawless logic sparked a long, exhausting dispute."
+        ]
+      }
+    },
+    {
       "id": "sound-oo",
       "group": "sounds",
       "name": "oo in good",
@@ -2085,70 +2119,274 @@
       }
     },
     {
-      "id": "sound-r",
+      "id": "sound-p",
       "group": "sounds",
-      "name": "r in red",
-      "blurb": "red, around, sorry",
-      "symbol": "ɹ",
+      "name": "p in pen",
+      "blurb": "pen, happy, stop",
+      "symbol": "p",
       "section": "Consonants",
       "phrases": {
         "beginner": [
-          "Really? Are you sure?",
-          "Red roses are rare.",
-          "Rice with carrots, please.",
-          "Right around the corner.",
-          "Sorry, wrong room.",
-          "Three gray rabbits."
+          "Pass the pepper, please.",
+          "Pick up paper.",
+          "Pink pajamas.",
+          "Stop, please!",
+          "Open the map.",
+          "Put the cup up."
         ],
         "intermediate": [
-          "Rachel rarely reads the reviews.",
-          "Our library requires a reservation.",
-          "Strawberries and raspberries are sold separately.",
-          "Arrive early to grab a front-row seat.",
-          "Traffic regularly ruins our Friday return.",
-          "Remember to bring your credit card."
+          "Peter put apples in a paper bag.",
+          "Please print a copy for Paul.",
+          "Our pizza place opens at eleven.",
+          "Prices dropped sharply last spring.",
+          "Pack a pillow for the camping trip.",
+          "I prefer pasta with spicy peppers."
         ],
         "advanced": [
-          "Rural jurors rarely err.",
-          "The brewery's refrigerator irreparably ruptured.",
-          "A rare aurora mirrored the river.",
-          "Her extraordinary career required rigorous preparation.",
-          "Harry's repertoire regularly irritates horror critics.",
-          "Rory's rarely wrong regarding regulatory errors."
+          "The proposal was postponed, pending public approval next spring.",
+          "Pharmaceutical companies rarely publish unflattering peer-reviewed papers.",
+          "Perhaps the principal's apology was purely superficial after all.",
+          "Sloppy paperwork jeopardized the airport's ambitious expansion plans.",
+          "Precise timekeeping is paramount in competitive sports.",
+          "The philosopher's perspective appealed to many sympathetic professors."
         ]
       }
     },
     {
-      "id": "sound-dark-l",
+      "id": "sound-b",
       "group": "sounds",
-      "name": "l in full",
-      "blurb": "full, people, world",
-      "symbol": "ɫ",
+      "name": "b in big",
+      "blurb": "big, rabbit, job",
+      "symbol": "b",
       "section": "Consonants",
       "phrases": {
         "beginner": [
-          "A full bottle.",
-          "Call me, Paul.",
-          "People feel well.",
-          "A small, cold apple.",
-          "Tell all the girls.",
-          "The whole world."
+          "Bring a big bag.",
+          "Baby blue.",
+          "A bowl of berries.",
+          "Grab the bus.",
+          "Bread and butter.",
+          "Both bikes broke."
         ],
         "intermediate": [
-          "Carl sold the old metal table.",
-          "It's still a difficult goal to fulfill.",
-          "The school hall will fill up quickly.",
-          "Michael's uncle built a little hotel.",
-          "Several people fell ill at the hospital.",
-          "Help yourself to a bowl of noodles."
+          "Ben bought a black bike in November.",
+          "The baby slept on the bus.",
+          "Bring a bottle to the beach.",
+          "Both brothers work at the bank.",
+          "My neighbor borrowed our big blue bucket.",
+          "Bananas are cheaper by the box."
         ],
         "advanced": [
-          "The colonel's rural hospital is delightfully tranquil.",
-          "A skillful girl twirled the purple pearls.",
-          "Technical obstacles will inevitably multiply overall.",
-          "The world's wealthiest individuals exploit legal loopholes.",
-          "Controversial proposals are usually handled poorly.",
-          "Squirrels curl up in a cold, dull hole."
+          "The bureaucrats abruptly abandoned the ambitious budget proposal.",
+          "Brilliant biologists observed a remarkably robust bacterium.",
+          "The labor board debated a substantial benefits overhaul.",
+          "Probably the most notable celebrity skipped the ballroom.",
+          "Her blunt rebuttal baffled the stubborn debate club.",
+          "Bilingual brochures are available in the lobby."
+        ]
+      }
+    },
+    {
+      "id": "sound-t",
+      "group": "sounds",
+      "name": "t in ten",
+      "blurb": "ten, stay, cat",
+      "symbol": "t",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "Take two tickets.",
+          "Ten tired students.",
+          "Stop at the station.",
+          "Tea or toast?",
+          "Turn left at twelve.",
+          "Start the test."
+        ],
+        "intermediate": [
+          "Tom takes the train at ten.",
+          "The taxi stopped outside the hotel.",
+          "Tina studied tourism at a technical college.",
+          "Don't touch the hot stove, Tom.",
+          "Our Tuesday meeting starts at two.",
+          "I left my ticket at the front desk."
+        ],
+        "advanced": [
+          "The attorney's testimony was strategically intricate and technical.",
+          "Stricter tariffs attracted intense criticism from foreign traders.",
+          "The tenant's contract terminates in late September.",
+          "Tourists frequently mistake the cathedral for a fortress.",
+          "Sustainable tourism attracts talented investors to the coast.",
+          "Two distinct tests detected toxic traces in the soil."
+        ]
+      }
+    },
+    {
+      "id": "sound-d",
+      "group": "sounds",
+      "name": "d in day",
+      "blurb": "day, under, good",
+      "symbol": "d",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "Good day, David!",
+          "Do it today, please.",
+          "Dinner is ready.",
+          "Don't drive, dad.",
+          "A hundred dollars.",
+          "Did you decide?"
+        ],
+        "intermediate": [
+          "Daniel drove down the road at midnight.",
+          "The doctor said I need a day off.",
+          "Dinner was delicious, and dessert too.",
+          "I didn't understand the second word.",
+          "Diana studied medicine for a decade.",
+          "We ordered a dozen donuts."
+        ],
+        "advanced": [
+          "The defendant deliberately destroyed the documented evidence afterward.",
+          "Dedicated students demand diverse academic standards.",
+          "Despite repeated delays, the deadline remained admirably rigid.",
+          "Droughts and floods endangered dozens of rural districts.",
+          "The diplomat's dramatic address dominated headlines around the world.",
+          "Undoubtedly, the dated design discouraged dedicated readers."
+        ]
+      }
+    },
+    {
+      "id": "sound-k",
+      "group": "sounds",
+      "name": "k in key",
+      "blurb": "key, back, school",
+      "symbol": "k",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "Coffee, black.",
+          "Call a cab.",
+          "Keep the key.",
+          "Cook the chicken.",
+          "Come back quickly.",
+          "Clean the kitchen."
+        ],
+        "intermediate": [
+          "Can you pick up the kids?",
+          "The cake in the kitchen looks amazing.",
+          "Kate keeps losing her car keys.",
+          "My car broke down near the school.",
+          "Click the link to check it.",
+          "Take a quick look, Carlos."
+        ],
+        "advanced": [
+          "The architect's sketch exquisitely captured the cathedral.",
+          "Critics questioned the accuracy of the chemical analysis.",
+          "Kevin's chronic cough caused considerable discomfort.",
+          "Quickly locate the backup key in the cabinet.",
+          "Technical complications can occur in complex mechanical projects.",
+          "The skeptical economist questioned the circus's costly comeback."
+        ]
+      }
+    },
+    {
+      "id": "sound-g",
+      "group": "sounds",
+      "name": "g in get",
+      "blurb": "get, again, big",
+      "symbol": "ɡ",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "Good game, guys!",
+          "Get the green bag.",
+          "Go again.",
+          "A big gift.",
+          "Grab a glass.",
+          "Begin again."
+        ],
+        "intermediate": [
+          "Greg forgot his bag again.",
+          "The girls are going to the garden.",
+          "Gary got a good grade in English.",
+          "Let's go grab a burger together.",
+          "Guess how big the dog grew.",
+          "The guests gave us great gifts."
+        ],
+        "advanced": [
+          "The legal argument was ambiguous, dogmatic, and grim.",
+          "Global regulators grudgingly agreed to the new guidelines.",
+          "Gregory's vague dialogue disguised a gigantic gamble.",
+          "The garrison guarded the fragile granite gateway at night.",
+          "Negotiations regarding the merger lagged significantly again.",
+          "Eager geologists began digging along the glacier's edge."
+        ]
+      }
+    },
+    {
+      "id": "sound-f",
+      "group": "sounds",
+      "name": "f in fun",
+      "blurb": "fun, phone, laugh",
+      "symbol": "f",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "Fresh fish, please.",
+          "Phone a friend.",
+          "Five coffees, please.",
+          "Feel free to ask.",
+          "Fifty-five feet.",
+          "Laugh it off."
+        ],
+        "intermediate": [
+          "My family flew home in February.",
+          "Fill out the form before Friday.",
+          "The phone fell off the sofa.",
+          "Fresh fruit is full of fiber.",
+          "Philip found a fun photo.",
+          "I feel fine after the flu."
+        ],
+        "advanced": [
+          "The physician's forecast proved fairly fortunate for the family.",
+          "Philosophers frequently find fault with traditional faith.",
+          "A fluffy giraffe fiercely defended its offspring.",
+          "Financial forecasts suffered badly from flawed infrastructure figures.",
+          "Her profound influence affected the firm's philanthropic efforts.",
+          "Unfortunately, the forensic findings were far from definitive."
+        ]
+      }
+    },
+    {
+      "id": "sound-v",
+      "group": "sounds",
+      "name": "v in very",
+      "blurb": "very, seven, live",
+      "symbol": "v",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "Very, very good.",
+          "Seven vans.",
+          "I love movies.",
+          "Have a nice vacation.",
+          "Give me five.",
+          "Leave the van."
+        ],
+        "intermediate": [
+          "Victor lives in a very nice village.",
+          "I've never visited a volcano.",
+          "We arrive at seven every evening.",
+          "Vanessa drives a silver van.",
+          "Have you reviewed the five videos?",
+          "The view over the river is lovely."
+        ],
+        "advanced": [
+          "Vivid visuals revived the venue's vibrant atmosphere overnight.",
+          "Several investors voiced their reservations over the vote.",
+          "Innovative ventures involve a variety of variables.",
+          "Avoid vague verbs in persuasive reviews of novels.",
+          "Her versatile vocals earned rave reviews everywhere.",
+          "Vacant villas overlook the vast valley below the village."
         ]
       }
     },
@@ -2221,36 +2459,138 @@
       }
     },
     {
-      "id": "sound-w",
+      "id": "sound-s",
       "group": "sounds",
-      "name": "w in we",
-      "blurb": "we, quick, always",
-      "symbol": "w",
+      "name": "s in sun",
+      "blurb": "sun, city, bus",
+      "symbol": "s",
       "section": "Consonants",
       "phrases": {
         "beginner": [
-          "We want water.",
-          "Which way is west?",
-          "One quick question.",
-          "What a week!",
-          "Why wait, William?",
-          "Twelve white swans."
+          "Six small snacks.",
+          "Sorry, I'm a bit sick.",
+          "Sit still, Sophie.",
+          "Start the stove.",
+          "A nice city.",
+          "Save some seats."
         ],
         "intermediate": [
-          "We were away all winter.",
-          "Would you walk with us on Wednesday?",
-          "The queen quietly wondered why.",
-          "Wow, what a wonderful swimming pool!",
-          "Language requires frequent, quiet work.",
-          "Which woman was wearing the sweater?"
+          "Sam usually sleeps on Sundays.",
+          "The bus stops across the street.",
+          "Sarah studies science at the university.",
+          "My sister sent some cupcakes.",
+          "This sauce is a bit salty.",
+          "Is it safe to swim in the sea?"
         ],
         "advanced": [
-          "Wayward squirrels squabbled in the woodwork.",
-          "Whoever's unaware will be overwhelmed afterward.",
-          "The acquaintance's eloquent wit was bewildering.",
-          "We'd welcome a somewhat wider waterway.",
-          "Quality equipment was required everywhere westward.",
-          "Why would Dwight squander his reward so quickly?"
+          "Sustainable systems seldom succeed without consistent public assistance.",
+          "The scientist's thesis sparked serious skepticism among peers.",
+          "Successive presidents ceased spending on social services.",
+          "Specialists say the substance is mostly safe for consumers.",
+          "Recent statistics suggest a steady surge in sales.",
+          "Several sensors sensed subtle seismic shifts."
+        ]
+      }
+    },
+    {
+      "id": "sound-z",
+      "group": "sounds",
+      "name": "z in zoo",
+      "blurb": "zoo, easy, is",
+      "symbol": "z",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "Is it easy?",
+          "Zero zebras.",
+          "Close the doors, please.",
+          "These are his.",
+          "Lazy days.",
+          "Busy, as always."
+        ],
+        "intermediate": [
+          "Zoe's cousin lives in a busy zone.",
+          "These shoes are his size.",
+          "His friends always choose music.",
+          "Please close the windows when it rains.",
+          "The prize was a dozen roses.",
+          "Is it easy to freeze cheese?"
+        ],
+        "advanced": [
+          "Zealous lawyers scrutinized dozens of cases over the years.",
+          "Visualize the zigzag design as a horizontal zone.",
+          "Businesses emphasize the hazards of excessive exposure.",
+          "Citizens organized a series of cozy bazaars downtown.",
+          "The museum's resident zoologist was amazed.",
+          "Researchers analyzed thousands of frozen bees in the lab."
+        ]
+      }
+    },
+    {
+      "id": "sound-sh",
+      "group": "sounds",
+      "name": "sh in ship",
+      "blurb": "ship, nation, sure",
+      "symbol": "ʃ",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "Shut the shop.",
+          "She's sure.",
+          "Wash the dishes.",
+          "Show me, Sean.",
+          "Share the sushi.",
+          "Shirts and shoes."
+        ],
+        "intermediate": [
+          "She showed me her new shoes.",
+          "I'm sure the shop is shut.",
+          "Make sure you wash the dishes.",
+          "Sharon shared a special dish.",
+          "The station is short of cash.",
+          "Should we choose the shirt or the shoes?"
+        ],
+        "advanced": [
+          "The commission's ambitious decision caused a national sensation.",
+          "Sufficient precautions ensure efficient shipping of fresh fish.",
+          "Her initial impression of the politician shifted considerably.",
+          "Special machines polish the sheets of glass by hand.",
+          "Social pressure shaped the musician's ambitions.",
+          "Cautious officials should cherish partnerships with charities."
+        ]
+      }
+    },
+    {
+      "id": "sound-zh",
+      "group": "sounds",
+      "name": "s in vision",
+      "blurb": "vision, usually, garage",
+      "symbol": "ʒ",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "Usually, it's a pleasure.",
+          "My usual massage.",
+          "Casual clothes, usually.",
+          "Pleasure, as usual.",
+          "Measure the garage.",
+          "Usual place, usual time."
+        ],
+        "intermediate": [
+          "We usually watch television for pleasure.",
+          "A casual decision, as usual.",
+          "Measure the garage and the beige door.",
+          "Massage is my usual leisure activity.",
+          "The new version usually causes confusion.",
+          "Decisions like this are usually a pleasure."
+        ],
+        "advanced": [
+          "The provision's revision caused widespread confusion and division.",
+          "Visual precision gives the collage an unusual illusion.",
+          "Unusual exposure of the espionage eroded the regime's prestige.",
+          "Erosion and corrosion forced the bridge's unusual closure.",
+          "Unusually, television coverage of the explosion caused confusion.",
+          "Her persuasion and composure are a pleasure on every occasion."
         ]
       }
     },
@@ -2289,6 +2629,142 @@
       }
     },
     {
+      "id": "sound-ch",
+      "group": "sounds",
+      "name": "ch in chip",
+      "blurb": "chip, watch, nature",
+      "symbol": "tʃ",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "Cheese sandwich, please.",
+          "Check the watch.",
+          "Chicken and chips.",
+          "Teach each child.",
+          "Change the channel.",
+          "Much cheaper!"
+        ],
+        "intermediate": [
+          "Charlie chose a cheap chair.",
+          "Each kitchen chair needs a cushion.",
+          "I'll watch the match at lunch.",
+          "Which picture did the teacher choose?",
+          "Children often chat during lunch.",
+          "Natural features change from century to century."
+        ],
+        "advanced": [
+          "The architecture of the chapel challenged structural conventions.",
+          "Questionable purchases jeopardized the merchant's charitable venture last March.",
+          "The champion's virtual match captured much attention online.",
+          "Her actual achievements eventually matched each challenge.",
+          "The chancellor's lecture touched on cultural changes worldwide.",
+          "A sketchy fortune-teller pitched a cheap adventure."
+        ]
+      }
+    },
+    {
+      "id": "sound-j",
+      "group": "sounds",
+      "name": "j in job",
+      "blurb": "job, page, gym",
+      "symbol": "dʒ",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "Just a jacket.",
+          "Orange juice.",
+          "Enjoy your job.",
+          "A large village.",
+          "Jump, John!",
+          "Change the page."
+        ],
+        "intermediate": [
+          "Jessica just joined the local gym.",
+          "The judge made a strange joke.",
+          "George packed his luggage in June.",
+          "Imagine a giant orange jellyfish.",
+          "The college budget was a huge challenge.",
+          "Jack enjoys jazz in July."
+        ],
+        "advanced": [
+          "The legislators' judgment jeopardized the region's agenda.",
+          "Genuine courage is a major advantage in any job.",
+          "The engineer's strategic adjustments generated enormous energy savings.",
+          "Psychologists suggest that jealousy jeopardizes marriages.",
+          "Digital technology has gradually changed the legal agenda.",
+          "The jury rejected the general's allegations as exaggerated."
+        ]
+      }
+    },
+    {
+      "id": "sound-m",
+      "group": "sounds",
+      "name": "m in man",
+      "blurb": "man, summer, home",
+      "symbol": "m",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "My mom is home.",
+          "Many more minutes.",
+          "Meet me tomorrow.",
+          "Lemon, maybe?",
+          "Come in, Tom.",
+          "Summer time."
+        ],
+        "intermediate": [
+          "Mark makes amazing homemade muffins.",
+          "My mother emails me every Monday.",
+          "Remember to send me the message.",
+          "Maria made lemonade for the team.",
+          "We'll meet in the museum at midnight.",
+          "Some mornings I miss my old home."
+        ],
+        "advanced": [
+          "Maximum momentum emerged from the mammoth campaign.",
+          "The committee's commitment to the environment remained minimal.",
+          "Multimedia marketing makes complex medical claims surprisingly memorable.",
+          "Unanimous members demanded an immediate moratorium on mining.",
+          "Imminent climate damage alarmed the summit's diplomats.",
+          "Mysterious symptoms tormented the immune system for months."
+        ]
+      }
+    },
+    {
+      "id": "sound-n",
+      "group": "sounds",
+      "name": "n in no",
+      "blurb": "no, dinner, sun",
+      "symbol": "n",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "Not now, Nina.",
+          "Nine new names.",
+          "Nice to know.",
+          "Dinner at noon.",
+          "Turn on the fan.",
+          "Need a lemon?"
+        ],
+        "intermediate": [
+          "Nancy never knew his name.",
+          "The new neighbors seem nice.",
+          "Ten men ran in the rain.",
+          "I need a knife and a napkin.",
+          "Nobody answered the phone at noon.",
+          "Ben's number is in my notebook."
+        ],
+        "advanced": [
+          "Nonetheless, the negotiations seemed unnecessarily tense and lengthy.",
+          "The nominee's surprise announcement generated national enthusiasm online.",
+          "Anonymous donors funded the nineteenth-century monument in the town.",
+          "Learning a language involves nearly endless nuance.",
+          "Financial institutions maintain stringent internal controls on spending.",
+          "Ninety nervous runners entered the annual marathon."
+        ]
+      }
+    },
+    {
       "id": "sound-ng",
       "group": "sounds",
       "name": "ng in sing",
@@ -2319,6 +2795,176 @@
           "Astonishingly, the buildings are sinking alarmingly.",
           "Hummingbirds were darting along the winding railing.",
           "The king's uncompromising thinking angered Washington."
+        ]
+      }
+    },
+    {
+      "id": "sound-l",
+      "group": "sounds",
+      "name": "l in let",
+      "blurb": "let, blue, hello",
+      "symbol": "l",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "Lovely light rain.",
+          "Hello, Lily!",
+          "Let's play.",
+          "Really long lines.",
+          "Lunch at eleven.",
+          "Please clean the glass."
+        ],
+        "intermediate": [
+          "Laura lost her blue umbrella.",
+          "The flight was late and really long.",
+          "Let's leave the lights on, please.",
+          "Lisa likes the yellow lamp.",
+          "I'm learning to play the flute.",
+          "Leo collects glass bottles in July."
+        ],
+        "advanced": [
+          "The relentless rally led to a landslide election.",
+          "Literally everyone applauded the lavish celebration last July.",
+          "Reliable laboratories rarely release flawed results to the public.",
+          "Clearly, the plumber's final estimate was ridiculously low.",
+          "Linguists analyze the melodic qualities of languages.",
+          "Lengthy legal delays eventually alienated loyal clients."
+        ]
+      }
+    },
+    {
+      "id": "sound-dark-l",
+      "group": "sounds",
+      "name": "l in full",
+      "blurb": "full, people, world",
+      "symbol": "ɫ",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "A full bottle.",
+          "Call me, Paul.",
+          "People feel well.",
+          "A small, cold apple.",
+          "Tell all the girls.",
+          "The whole world."
+        ],
+        "intermediate": [
+          "Carl sold the old metal table.",
+          "It's still a difficult goal to fulfill.",
+          "The school hall will fill up quickly.",
+          "Michael's uncle built a little hotel.",
+          "Several people fell ill at the hospital.",
+          "Help yourself to a bowl of noodles."
+        ],
+        "advanced": [
+          "The colonel's rural hospital is delightfully tranquil.",
+          "A skillful girl twirled the purple pearls.",
+          "Technical obstacles will inevitably multiply overall.",
+          "The world's wealthiest individuals exploit legal loopholes.",
+          "Controversial proposals are usually handled poorly.",
+          "Squirrels curl up in a cold, dull hole."
+        ]
+      }
+    },
+    {
+      "id": "sound-r",
+      "group": "sounds",
+      "name": "r in red",
+      "blurb": "red, around, sorry",
+      "symbol": "ɹ",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "Really? Are you sure?",
+          "Red roses are rare.",
+          "Rice with carrots, please.",
+          "Right around the corner.",
+          "Sorry, wrong room.",
+          "Three gray rabbits."
+        ],
+        "intermediate": [
+          "Rachel rarely reads the reviews.",
+          "Our library requires a reservation.",
+          "Strawberries and raspberries are sold separately.",
+          "Arrive early to grab a front-row seat.",
+          "Traffic regularly ruins our Friday return.",
+          "Remember to bring your credit card."
+        ],
+        "advanced": [
+          "Rural jurors rarely err.",
+          "The brewery's refrigerator irreparably ruptured.",
+          "A rare aurora mirrored the river.",
+          "Her extraordinary career required rigorous preparation.",
+          "Harry's repertoire regularly irritates horror critics.",
+          "Rory's rarely wrong regarding regulatory errors."
+        ]
+      }
+    },
+    {
+      "id": "sound-w",
+      "group": "sounds",
+      "name": "w in we",
+      "blurb": "we, quick, always",
+      "symbol": "w",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "We want water.",
+          "Which way is west?",
+          "One quick question.",
+          "What a week!",
+          "Why wait, William?",
+          "Twelve white swans."
+        ],
+        "intermediate": [
+          "We were away all winter.",
+          "Would you walk with us on Wednesday?",
+          "The queen quietly wondered why.",
+          "Wow, what a wonderful swimming pool!",
+          "Language requires frequent, quiet work.",
+          "Which woman was wearing the sweater?"
+        ],
+        "advanced": [
+          "Wayward squirrels squabbled in the woodwork.",
+          "Whoever's unaware will be overwhelmed afterward.",
+          "The acquaintance's eloquent wit was bewildering.",
+          "We'd welcome a somewhat wider waterway.",
+          "Quality equipment was required everywhere westward.",
+          "Why would Dwight squander his reward so quickly?"
+        ]
+      }
+    },
+    {
+      "id": "sound-y",
+      "group": "sounds",
+      "name": "y in yes",
+      "blurb": "yes, you, music",
+      "symbol": "j",
+      "section": "Consonants",
+      "phrases": {
+        "beginner": [
+          "Yes, you can.",
+          "A yellow yacht.",
+          "Your yard.",
+          "Young and cute.",
+          "Use your voice.",
+          "Yes, a few."
+        ],
+        "intermediate": [
+          "Yesterday, your yellow cat ran away.",
+          "You used my computer, didn't you?",
+          "Yoga is popular with young students.",
+          "The museum's new menu is huge.",
+          "Yes, I usually eat yogurt.",
+          "Few students used the new computers."
+        ],
+        "advanced": [
+          "Unique youth communities unite in mutual curiosity.",
+          "Yearly reviews evaluate each individual's contribution to the team.",
+          "Ambiguous regulations confused the young manufacturer last year.",
+          "Yesterday's computer failure was a peculiar issue.",
+          "Accurate population figures are useful for future funding.",
+          "Yes, the brilliant young musician deserves a huge ovation."
         ]
       }
     },

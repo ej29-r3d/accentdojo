@@ -1,8 +1,8 @@
 """Phrase text -> display words with reference phonemes.
 
 The phonemes come from OpenPronounce's own G2P (CMUdict mapped to the phone
-recogniser's symbols, then normalised), so what the UI shows is exactly what the
-scorer aligns against. Accent Dojo adds stress marks for display: a mark sits on the
+recogniser's symbols, then normalised), so what the UI shows is what the scorer aligns
+against, except that /ɔ/ stays apart from /ɑ/. Accent Dojo adds stress marks for display: a mark sits on the
 first sound of the stressed syllable (maximal onset), and the frontend keeps it
 glued to that sound. One-syllable words get no mark.
 
@@ -61,7 +61,9 @@ def _with_stress(symbols: tuple[str, ...]) -> list[str]:
     """Normalised scorer phones of one word, with ˈ / ˌ on the onset of stressed syllables."""
     raw = list(op_g2p.arpabet_to_phones(symbols))
     norm = op_phones._normalize_indexed(raw, LANG)  # [(phone, [raw indices])]
-    out = [p for p, _ in norm]
+    # The scorer merges /ɔ/ into /ɑ/ (cot-caught); the reference voice keeps them apart, so the
+    # display does too. The detectors tolerate ɔ/ɑ (analysis.VOWEL_TOLERATED).
+    out = [("ɔ" if p == "ɑ" and all(raw[r].replace("ː", "") == "ɔ" for r in rs) else p) for p, rs in norm]
     # arpabet_to_phones emits one phone per vowel symbol (r-coloured and syllabic-l merges
     # keep the vowel), so the k-th vowel-bearing phone carries the k-th stress digit.
     stresses = [s[-1] for s in symbols if _is_vowel_symbol(s)]
