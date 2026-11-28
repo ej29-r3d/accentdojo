@@ -27,6 +27,7 @@ function topicOf(id: string): Topic {
     group: t.group === "sounds" || t.group === "pairs" ? t.group : "situations",
     symbol: t.symbol ?? null,
     section: t.section ?? null,
+    guide: t.guide ?? null,
     name: t.name,
     blurb: t.blurb,
     counts: { beginner: t.phrases.beginner.length, intermediate: t.phrases.intermediate.length, advanced: t.phrases.advanced.length },

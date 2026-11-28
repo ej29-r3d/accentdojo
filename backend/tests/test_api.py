@@ -4,6 +4,7 @@ import io
 import subprocess
 import time
 import wave
+from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
@@ -28,6 +29,15 @@ def test_topics_and_phrases(client):
     assert {"id", "group", "name", "blurb", "symbol", "counts"} <= topics[0].keys()
     assert {t["group"] for t in topics} == set(content.GROUPS)
     assert all(bool(t["symbol"]) == (t["group"] == "sounds") for t in topics)
+    # Every sound has a guide; a diagram, when present, is a file the frontend serves.
+    root = Path(__file__).resolve().parents[2] / "frontend" / "public"
+    for t in topics:
+        assert bool(t["guide"]) == (t["group"] == "sounds")
+        if t["guide"]:
+            assert t["guide"]["how"] and t["guide"]["tip"]
+            if "diagram" in t["guide"]:
+                assert (root / t["guide"]["diagram"]["src"].lstrip("/")).is_file()
+                assert t["guide"]["diagram"]["credit"]
     assert all(bool(t["section"]) == (t["group"] == "sounds") for t in topics)
     assert set(topics[0]["counts"]) == set(content.LEVELS) == {"beginner", "intermediate", "advanced"}
     t = topics[0]["id"]

@@ -298,6 +298,22 @@ components:
           type: [string, "null"]
           description: "Heading a sound topic is listed under, in file order: Vowels, Diphthongs, Vowels with R, Consonants, American T. Null for other groups."
           example: Consonants
+        guide:
+          description: "How to make the sound, for sound topics; null for other groups."
+          oneOf:
+            - type: "null"
+            - type: object
+              required: [how, tip]
+              properties:
+                how: { type: string, description: Two or three plain sentences on lips, tongue and voice. }
+                tip: { type: string, description: The most common mistake, with an example. }
+                diagram:
+                  type: object
+                  description: Mouth diagram served by the frontend, with the credit line its licence asks for.
+                  required: [src, credit]
+                  properties:
+                    src: { type: string, example: /diagrams/sound-t.svg }
+                    credit: { type: string }
         counts:
           type: object
           description: Number of phrases per level.

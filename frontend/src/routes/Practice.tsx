@@ -18,6 +18,7 @@ import { useRecorder, type Take } from "@/hooks/useRecorder"
 import { usePrefs } from "@/state/prefs"
 import { cn } from "@/lib/utils"
 import { GROUP } from "@/routes/Topics"
+import { SoundGuideButton } from "@/components/SoundGuide"
 
 // ─── Mode wrappers: each one finds a phrase and says what "next" means ─────────
 
@@ -52,7 +53,8 @@ export function PracticeTopic() {
   return (
     <PracticeShell
       back={list}
-      title={topic?.name}
+      title={topic?.symbol ? <span className="font-ipa text-xl" aria-label={topic.name}>{topic.symbol}</span> : topic?.name}
+      right={topic?.guide ? <SoundGuideButton topic={topic} /> : undefined}
       phrase={phrase}
       nextLabel={last ? "Finish topic" : "Next phrase"}
       onNext={() => (last ? navigate(list) : go(current + 1))}
@@ -209,7 +211,8 @@ function Compose({ initial, onDone }: { initial: string; onDone: (text: string, 
 
 interface ShellProps {
   back: string
-  title?: string
+  title?: ReactNode
+  right?: ReactNode
   phrase?: Phrase
   autoRecord?: boolean
   onEdit?: () => void
@@ -219,12 +222,13 @@ interface ShellProps {
   onRetry?: () => void
 }
 
-function PracticeShell({ back, title, phrase, onRetry, ...rest }: ShellProps) {
+function PracticeShell({ back, title, right, phrase, onRetry, ...rest }: ShellProps) {
   return (
     <div className="flex min-h-dvh flex-col">
       <TopBar
         back={back}
         title={title}
+        right={right}
         level
       />
       {phrase ? (
