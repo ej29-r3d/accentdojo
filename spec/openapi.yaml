@@ -1,11 +1,11 @@
 openapi: 3.1.0
 info:
-  title: AccentDojo API
+  title: Accent Dojo API
   version: 0.1.0
   description: |
-    Contract between the AccentDojo frontend and the FastAPI backend.
+    Contract between the Accent Dojo frontend and the FastAPI backend.
     The frontend's `frontend/src/api/types.ts` mirrors these schemas and
-    `frontend/src/api/client.ts` (interface `KoleApi`) maps one method to each operation.
+    `frontend/src/api/client.ts` (interface `AccentDojoApi`) maps one method to each operation.
     JSON uses camelCase. All paths are served under `/api` on the same origin as the app.
 servers:
   - url: /api
@@ -30,7 +30,7 @@ paths:
   /login:
     post:
       operationId: login
-      summary: Exchange the shared password for a session cookie (kole_session)
+      summary: Exchange the shared password for a session cookie (accentdojo_session)
       description: Every other /api route except /health and /session answers 401 without it.
       requestBody:
         required: true
@@ -204,7 +204,7 @@ paths:
         Accepts the browser's MediaRecorder output (webm/opus on Chrome and Android,
         mp4/aac on iOS Safari). The server decodes to 16 kHz mono, runs quality gates,
         and either scores or returns `status: unscorable`. Recordings are discarded after scoring unless the server
-        runs with `KOLE_KEEP_TAKES=1`.
+        runs with `ACCENTDOJO_KEEP_TAKES=1`.
       parameters:
         - $ref: "#/components/parameters/PhraseId"
       requestBody:
@@ -294,6 +294,10 @@ components:
           type: [string, "null"]
           description: IPA symbol of a sound topic, shown beside its name; null for other groups.
           example: "ɹ"
+        section:
+          type: [string, "null"]
+          description: "Heading a sound topic is listed under, in file order: Vowels, Diphthongs, Vowels with R, Consonants, American T. Null for other groups."
+          example: Consonants
         counts:
           type: object
           description: Number of phrases per level.

@@ -1,16 +1,15 @@
-# AccentDojo
+# Accent Dojo
 
 Instructions for AI coding agents working in this repository. English pronunciation
 practice: hear a phrase in a natural voice, say it, get a score and the words to fix. Read
 `README.md`, then `spec/product.md` (what to build) and `spec/openapi.yaml` (the API
-contract). The code keeps the working title `kole` (package, `KOLE_*` variables, cookie,
-localStorage keys).
+contract).
 
 ## Layout
 
 - `frontend/` — React 19 + Vite + TypeScript + Tailwind v4 + Base UI. Mobile first.
 - `backend/` — FastAPI service: Kokoro TTS + OpenPronounce scoring (AGPL). See `backend/README.md`.
-- `content/` — `topics.json`: 49 topics in three groups (18 situations, 17 contrasting pairs, 14 American sounds), 1,200 phrases; read by the backend and the mock.
+- `content/` — `topics.json`: 63 topics in three groups (18 situations, 17 contrasting pairs, 28 American sounds in sections), 1,452 phrases; read by the backend and the mock.
 - `deploy/` — example systemd user unit for the backend.
 - `spec/` — product spec and OpenAPI contract. Update them in the same change as the code.
 
@@ -34,14 +33,14 @@ cd backend
 .venv/bin/python -m pytest -q                       # contract and detector tests, no models needed
 .venv/bin/ruff check .                              # lint
 PYTHONPATH=. .venv/bin/python scripts/bench.py      # latency + Kokoro self-check (loads models)
-.venv/bin/uvicorn kole.app:app --port 8000          # serves the API and frontend/dist
+.venv/bin/uvicorn accentdojo.app:app --port 8000          # serves the API and frontend/dist
 ```
 
 Python 3.10–3.12 (Kokoro needs < 3.13). The microphone only works over HTTPS or localhost.
 
 ## Architecture rules
 
-- The UI talks only to `frontend/src/api/client.ts` (`KoleApi`), implemented over HTTP in
+- The UI talks only to `frontend/src/api/client.ts` (`AccentDojoApi`), implemented over HTTP in
   `src/api/http.ts` (default) and by the in-browser mock (`VITE_API=mock`).
   `src/api/types.ts` mirrors `spec/openapi.yaml` — change both together.
 - Levels are Beginner (A1–A2), Intermediate (B1–B2), Advanced (C1–C2), codes never shown in the UI; ids `beginner` / `intermediate` / `advanced`.
@@ -53,7 +52,7 @@ Python 3.10–3.12 (Kokoro needs < 3.13). The microphone only works over HTTPS o
   "+N more"); no separate summary of the same errors; notes for long pauses, slow, flat intonation; an intonation chart; an
   `unscorable` state with a reason. See spec/product.md §Result.
 - Backend: one process, models warmed at startup, one inference at a time. Recordings are
-  kept only when `KOLE_KEEP_TAKES=1` (in `backend/.cache/takes/`); never commit them.
+  kept only when `ACCENTDOJO_KEEP_TAKES=1` (in `backend/.cache/takes/`); never commit them.
 - Never claim a measurement in a README or the spec that `backend/scripts/` cannot reproduce.
 
 ## Design rules

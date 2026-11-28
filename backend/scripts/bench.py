@@ -13,9 +13,9 @@ from pathlib import Path
 
 import numpy as np
 
-from kole import audio, content
-from kole.scoring import Scorer
-from kole.tts import Tts
+from accentdojo import audio, content
+from accentdojo.scoring import Scorer
+from accentdojo.tts import Tts
 
 
 def ms(t):
@@ -33,7 +33,7 @@ def summary(name, xs):
 
 c = content.Content()
 t = time.perf_counter(); scorer = Scorer(); scorer.load(); print(f"scorer load+warm {ms(t)/1000:.1f} s")
-tmp = Path(tempfile.mkdtemp(prefix="kole-bench-"))
+tmp = Path(tempfile.mkdtemp(prefix="accentdojo-bench-"))
 t = time.perf_counter(); tts = Tts(tmp); tts.load(); print(f"tts load+warm    {ms(t)/1000:.1f} s")
 
 tts_ms, dec_ms, score_ms, durs, bands, rows = [], [], [], [], {}, []

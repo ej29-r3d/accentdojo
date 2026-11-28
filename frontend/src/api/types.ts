@@ -20,6 +20,8 @@ export interface Topic {
   group: TopicGroup
   /** IPA symbol of a sound topic; null elsewhere. */
   symbol: string | null
+  /** Heading a sound topic is listed under (Vowels, Diphthongs, Vowels with R, Consonants, American T); null elsewhere. */
+  section: string | null
   name: string
   blurb: string
   /** Number of phrases per level. */

@@ -23,9 +23,9 @@ export function LogoMark({ className }: { className?: string }) {
 
 function Wordmark() {
   return (
-    <Link to="/" className="flex items-center gap-2 rounded-md outline-offset-4" aria-label="AccentDojo home">
+    <Link to="/" className="flex items-center gap-2 rounded-md outline-offset-4" aria-label="Accent Dojo home">
       <LogoMark className="size-6 rounded-[6px] ring-1 ring-border" />
-      <span className="text-[17px] font-semibold tracking-tight">AccentDojo</span>
+      <span className="text-[17px] font-semibold tracking-tight">Accent Dojo</span>
     </Link>
   )
 }

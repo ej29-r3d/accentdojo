@@ -5,8 +5,8 @@ import { defineConfig } from "vite"
 import { VitePWA } from "vite-plugin-pwa"
 
 // Extra hostnames the dev server answers to, e.g. when it sits behind a reverse proxy or a
-// tunnel: KOLE_ALLOWED_HOSTS=dev.example.com,other.example.com (empty: localhost only).
-const ALLOWED_HOSTS = (process.env.KOLE_ALLOWED_HOSTS ?? "")
+// tunnel: ACCENTDOJO_ALLOWED_HOSTS=dev.example.com,other.example.com (empty: localhost only).
+const ALLOWED_HOSTS = (process.env.ACCENTDOJO_ALLOWED_HOSTS ?? "")
   .split(",")
   .map((h) => h.trim())
   .filter(Boolean)
@@ -17,12 +17,15 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: "autoUpdate",
-      injectRegister: "auto",
+      // Registered in src/main.tsx, which also checks for updates and reloads onto them.
+      injectRegister: false,
+      // Take over open pages at once, so registerSW sees "controlling" and reloads them.
+      workbox: { skipWaiting: true, clientsClaim: true },
       devOptions: { enabled: true, type: "module" },
       includeAssets: ["favicon.svg", "apple-touch-icon.png"],
       manifest: {
-        name: "AccentDojo",
-        short_name: "AccentDojo",
+        name: "Accent Dojo",
+        short_name: "Accent Dojo",
         description: "Pronunciation practice: hear a phrase, say it, see which words to listen to again.",
         start_url: "/",
         scope: "/",
@@ -44,7 +47,7 @@ export default defineConfig({
     port: 5173,
     strictPort: true,
     allowedHosts: ALLOWED_HOSTS,
-    // The FastAPI backend (backend/, `uvicorn kole.app:app --port 8000`).
+    // The FastAPI backend (backend/, `uvicorn accentdojo.app:app --port 8000`).
     proxy: { "/api": { target: "http://127.0.0.1:8000", changeOrigin: false } },
     // The mock imports the shared phrase set from ../content.
     fs: { allow: [path.resolve(import.meta.dirname, "..")] },

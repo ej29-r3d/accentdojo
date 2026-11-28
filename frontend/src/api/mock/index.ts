@@ -1,4 +1,4 @@
-import type { KoleApi } from "../client"
+import type { AccentDojoApi } from "../client"
 import { ApiError, LEVELS, type Level, type Phrase, type ReferenceAudio, type Topic } from "../types"
 import { synthesize } from "./audio"
 import { phonemesFor } from "./lexicon"
@@ -26,6 +26,7 @@ function topicOf(id: string): Topic {
     id: t.id,
     group: t.group === "sounds" || t.group === "pairs" ? t.group : "situations",
     symbol: t.symbol ?? null,
+    section: t.section ?? null,
     name: t.name,
     blurb: t.blurb,
     counts: { beginner: t.phrases.beginner.length, intermediate: t.phrases.intermediate.length, advanced: t.phrases.advanced.length },
@@ -34,7 +35,7 @@ function topicOf(id: string): Topic {
 
 const audioCache = new Map<string, ReferenceAudio>()
 
-export const mockBackend: KoleApi = {
+export const mockBackend: AccentDojoApi = {
   async listTopics() {
     await wait(120)
     return TOPICS.map((t) => topicOf(t.id))

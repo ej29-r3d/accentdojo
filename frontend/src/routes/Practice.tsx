@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react"
 import { useNavigate, useParams, useSearchParams } from "react-router"
-import { ArrowRight, CircleAlert, MicOff, PenLine, Play, Square } from "lucide-react"
+import { ArrowRight, CircleAlert, MicOff, PenLine, Play, Square, Turtle } from "lucide-react"
 import {
   api,
   BAND_LABEL,
@@ -12,12 +12,10 @@ import {
   type WordTime,
 } from "@/api/client"
 import { Eyebrow, Ipa, Kbd, Spinner, TopBar } from "@/components/kit"
-import { useAudio, type Segment } from "@/hooks/useAudio"
+import { SLOW_RATE, useAudio, type Segment } from "@/hooks/useAudio"
 import { useLoad } from "@/hooks/useLoad"
 import { useRecorder, type Take } from "@/hooks/useRecorder"
 import { usePrefs } from "@/state/prefs"
-import { useIsDesktop } from "@/components/Sheet"
-import { PhraseCounterSheet, PhrasePanel } from "@/components/PhraseNav"
 import { cn } from "@/lib/utils"
 import { GROUP } from "@/routes/Topics"
 
@@ -50,18 +48,11 @@ export function PracticeTopic() {
   const phrase = phrases?.[current]
   const last = phrases ? current >= phrases.length - 1 : false
   const go = (n: number) => navigate(`/practice/topic/${topicId}/${n}`, { replace: true })
-  const desktop = useIsDesktop()
   const list = GROUP[topic?.group ?? "situations"].path
   return (
     <PracticeShell
       back={list}
       title={topic?.name}
-      counter={
-        phrases && topic && !desktop ? (
-          <PhraseCounterSheet phrases={phrases} current={current} title={topic.name} onPick={go} />
-        ) : undefined
-      }
-      panel={phrases && <PhrasePanel phrases={phrases} current={current} onPick={go} />}
       phrase={phrase}
       nextLabel={last ? "Finish topic" : "Next phrase"}
       onNext={() => (last ? navigate(list) : go(current + 1))}
@@ -219,9 +210,6 @@ function Compose({ initial, onDone }: { initial: string; onDone: (text: string, 
 interface ShellProps {
   back: string
   title?: string
-  counter?: ReactNode
-  /** Extra content under the controls on desktop. */
-  panel?: ReactNode
   phrase?: Phrase
   autoRecord?: boolean
   onEdit?: () => void
@@ -231,7 +219,7 @@ interface ShellProps {
   onRetry?: () => void
 }
 
-function PracticeShell({ back, title, counter, phrase, onRetry, ...rest }: ShellProps) {
+function PracticeShell({ back, title, phrase, onRetry, ...rest }: ShellProps) {
   return (
     <div className="flex min-h-dvh flex-col">
       <TopBar
@@ -240,7 +228,7 @@ function PracticeShell({ back, title, counter, phrase, onRetry, ...rest }: Shell
         level
       />
       {phrase ? (
-        <Session key={phrase.id} phrase={phrase} counter={counter} {...rest} />
+        <Session key={phrase.id} phrase={phrase} {...rest} />
       ) : onRetry ? (
         <div className="mx-auto w-full max-w-2xl flex-1 px-5 pt-10 md:px-8">
           <Notice icon={<CircleAlert className="size-4" />} title="Couldn't load a phrase">
@@ -277,18 +265,14 @@ function Session({
   phrase,
   nextLabel,
   onNext,
-  panel,
   autoRecord,
   onEdit,
-  counter,
 }: {
   phrase: Phrase
   nextLabel: string
   onNext: () => void
-  panel?: ReactNode
   autoRecord?: boolean
   onEdit?: () => void
-  counter?: ReactNode
 }) {
   const audio = useAudio()
   const [ref, setRef] = useState<ReferenceAudio>()
@@ -341,12 +325,18 @@ function Session({
     audio.stop()
     void rec.start()
   }, [recording, rec, audio])
-  const playRef = useCallback(() => {
-    if (!ref || recording) return
-    setHeard(true)
-    void audio.toggle("ref", ref.url)
-  }, [ref, recording, audio])
-  const playTake = useCallback(() => take && !recording && audio.toggle("take", take.url), [take, recording, audio])
+  const playRef = useCallback(
+    (slow = false) => {
+      if (!ref || recording) return
+      setHeard(true)
+      void audio.toggle(slow ? "ref-slow" : "ref", ref.url, undefined, slow ? SLOW_RATE : 1)
+    },
+    [ref, recording, audio],
+  )
+  const playTake = useCallback(
+    (slow = false) => take && !recording && audio.toggle(slow ? "take-slow" : "take", take.url, undefined, slow ? SLOW_RATE : 1),
+    [take, recording, audio],
+  )
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -355,8 +345,8 @@ function Session({
       if (e.code === "Space") {
         e.preventDefault()
         toggleRecord()
-      } else if (e.key === "r") playRef()
-      else if (e.key === "y") playTake()
+      } else if (e.key === "r" || e.key === "R") playRef(e.shiftKey)
+      else if (e.key === "y" || e.key === "Y") playTake(e.shiftKey)
       else if (e.key === "n" || e.key === "ArrowRight") onNext()
     }
     window.addEventListener("keydown", onKey)
@@ -389,8 +379,7 @@ function Session({
       <div className="mx-auto w-full max-w-2xl flex-1 px-5 md:px-8 lg:grid lg:max-w-6xl lg:grid-cols-[minmax(0,1fr)_380px] lg:gap-16">
         <div className="pb-[19rem] lg:pb-20">
 
-          <section className={cn(counter ? "pt-6 md:pt-10 lg:pt-14" : "pt-10 md:pt-14 lg:pt-20")} aria-live="polite">
-            {counter && <div className="mb-6 flex">{counter}</div>}
+          <section className="pt-10 md:pt-14 lg:pt-20" aria-live="polite">
             <div className="flex items-start gap-3">
               <div className="min-w-0 flex-1">
                 <PhraseView phrase={phrase} result={scored} />
@@ -423,7 +412,6 @@ function Session({
         <aside className="hidden lg:block">
           <div className="sticky top-24 mt-10">
             <Dock variant="panel" {...dockProps} />
-            {panel}
           </div>
         </aside>
       </div>
@@ -529,7 +517,7 @@ function ReadyHint({ state }: { state: string }) {
   if (state === "unsupported")
     return (
       <Notice icon={<MicOff className="size-4" />} title="Recording not available">
-        This browser can't record audio here. Open AccentDojo over HTTPS in Safari or Chrome.
+        This browser can't record audio here. Open Accent Dojo over HTTPS in Safari or Chrome.
       </Notice>
     )
   return null
@@ -692,20 +680,35 @@ function WordCard(p: {
       ))}
       {p.issue.stress && <StressLine phonemes={word.phonemes} stress={p.issue.stress} />}
       <div className="mt-4 grid grid-cols-2 gap-2">
-        <ClipButton
-          label="Listen"
-          active={p.audio.playing === refKey}
-          disabled={!p.refUrl || !p.refSeg}
-          onClick={() => p.refUrl && p.refSeg && p.audio.toggle(refKey, p.refUrl, p.refSeg)}
-        />
-        <ClipButton
-          label="Mine"
-          mine
-          active={p.audio.playing === takeKey}
-          disabled={!p.takeUrl || !p.takeSeg}
-          onClick={() => p.takeUrl && p.takeSeg && p.audio.toggle(takeKey, p.takeUrl, p.takeSeg)}
-        />
+        <ClipPair label="Listen" id={refKey} url={p.refUrl} seg={p.refSeg} audio={p.audio} />
+        <ClipPair label="Mine" mine id={takeKey} url={p.takeUrl} seg={p.takeSeg} audio={p.audio} />
       </div>
+    </div>
+  )
+}
+
+/** A word clip at normal speed, with a small "Slow" button beside it. */
+function ClipPair(p: { label: string; mine?: boolean; id: string; url?: string; seg?: Segment; audio: ReturnType<typeof useAudio> }) {
+  const play = (slow: boolean) =>
+    p.url && p.seg && p.audio.toggle(slow ? `${p.id}-slow` : p.id, p.url, p.seg, slow ? SLOW_RATE : 1)
+  const disabled = !p.url || !p.seg
+  const slowActive = p.audio.playing === `${p.id}-slow`
+  return (
+    <div className="flex gap-1.5">
+      <ClipButton label={p.label} mine={p.mine} active={p.audio.playing === p.id} disabled={disabled} onClick={() => play(false)} />
+      <button
+        type="button"
+        onClick={() => play(true)}
+        disabled={disabled}
+        aria-label={`${slowActive ? "Stop" : "Play"} ${p.label === "Mine" ? "your word" : "the word"} slowly`}
+        className={cn(
+          "flex h-11 shrink-0 items-center gap-1 rounded-xl border px-2.5 text-[13px] font-medium text-muted-foreground transition-colors disabled:opacity-30",
+          slowActive ? "border-score text-foreground" : "hover:border-border-strong hover:text-foreground",
+        )}
+      >
+        {slowActive ? <Square className="size-3 fill-current" /> : <Turtle className="size-3.5" />}
+        Slow
+      </button>
     </div>
   )
 }
@@ -717,7 +720,7 @@ function ClipButton(p: { label: string; mine?: boolean; active: boolean; disable
       onClick={p.onClick}
       disabled={p.disabled}
       className={cn(
-        "flex h-11 items-center justify-center gap-2 rounded-xl border text-[15px] font-medium transition-colors disabled:opacity-30",
+        "flex h-11 min-w-0 flex-1 items-center justify-center gap-2 rounded-xl border text-[15px] font-medium transition-colors disabled:opacity-30",
         p.active ? "border-score" : "hover:border-border-strong",
       )}
     >
@@ -803,7 +806,7 @@ function IntonationChart({ intonation }: { intonation: Scored["intonation"] }) {
   )
 }
 
-/** Keyword per sound, for sound lines and Work on badges. Non-English sounds point at the Russian letter. */
+/** Keyword per sound, for sound lines and Work on badges. Sounds that English does not use get a short description. */
 const SOUND_EXAMPLE: Record<string, string> = {
   θ: "as in think", ð: "as in this", w: "as in we", v: "as in very", f: "as in fan", s: "as in sun",
   z: "as in zoo", t: "as in top", d: "as in dog", p: "as in pen", b: "as in bat", k: "as in cat",
@@ -814,7 +817,7 @@ const SOUND_EXAMPLE: Record<string, string> = {
   oʊ: "as in go", aʊ: "as in now", ɔɪ: "as in boy",
   ɛɹ: "as in air", ɪɹ: "as in near", ɑɹ: "as in car", oɹ: "as in more", ʊɹ: "as in tour", aʊɚ: "as in hour",
   əl: "as in little",
-  x: "like Russian х", r: "like Russian р", e: "like Russian э", o: "like Russian о", a: "like Russian а",
+  x: "like ch in loch", r: "rolled or tapped", e: "pure, without a glide", o: "pure, without a glide", a: "like a in father, but shorter",
 }
 
 function ScoreMeter({ score, band }: { score: number; band: Band }) {
@@ -852,8 +855,8 @@ function Dock(props: {
   retry: boolean
   /** Which control to draw the eye to next. */
   focus: "listen" | "record" | null
-  onRef: () => void
-  onTake: () => void
+  onRef: (slow?: boolean) => void
+  onTake: (slow?: boolean) => void
   onRecord: () => void
   onNext: () => void
   nextLabel: string
@@ -871,7 +874,10 @@ function Dock(props: {
 
   const controls = (
     <div className="mx-auto grid max-w-sm grid-cols-3 items-start">
-      <Control label="Listen" kbd="R">
+      <Control
+        label="Listen" kbd="R"
+        extra={<SlowButton name="reference voice" active={playing === "ref-slow"} disabled={!refAudio || recording} onClick={() => props.onRef(true)} />}
+      >
         <SideButton
           name="reference voice"
           active={playing === "ref"}
@@ -879,7 +885,7 @@ function Dock(props: {
           progress={playing === "ref" ? progress : 0}
           disabled={!refAudio || recording}
           loading={!refAudio}
-          onClick={props.onRef}
+          onClick={() => props.onRef()}
         />
       </Control>
 
@@ -911,13 +917,16 @@ function Dock(props: {
         </button>
       </Control>
 
-      <Control label="My take" kbd="Y">
+      <Control
+        label="My take" kbd="Y"
+        extra={<SlowButton name="your take" active={playing === "take-slow"} disabled={!take || recording} onClick={() => props.onTake(true)} />}
+      >
         <SideButton
           name="your take"
           active={playing === "take"}
           progress={playing === "take" ? progress : 0}
           disabled={!take || recording}
-          onClick={props.onTake}
+          onClick={() => props.onTake()}
         />
       </Control>
     </div>
@@ -956,7 +965,20 @@ function Dock(props: {
   )
 }
 
-function Control({ label, kbd, strong, children }: { label: string; kbd: string; strong?: boolean; children: ReactNode }) {
+function Control({
+  label,
+  kbd,
+  strong,
+  extra,
+  children,
+}: {
+  label: string
+  kbd: string
+  strong?: boolean
+  /** Under the label, e.g. the "Slow" button. */
+  extra?: ReactNode
+  children: ReactNode
+}) {
   return (
     <div className="flex flex-col items-center gap-2.5">
       <div className="grid h-[72px] place-items-center">{children}</div>
@@ -971,6 +993,7 @@ function Control({ label, kbd, strong, children }: { label: string; kbd: string;
           <Kbd>{kbd}</Kbd>
         </span>
       </span>
+      {extra}
     </div>
   )
 }
@@ -1008,6 +1031,25 @@ function SideButton(p: {
         className="absolute bottom-0 left-0 h-0.5 bg-score transition-[width] duration-200 ease-linear"
         style={{ width: `${p.progress * 100}%` }}
       />
+    </button>
+  )
+}
+
+/** Small "Slow" button beside a dock play button: the same clip at SLOW_RATE. */
+function SlowButton(p: { name: string; active: boolean; disabled: boolean; onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={p.onClick}
+      disabled={p.disabled}
+      aria-label={`${p.active ? "Stop" : "Play"} ${p.name} slowly`}
+      className={cn(
+        "-mt-0.5 flex h-8 items-center gap-1 rounded-full border px-2.5 text-[13px] font-medium text-muted-foreground transition-colors disabled:opacity-30",
+        p.active ? "border-score text-foreground" : "hover:border-border-strong hover:text-foreground",
+      )}
+    >
+      {p.active ? <Square className="size-3 fill-current" /> : <Turtle className="size-3.5" />}
+      Slow
     </button>
   )
 }

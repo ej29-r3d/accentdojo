@@ -3,8 +3,8 @@
 import numpy as np
 import pytest
 
-from kole import analysis, g2p, scoring
-from kole.content import Phrase
+from accentdojo import analysis, g2p, scoring
+from accentdojo.content import Phrase
 
 
 def word(text: str) -> g2p.DisplayWord:

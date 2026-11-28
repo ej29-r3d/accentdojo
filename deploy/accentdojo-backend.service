@@ -1,0 +1,15 @@
+[Unit]
+Description=Accent Dojo backend (FastAPI: Kokoro TTS + OpenPronounce scoring)
+After=network.target
+
+[Service]
+WorkingDirectory=%h/gh/accentdojo/backend
+Environment=HF_HUB_OFFLINE=1
+Environment=ACCENTDOJO_TORCH_THREADS=6
+# Optional: ACCENTDOJO_PASSWORD=... and other settings, kept out of git.
+EnvironmentFile=-%h/.config/accentdojo/env
+ExecStart=%h/gh/accentdojo/backend/.venv/bin/uvicorn accentdojo.app:app --host 127.0.0.1 --port 8000 --workers 1
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

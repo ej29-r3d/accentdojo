@@ -67,7 +67,7 @@ export function SettingsButton() {
           <div className="space-y-1.5 px-4 py-4 text-sm leading-snug text-muted-foreground">
             <p>The server may keep recordings to tune scoring.</p>
             <p>
-              AccentDojo is open source (AGPL-3.0).{" "}
+              Accent Dojo is open source (AGPL-3.0).{" "}
               <a href={SOURCE_URL} target="_blank" rel="noreferrer" className={link}>
                 Source code
               </a>

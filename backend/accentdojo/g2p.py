@@ -2,7 +2,7 @@
 
 The phonemes come from OpenPronounce's own G2P (CMUdict mapped to the phone
 recogniser's symbols, then normalised), so what the UI shows is exactly what the
-scorer aligns against. kole adds stress marks for display: a mark sits on the
+scorer aligns against. Accent Dojo adds stress marks for display: a mark sits on the
 first sound of the stressed syllable (maximal onset), and the frontend keeps it
 glued to that sound. One-syllable words get no mark.
 

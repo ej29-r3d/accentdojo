@@ -43,7 +43,7 @@ function Login({ onDone }: { onDone: () => void }) {
     <main className="mx-auto flex min-h-dvh w-full max-w-sm flex-col justify-center px-5">
       <h1 className="flex items-center gap-3 text-4xl font-semibold tracking-[-0.04em]">
         <LogoMark className="size-10 rounded-[10px] ring-1 ring-border" />
-        AccentDojo
+        Accent Dojo
       </h1>
       <form
         className="mt-10 space-y-3"
