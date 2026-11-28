@@ -57,6 +57,58 @@ def test_dropped_sounds():
     assert analysis.sound_errors(word("bed"), []) == []  # nothing heard is "swallowed", not a sound error
 
 
+def test_substitutions_from_other_first_languages():
+    cases = {
+        ("very", ("b", "ɛ", "ɹ", "i")): {"at": 0, "expected": "v", "heard": "b"},
+        ("light", ("ɹ", "aɪ", "t")): {"at": 0, "expected": "l", "heard": "ɹ"},
+        ("rice", ("l", "aɪ", "s")): {"at": 0, "expected": "ɹ", "heard": "l"},
+        ("pen", ("b", "ɛ", "n")): {"at": 0, "expected": "p", "heard": "b"},
+        ("fan", ("p", "æ", "n")): {"at": 0, "expected": "f", "heard": "p"},
+        ("yes", ("dʒ", "ɛ", "s")): {"at": 0, "expected": "j", "heard": "dʒ"},
+        ("job", ("j", "ɑ", "b")): {"at": 0, "expected": "dʒ", "heard": "j"},
+        ("ship", ("tʃ", "ɪ", "p")): {"at": 0, "expected": "ʃ", "heard": "tʃ"},
+        ("zoo", ("dʒ", "u")): {"at": 0, "expected": "z", "heard": "dʒ"},
+        ("time", ("ʈ", "aɪ", "m")): {"at": 0, "expected": "t", "heard": "ʈ"},
+        ("night", ("l", "aɪ", "t")): {"at": 0, "expected": "n", "heard": "l"},
+        ("easy", ("i", "s", "i")): {"at": 1, "expected": "z", "heard": "s"},
+    }
+    for (text, heard), error in cases.items():
+        assert analysis.sound_errors(word(text), list(heard)) == [error], text
+
+
+def test_dropped_final_consonant():
+    assert analysis.sound_errors(word("bus"), ["b", "ʌ"]) == [{"at": 2, "expected": "s", "heard": None}]
+    assert analysis.sound_errors(word("bus"), ["b", "ʌ"], "s") == []  # "bus stop": one long /s/
+    assert analysis.sound_errors(word("thing"), ["θ", "ɪ"]) == [{"at": 2, "expected": "ŋ", "heard": None}]
+
+
+def test_added_vowels():
+    assert analysis.sound_errors(word("school"), ["ɛ", "s", "k", "u", "l"]) == [{"at": 0, "expected": "s", "heard": "ɛs"}]
+    assert analysis.sound_errors(word("street"), ["s", "ə", "t", "ɹ", "i", "t"]) == [{"at": 0, "expected": "s", "heard": "sə"}]
+    assert analysis.sound_errors(word("big"), ["b", "ɪ", "ɡ", "u"]) == [{"at": 2, "expected": "ɡ", "heard": "ɡu"}]
+    assert analysis.sound_errors(word("big"), ["b", "ɪ", "ɡ", "u"], "d") == [{"at": 2, "expected": "ɡ", "heard": "ɡu"}]
+    # The next word's vowel can be caught at the end of this one: "big apple".
+    assert analysis.sound_errors(word("big"), ["b", "ɪ", "ɡ", "ə"], "æ") == []
+    assert analysis.sound_errors(word("to"), ["ɛ", "t", "u"]) == []  # function words are left alone
+
+
+def test_known_substitution_wins_the_alignment():
+    assert analysis.sound_errors(word("usually"), ["j", "u", "dʒ", "u", "l", "i"]) == [{"at": 2, "expected": "ʒ", "heard": "dʒ"}]
+
+
+def test_vowel_before_s_cluster_caught_on_previous_word():
+    to, school = g2p.words_of("to school")
+    out = analysis._vowel_before_s_cluster(school, ["s", "k", "u", "l"], to, said(0, 1, heard=["t", "ə", "eɪ"]))
+    assert out == [{"at": 0, "expected": "s", "heard": "eɪs"}]
+    assert analysis._vowel_before_s_cluster(school, ["s", "k", "u", "l"], to, said(0, 1, heard=["t", "ə"])) == []
+
+
+def test_thought_shows_aw_and_matches_merged_ah():
+    assert word("thought").phonemes == ["θ", "ɔ", "t"]
+    assert word("cot").phonemes == ["k", "ɑ", "t"]
+    assert analysis.sound_errors(word("thought"), ["θ", "ɑ", "t"]) == []
+
+
 def test_pauses_against_reference_and_commas():
     p = phrase("good dogs sing")
     take = {"words": [said(0.0, 0.4), said(1.0, 1.4), said(1.5, 1.9)]}

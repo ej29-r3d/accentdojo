@@ -388,7 +388,7 @@ components:
             properties:
               at: { type: integer, description: Index into the word's phonemes. }
               expected: { type: string }
-              heard: { type: [string, "null"], description: null when the sound was dropped. }
+              heard: { type: [string, "null"], description: "null when the sound was dropped. An added vowel is reported on the consonant next to it, with both sounds here (\"ɛs\" for \"eschool\")." }
         stress:
           oneOf:
             - type: object

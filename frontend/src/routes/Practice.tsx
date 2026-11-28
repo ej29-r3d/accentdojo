@@ -813,11 +813,14 @@ const SOUND_EXAMPLE: Record<string, string> = {
   ɡ: "as in go", ʃ: "as in ship", ʒ: "as in vision", tʃ: "as in chip", dʒ: "as in job", h: "as in hat",
   ŋ: "as in sing", n: "as in no", m: "as in me", l: "as in let", ɹ: "as in red", j: "as in yes",
   i: "as in see", ɪ: "as in sit", ɛ: "as in bed", æ: "as in cat", ʌ: "as in cup", ɑ: "as in father",
-  ʊ: "as in book", u: "as in food", ə: "as in about", ɚ: "as in bird", eɪ: "as in day", aɪ: "as in my",
+  ʊ: "as in book", u: "as in food", ɔ: "as in thought", ə: "as in about", ɚ: "as in bird", eɪ: "as in day", aɪ: "as in my",
   oʊ: "as in go", aʊ: "as in now", ɔɪ: "as in boy",
   ɛɹ: "as in air", ɪɹ: "as in near", ɑɹ: "as in car", oɹ: "as in more", ʊɹ: "as in tour", aʊɚ: "as in hour",
   əl: "as in little",
   x: "like ch in loch", r: "rolled or tapped", e: "pure, without a glide", o: "pure, without a glide", a: "like a in father, but shorter",
+  ʈ: "with the tongue curled back", ɖ: "with the tongue curled back", "t̪": "with the tongue on the teeth",
+  β: "between b and v", ʋ: "between v and w", ɸ: "blown through the lips", ʁ: "from the back of the throat",
+  χ: "rough, from the back of the throat", ħ: "breathy, from the throat", ɕ: "a soft sh", ts: "as in cats",
 }
 
 function ScoreMeter({ score, band }: { score: number; band: Band }) {

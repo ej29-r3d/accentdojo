@@ -61,12 +61,19 @@ machine; no gTTS.
   same measurements on the reference clip (cached with the word times, `REF_VERSION`).
   Detected problems take points off the shown score (`PENALTY`: major word 8, minor 3, pause 5, slow 8, flat 5; capped at 50), and the band follows the shown score.
   False alarms on clean readings by am_michael / am_adam / af_bella / af_nicole (216 takes,
-  1200 words; `scripts/calibrate.py 54`, the first 54 phrases, re-run 2026-11-25): sound 2.9 % of words,
-  swallowed 0 %, stress 2.3 %, slow 1 take, flat 7 takes, pauses 18 takes.
-  An earlier, easier phrase set gave 1.1 % and 0.1 %; the harder phrases raise the false alarms. Controlled
-  errors made by hand with Kokoro, not scripted in this repo (respellings and `[word](/ipa/)` stress overrides) were caught:
-  w→v, ɪ→i, ð→z, ʌ→æ, wrong stress on recommend / revisit / allergic / penicillin, a missing
-  word, a 0.9 s pause, speed 0.55. Missed: "I sink" (the recogniser itself heard /θ/).
+  1200 words; `scripts/calibrate.py 54`, the first 54 phrases, re-run 2026-11-28 with the
+  substitutions, final drops and added vowels for other first languages): sound 2.8 % of words
+  (2.8 % before those were added), swallowed 0 %, stress 2.2 %, slow 1 take, flat 6 takes,
+  pauses 18 takes. An earlier, easier phrase set gave 1.1 % and 0.1 %; the harder phrases raise
+  the false alarms.
+  Controlled errors (`scripts/controlled.py`: af_heart and am_michael read a respelled phrase,
+  judged against the real one): 31 of 32 caught, covering v→b, l→r, r→l, p→b, f→p, j→dʒ, dʒ→j,
+  ʒ→dʒ, ʃ→tʃ, θ→s, w→v, z→s, an added vowel before an s-cluster and inside one, and dropped
+  final s and n. Missed: am_michael's "eh school" (the vowel was not heard). Kokoro will not
+  add a vowel after a final consonant, so that check is covered by unit tests only.
+  Earlier hand-made checks, not scripted: ɪ→i, ð→z, ʌ→æ, wrong stress on recommend / revisit /
+  allergic / penicillin, a missing word, a 0.9 s pause, speed 0.55 were caught; "I sink" was
+  missed (the recogniser itself heard /θ/).
 - **Takes** are discarded after scoring. With `ACCENTDOJO_KEEP_TAKES=1` each take is saved with
   its result in `.cache/takes/` (git-ignored) for tuning the detectors.
 - **Different phrase.** Besides OpenPronounce's own alignment check, a take whose relative
@@ -86,7 +93,7 @@ and dropped words were.
 ## Measurements (one home server, 2026-11-23)
 
 12 cores, no GPU, `torch.set_num_threads(6)`, taken when the content was 54 phrases (it is
-1,452 now; the figures have not been re-run on the full set). Those phrases are 1.4-3.5 s of audio
+1,794 now; the figures have not been re-run on the full set). Those phrases are 1.4-3.5 s of audio
 (median 2.2 s). Run `PYTHONPATH=. .venv/bin/python scripts/bench.py` to repeat.
 
 | Step | p50 | p95 | max |
@@ -106,7 +113,7 @@ different phrase all come back unscorable with the expected reason.
 
 ## Startup and cache
 
-Every built-in phrase (1,452) is pre-rendered at startup: Kokoro clip, word times, reference
+Every built-in phrase (1,794) is pre-rendered at startup: Kokoro clip, word times, reference
 total and detector measurements, about 1.7 s per phrase, so the first start after new
 content takes about 35 minutes (measured on a fresh install, 12 cores) while the API already serves requests. Everything lands in
 `.cache/audio/` and later starts take seconds. Bumping `scoring.REF_VERSION` recomputes the
