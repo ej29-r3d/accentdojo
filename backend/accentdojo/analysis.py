@@ -1,7 +1,7 @@
 """Detectors on top of the trained scorer.
 
 The trained OpenPronounce models follow human raters, who forgive accent features
-(θ→s, w→v, ɪ→i). kole is a practice tool, so it also flags what a teacher would
+(θ→s, w→v, ɪ→i). Accent Dojo is a practice tool, so it also flags what a teacher would
 point at, by comparing the take with the expected phonemes and with Kokoro's reading
 of the same phrase:
 
@@ -15,7 +15,7 @@ of the same phrase:
   range is far narrower.
 
 Every threshold is a first guess, checked for false alarms on clean readings by four
-other Kokoro voices; meant to be re-fit on labelled takes (KOLE_KEEP_TAKES=1 keeps them
+other Kokoro voices; meant to be re-fit on labelled takes (ACCENTDOJO_KEEP_TAKES=1 keeps them
 in backend/.cache/takes/).
 """
 
@@ -47,12 +47,12 @@ FUNCTION_WORDS = {
     "i'm", "i've", "i'd", "i'll", "it's", "you're", "we're", "we'd", "they're", "what", "some", "than", "then",
 }
 
-#: Consonant substitutions that always count (expected -> heard). Typical L2 and Russian-L1.
+#: Consonant substitutions that always count (expected -> heard). Common learner substitutions.
 CONSONANT_ERRORS = {
     "θ": {"s", "t", "f", "z"}, "ð": {"z", "d", "v", "s"}, "w": {"v", "f"}, "v": {"w"}, "ŋ": {"n", "ŋk", "ŋɡ"},
     "h": {"x"}, "ɹ": {"r"}, "dʒ": {"ʒ", "ʃ"}, "tʃ": {"ʃ", "ts"}, "ʃ": {"s", "ɕ"}, "ʒ": {"z"}, "l": {"ɫ"},
 }
-#: Word-final devoicing (a strong Russian-L1 habit); only checked on the last consonant.
+#: Word-final devoicing (common in many first languages); only checked on the last consonant.
 FINAL_DEVOICING = {"z": "s", "d": "t", "b": "p", "ɡ": "k", "v": "f", "ʒ": "ʃ", "dʒ": "tʃ"}
 #: Vowel pairs that are not errors even in a stressed syllable (recogniser / dialect variation).
 VOWEL_TOLERATED = {("ɑ", "ɔ"), ("ɔ", "ɑ"), ("ɚ", "ɜ"), ("ɜ", "ɚ"), ("oʊ", "o"), ("ə", "ʌ"), ("ʌ", "ə"),

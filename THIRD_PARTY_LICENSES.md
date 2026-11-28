@@ -1,6 +1,6 @@
 # Third-party software, models and fonts
 
-AccentDojo incorporates or depends on the following. Model weights are downloaded at run
+Accent Dojo incorporates or depends on the following. Model weights are downloaded at run
 time and are not part of this repository.
 
 ## Scoring

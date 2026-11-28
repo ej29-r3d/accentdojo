@@ -1439,11 +1439,658 @@
       }
     },
     {
+      "id": "sound-ee",
+      "group": "sounds",
+      "section": "Vowels",
+      "name": "ee in see",
+      "blurb": "see, keep, people",
+      "symbol": "i",
+      "phrases": {
+        "beginner": [
+          "Green tea, please.",
+          "Keep the receipt.",
+          "We need three keys.",
+          "See you next week.",
+          "Feel free to eat.",
+          "Sweet dreams, everyone."
+        ],
+        "intermediate": [
+          "These people eat meat three times a week.",
+          "Please keep the key in the green bag.",
+          "We need to leave the meeting early.",
+          "She reads the evening news at three.",
+          "Each teacher needs a free seat.",
+          "Steve really believes in teamwork."
+        ],
+        "advanced": [
+          "The police received an email describing the speeding vehicle.",
+          "We agreed to meet each week to discuss the season's key decisions.",
+          "These features seem easy to repeat with a cheap machine.",
+          "She believes the scheme will succeed if we keep each piece simple.",
+          "Please leave the keys beneath the green tree by the beach.",
+          "The meeting will be completely free for people over sixteen."
+        ]
+      }
+    },
+    {
+      "id": "sound-i",
+      "group": "sounds",
+      "name": "i in sit",
+      "blurb": "sit, busy, women",
+      "symbol": "ɪ",
+      "section": "Vowels",
+      "phrases": {
+        "beginner": [
+          "Sit with him.",
+          "It's a big ship.",
+          "Six quick minutes.",
+          "Is this milk?",
+          "A busy city.",
+          "Fish and chips."
+        ],
+        "intermediate": [
+          "Which women live in this building?",
+          "His sister's business is in Chicago.",
+          "This is a bit difficult to fix.",
+          "Bill didn't finish his dinner quickly.",
+          "The children will visit in the winter.",
+          "Give him the tickets in the kitchen."
+        ],
+        "advanced": [
+          "The physician's prescription was ridiculously illegible.",
+          "Six simplistic statistics intrigued the committee.",
+          "A vigilant citizen witnessed the incident.",
+          "His initial criticism diminished considerably.",
+          "Deliberately mischievous children interrupted the minister.",
+          "Its distinctive rhythm instills vivid imagery."
+        ]
+      }
+    },
+    {
+      "id": "sound-eh",
+      "group": "sounds",
+      "section": "Vowels",
+      "name": "e in bed",
+      "blurb": "bed, said, friend",
+      "symbol": "ɛ",
+      "phrases": {
+        "beginner": [
+          "Get some rest.",
+          "Ten red pens.",
+          "Let me help.",
+          "Bed at seven.",
+          "Send the check.",
+          "Never again!"
+        ],
+        "intermediate": [
+          "Ben left the red pen on the desk.",
+          "Let's get breakfast together next weekend.",
+          "My friend sent a letter yesterday.",
+          "Ten guests went to the wedding.",
+          "Help yourself to some fresh bread.",
+          "Every member says the test was easy."
+        ],
+        "advanced": [
+          "Several elderly gentlemen expected a better selection of desserts.",
+          "The president's message helped settle the tense debate.",
+          "Jessica never let anyone forget her twentieth birthday.",
+          "Fred checked every detail before sending the final memo.",
+          "Many restaurants offer special breakfast deals on Wednesday.",
+          "Let's spend the rest of the evening getting the tent ready."
+        ]
+      }
+    },
+    {
+      "id": "sound-ae",
+      "group": "sounds",
+      "name": "a in cat",
+      "blurb": "cat, hand, after",
+      "symbol": "æ",
+      "section": "Vowels",
+      "phrases": {
+        "beginner": [
+          "A black cat.",
+          "Thanks, Dad!",
+          "That's a bad plan.",
+          "Pack my bags, Sam.",
+          "Ask the man.",
+          "A happy family."
+        ],
+        "intermediate": [
+          "Can Alice stand on that ladder?",
+          "Sam's grandmother has a fantastic laugh.",
+          "The last exam was absolutely tragic.",
+          "Pack an apple and a ham sandwich.",
+          "The manager canceled half the classes.",
+          "Dan actually ran back to the cabin."
+        ],
+        "advanced": [
+          "The ambassador's lavish banquet was a catastrophe.",
+          "Angry passengers abandoned the stranded tram.",
+          "Practically every candidate lacked a tangible plan.",
+          "A fanatical mathematician analyzed the anagram.",
+          "The bankrupt landlord adamantly attacked the tax.",
+          "Her transatlantic accent has dramatically vanished."
+        ]
+      }
+    },
+    {
+      "id": "sound-uh",
+      "group": "sounds",
+      "section": "Vowels",
+      "name": "u in cup",
+      "blurb": "cup, love, money",
+      "symbol": "ʌ",
+      "phrases": {
+        "beginner": [
+          "Come on, hurry up!",
+          "Some fun in the sun.",
+          "Lunch on Monday?",
+          "Not enough money.",
+          "My cousin's truck.",
+          "Just one cup."
+        ],
+        "intermediate": [
+          "My brother loves his country club.",
+          "Somebody must have touched the button.",
+          "Another young couple runs the shop.",
+          "I've done enough for one month.",
+          "Does your husband cut the onions?",
+          "Come up for lunch on Sunday."
+        ],
+        "advanced": [
+          "My younger brother suddenly discovered a hundred dollars under the rug.",
+          "The government must cover the cost of public transportation.",
+          "Unfortunately, the couple's honeymoon was cut short by the flood.",
+          "Nothing could stop my stubborn cousin from running another marathon.",
+          "Mother wonders if the summer sun is much stronger this month.",
+          "Some numbers in the summer budget just don't add up."
+        ]
+      }
+    },
+    {
+      "id": "sound-ah",
+      "group": "sounds",
+      "name": "o in hot",
+      "blurb": "hot, job, father",
+      "symbol": "ɑ",
+      "section": "Vowels",
+      "phrases": {
+        "beginner": [
+          "It's a hot pot.",
+          "Stop the clock.",
+          "Not a problem, Bob.",
+          "My job is odd.",
+          "A lot of rocks.",
+          "Lock the top box."
+        ],
+        "intermediate": [
+          "John's got a lot of documents.",
+          "The doctor's office opens at one o'clock.",
+          "Probably not, but it's possible.",
+          "Tom dropped his wallet in the parking lot.",
+          "The shop was robbed around five o'clock.",
+          "Honestly, I forgot about the concert."
+        ],
+        "advanced": [
+          "The economist's hypothesis was quite controversial.",
+          "Monstrous obstacles blocked the colossal project.",
+          "A prominent scholar adopted a novel policy.",
+          "Modern technology constantly conquers common problems.",
+          "The psychologist's response was a solid compromise.",
+          "Bob's hobby is collecting exotic tropical rocks."
+        ]
+      }
+    },
+    {
+      "id": "sound-oo",
+      "group": "sounds",
+      "name": "oo in good",
+      "blurb": "good, could, put",
+      "symbol": "ʊ",
+      "section": "Vowels",
+      "phrases": {
+        "beginner": [
+          "A good book.",
+          "Look at my foot.",
+          "Could you cook?",
+          "Push, don't pull.",
+          "Good sugar cookies.",
+          "Would you look?"
+        ],
+        "intermediate": [
+          "Could you put the sugar back?",
+          "She took a good look at the bush.",
+          "The woman should push the wooden door.",
+          "I would if I could, honestly.",
+          "The butcher's cookbook looks really good.",
+          "He stood by the brook and shook."
+        ],
+        "advanced": [
+          "She mistook the bully's crooked look for goodwill.",
+          "The woolen cushion couldn't withstand the bushfire.",
+          "Understandably, the pudding should be cooked fully.",
+          "Brooklyn's neighborhoods wouldn't overlook a good butcher.",
+          "A crooked rookie took the bulletproof hood.",
+          "The childhood cookbook stood on a wooden footstool."
+        ]
+      }
+    },
+    {
+      "id": "sound-ooo",
+      "group": "sounds",
+      "section": "Vowels",
+      "name": "oo in food",
+      "blurb": "food, blue, shoe",
+      "symbol": "u",
+      "phrases": {
+        "beginner": [
+          "Two new shoes.",
+          "Soup or juice?",
+          "See you soon!",
+          "The room is cool.",
+          "Blue balloons.",
+          "Choose a movie."
+        ],
+        "intermediate": [
+          "Who threw the food into the pool?",
+          "We're moving to a new school in June.",
+          "Sue usually wears blue boots.",
+          "Do you have room for soup?",
+          "The group grew too loud at noon.",
+          "Lucy wants a cool new suit."
+        ],
+        "advanced": [
+          "The students usually choose fruit juice and soup at lunch.",
+          "A huge group of students moved through the museum in June.",
+          "Who knew the new computer would include a cool blue screen?",
+          "Ruth refused to move into the room with the broken roof.",
+          "Lose your shoes before you step into the swimming pool.",
+          "The crew soon proved the new route was too long."
+        ]
+      }
+    },
+    {
+      "id": "sound-schwa",
+      "group": "sounds",
+      "name": "a in about",
+      "blurb": "about, banana, today",
+      "symbol": "ə",
+      "section": "Vowels",
+      "phrases": {
+        "beginner": [
+          "A banana, please.",
+          "About a minute ago.",
+          "Today and tomorrow.",
+          "A cup of tea.",
+          "The sofa is comfortable.",
+          "Again and again."
+        ],
+        "intermediate": [
+          "The official decision was a surprise.",
+          "A photographer took a picture of us.",
+          "Can you recommend a comfortable hotel?",
+          "The support was better than expected.",
+          "Tomorrow's lesson is about American history.",
+          "A professional musician performed for an hour."
+        ],
+        "advanced": [
+          "The president's proposal astonished the opposition.",
+          "A considerable percentage of applicants succeeded.",
+          "Apparently, the phenomenon is fundamentally unpredictable.",
+          "Occasional confusion is a natural reaction.",
+          "The pharmacist's assistant memorized the alphabetical catalog.",
+          "An economical alternative appealed to the committee."
+        ]
+      }
+    },
+    {
+      "id": "sound-ay",
+      "group": "sounds",
+      "section": "Diphthongs",
+      "name": "ay in day",
+      "blurb": "day, wait, great",
+      "symbol": "eɪ",
+      "phrases": {
+        "beginner": [
+          "Great day!",
+          "Stay safe!",
+          "Make a cake.",
+          "Same place, same day.",
+          "Take the train.",
+          "Wait, they're late."
+        ],
+        "intermediate": [
+          "They stayed late to paint the gate.",
+          "May I pay later today?",
+          "The neighbor's baby made a face.",
+          "The train came eight minutes late.",
+          "They'll play a game later today.",
+          "Grace always makes great pancakes."
+        ],
+        "advanced": [
+          "The weather may change, so take a raincoat to the game.",
+          "The famous painter displayed eight paintings in a spacious hallway.",
+          "Our neighbors waited patiently at the station for the delayed train.",
+          "Jane explained the main changes to the payment plan yesterday.",
+          "They made a mistake and paid eighty dollars for the wrong shade.",
+          "Today's race was canceled because of the rain and hail."
+        ]
+      }
+    },
+    {
+      "id": "sound-eye",
+      "group": "sounds",
+      "section": "Diphthongs",
+      "name": "y in my",
+      "blurb": "my, time, nice",
+      "symbol": "aɪ",
+      "phrases": {
+        "beginner": [
+          "Nice try!",
+          "I like rice.",
+          "Time to fly.",
+          "My white bike.",
+          "Why not try?",
+          "I'm fine, thanks."
+        ],
+        "intermediate": [
+          "I'd like a slice of pie.",
+          "My wife arrives at nine tonight.",
+          "Mike drives a bright white car.",
+          "Try to find the right size.",
+          "I might ride my bike outside.",
+          "Why is the price so high?"
+        ],
+        "advanced": [
+          "I tried to reply quickly, but my mind went quiet.",
+          "The guide advised us to arrive before five on Friday.",
+          "My nephew likes to climb high mountains in the dry season.",
+          "Kites flying in the bright July sky delighted the children.",
+          "Ice cream prices rise every time the weather is fine.",
+          "I decided to buy a nice white rice cooker online."
+        ]
+      }
+    },
+    {
+      "id": "sound-oy",
+      "group": "sounds",
+      "section": "Diphthongs",
+      "name": "oy in boy",
+      "blurb": "boy, coin, enjoy",
+      "symbol": "ɔɪ",
+      "phrases": {
+        "beginner": [
+          "Toys for boys.",
+          "Boil the oil.",
+          "Avoid the noise.",
+          "A noisy toy.",
+          "Point to the coin.",
+          "Enjoy your choice!"
+        ],
+        "intermediate": [
+          "The boys enjoyed the noisy toys.",
+          "Roy's voice annoys the employees.",
+          "Avoid boiling the oysters in oil.",
+          "Join us and enjoy the royal show.",
+          "My employer avoids pointless meetings.",
+          "Point to the spot with moist soil."
+        ],
+        "advanced": [
+          "The employees avoided the noisy boiler room to enjoy some quiet.",
+          "Her loyal choice of employer brought her real joy.",
+          "The boys pointed at the toy coins buried in the moist soil.",
+          "Don't spoil the oysters by boiling them in too much oil.",
+          "A loud noise from the toilet annoyed the royal visitors.",
+          "Joyce enjoyed picking the voice actor for the toy commercial."
+        ]
+      }
+    },
+    {
+      "id": "sound-ow",
+      "group": "sounds",
+      "section": "Diphthongs",
+      "name": "ow in now",
+      "blurb": "now, house, about",
+      "symbol": "aʊ",
+      "phrases": {
+        "beginner": [
+          "How about now?",
+          "Out of town.",
+          "A brown cow.",
+          "Shout it out!",
+          "Sit down now.",
+          "Loud crowds downtown."
+        ],
+        "intermediate": [
+          "How many flowers are in the house?",
+          "We found a mouse in the house.",
+          "Pronounce the noun out loud, please.",
+          "Count the houses in our town.",
+          "How about a shower after the round?",
+          "The crowd downtown was very loud."
+        ],
+        "advanced": [
+          "A thousand proud fans shouted loudly around the town fountain.",
+          "The mountain cabin is about an hour south of downtown.",
+          "Allow me to announce the outcome of the council's vote now.",
+          "The power went out, and we found our flashlights downstairs.",
+          "Howard found a thousand dollars in a brown pouch somehow.",
+          "Without a doubt, the brown couch is out of style now."
+        ]
+      }
+    },
+    {
+      "id": "sound-oh",
+      "group": "sounds",
+      "section": "Diphthongs",
+      "name": "o in go",
+      "blurb": "go, home, know",
+      "symbol": "oʊ",
+      "phrases": {
+        "beginner": [
+          "Don't go alone.",
+          "Hello, Joe!",
+          "No, I don't know.",
+          "Close the window.",
+          "Show me the road.",
+          "Phone home, okay?"
+        ],
+        "intermediate": [
+          "Joe's phone is broken again.",
+          "Don't open the window, it's cold.",
+          "Go slowly on the snowy road.",
+          "I hope Rose knows the old joke.",
+          "Sophie owns a boat on the coast.",
+          "Most hotels close in October."
+        ],
+        "advanced": [
+          "The old man slowly opened the yellow notebook and spoke.",
+          "Joe's going home alone, so don't phone him tonight.",
+          "Snow closed most roads, so the whole show was postponed.",
+          "Nobody knows who stole the gold from the old boat.",
+          "Hold your phone close and follow the road to the ocean.",
+          "I suppose we could go bowling, though I don't own shoes."
+        ]
+      }
+    },
+    {
+      "id": "sound-er",
+      "group": "sounds",
+      "name": "er in her",
+      "blurb": "her, bird, teacher",
+      "symbol": "ɝ",
+      "section": "Vowels with R",
+      "phrases": {
+        "beginner": [
+          "Her first birthday.",
+          "Thirty purple birds.",
+          "Her shirt is dirty.",
+          "The girl works early.",
+          "I prefer the third.",
+          "Turn left at the church."
+        ],
+        "intermediate": [
+          "The nurse returned on Thursday morning.",
+          "Our neighbors prefer their burgers rare.",
+          "Certain words were hard to hear.",
+          "The first word was perfect.",
+          "Her early surgery was on Thursday.",
+          "Thirty birds circled over the harbor."
+        ],
+        "advanced": [
+          "The murderer's attorney urged further mercy.",
+          "The nervous clerk returned the dirty shirts on Thursday.",
+          "A stern northern governor averted the disaster.",
+          "Squirrels were stirring in the birch forest.",
+          "Her earnest journal entries were surprisingly absurd.",
+          "The surgeon worked thirty hours before her first break."
+        ]
+      }
+    },
+    {
+      "id": "sound-ar",
+      "group": "sounds",
+      "section": "Vowels with R",
+      "name": "ar in car",
+      "blurb": "car, start, party",
+      "symbol": "ɑɹ",
+      "phrases": {
+        "beginner": [
+          "Start the car.",
+          "Park far away.",
+          "A large jar.",
+          "Far apart.",
+          "A dark garden.",
+          "Charge my car."
+        ],
+        "intermediate": [
+          "Mark parked the car in the yard.",
+          "The farm is far from the market.",
+          "Start the party in the garden.",
+          "Are the cards in the jar?",
+          "Our apartment has a large garden.",
+          "Charlie argued hard about the parking charge."
+        ],
+        "advanced": [
+          "The artist's large cartoons were sold at the farmers market in March.",
+          "The army's sergeant parked his car far from the harbor.",
+          "Start the barbecue in the backyard before the guests arrive at dark.",
+          "The cart was parked in the dark garage behind the market.",
+          "Large cardboard boxes are stored in the far part of the barn.",
+          "Margaret started a small art class in her apartment."
+        ]
+      }
+    },
+    {
+      "id": "sound-or",
+      "group": "sounds",
+      "section": "Vowels with R",
+      "name": "or in more",
+      "blurb": "more, door, story",
+      "symbol": "ɔɹ",
+      "phrases": {
+        "beginner": [
+          "Four more.",
+          "A short story.",
+          "Report the score.",
+          "Your door is open.",
+          "Forty more forks.",
+          "Morning sports."
+        ],
+        "intermediate": [
+          "The store closes at four in the morning.",
+          "George ordered more orange juice.",
+          "Before the storm, close the door.",
+          "Your horse looks bored this morning.",
+          "We bought forty more boards for the porch.",
+          "Of course, the story is important."
+        ],
+        "advanced": [
+          "The reporter ordered four more short stories for the morning paper.",
+          "Before the storm, the north shore was warm and boring.",
+          "George lost his passport, so he's sorting forms at the airport.",
+          "The orchestra performed a gorgeous chorus in the auditorium.",
+          "Your horse slept all morning on the porch.",
+          "The sports store on the corner is open until four."
+        ]
+      }
+    },
+    {
+      "id": "sound-air",
+      "group": "sounds",
+      "section": "Vowels with R",
+      "name": "air in care",
+      "blurb": "care, where, there",
+      "symbol": "ɛɹ",
+      "phrases": {
+        "beginner": [
+          "Where's the chair?",
+          "Take care, Mary.",
+          "A fair share.",
+          "Repair the stairs.",
+          "Over there, upstairs.",
+          "Pears or berries?"
+        ],
+        "intermediate": [
+          "Their parents are very careful.",
+          "Where's the airport? Over there!",
+          "Take the spare chairs up the stairs.",
+          "Sarah shared her cherry pie.",
+          "There's a bear in the area.",
+          "Prepare the spare chair for our guest."
+        ],
+        "advanced": [
+          "Mary and Harry dragged their heavy luggage up the stairs.",
+          "The airline compared fares to Paris carefully this year.",
+          "There's barely enough air in the spare tire, so be careful.",
+          "Larry repaired the squeaky stairs and painted the chairs there.",
+          "Sarah's parents rarely care where their teenagers wear their hair.",
+          "Very few parents were aware of the airport's new parking fees."
+        ]
+      }
+    },
+    {
+      "id": "sound-ear",
+      "group": "sounds",
+      "section": "Vowels with R",
+      "name": "ear in near",
+      "blurb": "near, here, year",
+      "symbol": "ɪɹ",
+      "phrases": {
+        "beginner": [
+          "Come here, dear.",
+          "Near the pier.",
+          "Cheer up, dear!",
+          "Clear beer.",
+          "Here's my gear.",
+          "Is it near here?"
+        ],
+        "intermediate": [
+          "Steer clear of the pier this year.",
+          "Fears disappear when friends are near.",
+          "Here's the earring I lost last year.",
+          "Is the engineer sitting near here?",
+          "The cashier cheered the volunteers.",
+          "The beer here is very clear."
+        ],
+        "advanced": [
+          "Every year, the engineers appear here to inspect the old pier.",
+          "The sincere volunteer cleared the weird gear near the pier.",
+          "We could hear cheering near the rear entrance of the theater.",
+          "Clearly, the experienced engineer's career is nearly over.",
+          "Each year, cheerful volunteers appear near the pier to clean the beach.",
+          "My dear, your earrings appear clearer in this mirror."
+        ]
+      }
+    },
+    {
       "id": "sound-r",
       "group": "sounds",
-      "name": "American R",
+      "name": "r in red",
       "blurb": "red, around, sorry",
       "symbol": "ɹ",
+      "section": "Consonants",
       "phrases": {
         "beginner": [
           "Really? Are you sure?",
@@ -1451,7 +2098,7 @@
           "Rice with carrots, please.",
           "Right around the corner.",
           "Sorry, wrong room.",
-          "Three grey rabbits."
+          "Three gray rabbits."
         ],
         "intermediate": [
           "Rachel rarely reads the reviews.",
@@ -1472,110 +2119,12 @@
       }
     },
     {
-      "id": "sound-er",
-      "group": "sounds",
-      "name": "Vowel + R",
-      "blurb": "her, car, more",
-      "symbol": "ɚ",
-      "phrases": {
-        "beginner": [
-          "Her first birthday.",
-          "Park the car here.",
-          "Four more, please.",
-          "The girl works early.",
-          "Where are your stairs?",
-          "Turn north at the corner."
-        ],
-        "intermediate": [
-          "The nurse returned on Thursday morning.",
-          "Our neighbors prefer their burgers rare.",
-          "Certain words were hard to hear.",
-          "The world's largest airport is nearby.",
-          "Her heart surgery starts at four.",
-          "Thirty birds circled over the harbor."
-        ],
-        "advanced": [
-          "The murderer's attorney urged further mercy.",
-          "Burglars ordinarily prefer darker corridors.",
-          "A stern northern governor averted the disaster.",
-          "Squirrels were stirring in the birch forest.",
-          "Her earnest journal entries were surprisingly absurd.",
-          "The courier hurried toward the terminal's barrier."
-        ]
-      }
-    },
-    {
-      "id": "sound-flap-t",
-      "group": "sounds",
-      "name": "Flap T",
-      "blurb": "water, better, city",
-      "symbol": "ɾ",
-      "phrases": {
-        "beginner": [
-          "A bottle of water.",
-          "What a pretty city!",
-          "Get it at eight.",
-          "A little bit better.",
-          "Not at all, buddy.",
-          "Put it on the table."
-        ],
-        "intermediate": [
-          "Peter got a lot of letters.",
-          "I ought to visit my daughter later.",
-          "What a beautiful Saturday for a party!",
-          "Could you write it out a bit bigger?",
-          "The meeting started thirty minutes late.",
-          "Betty bought a better computer battery."
-        ],
-        "advanced": [
-          "The editor noted a pattern of fatalities.",
-          "Pretty little cottages dotted the waterfront.",
-          "Out-of-date data creates critical liabilities.",
-          "Competitors capitalize on outdated metadata.",
-          "Whatever it is, get it out of the attic.",
-          "A veteran writer waited at the auditorium."
-        ]
-      }
-    },
-    {
-      "id": "sound-stop-t",
-      "group": "sounds",
-      "name": "Held T",
-      "blurb": "button, mountain, right",
-      "symbol": "ʔ",
-      "phrases": {
-        "beginner": [
-          "Press that button.",
-          "Not right now.",
-          "A white kitten.",
-          "What's that mountain?",
-          "I can't eat that.",
-          "Sit right there."
-        ],
-        "intermediate": [
-          "I've forgotten the curtains again.",
-          "Britain's written rules are important.",
-          "The fountain sits right outside the apartment.",
-          "He hasn't eaten cotton candy yet.",
-          "Put that hat back, Martin.",
-          "Wait, that didn't quite fit."
-        ],
-        "advanced": [
-          "The mittens were rotten and frostbitten.",
-          "Latin scholars certainly shortened the sentence.",
-          "An important patent went straight to Manhattan.",
-          "The frightened kitten bit that outstretched hand.",
-          "Fortunately, that department wasn't threatened outright.",
-          "It's not what that accountant meant, apparently."
-        ]
-      }
-    },
-    {
       "id": "sound-dark-l",
       "group": "sounds",
-      "name": "Dark L",
+      "name": "l in full",
       "blurb": "full, people, world",
       "symbol": "ɫ",
+      "section": "Consonants",
       "phrases": {
         "beginner": [
           "A full bottle.",
@@ -1606,9 +2155,10 @@
     {
       "id": "sound-th",
       "group": "sounds",
-      "name": "TH in think",
+      "name": "th in think",
       "blurb": "three, both, nothing",
       "symbol": "θ",
+      "section": "Consonants",
       "phrases": {
         "beginner": [
           "Thirty-three, thanks.",
@@ -1639,9 +2189,10 @@
     {
       "id": "sound-th-voiced",
       "group": "sounds",
-      "name": "TH in this",
+      "name": "th in this",
       "blurb": "the, mother, breathe",
       "symbol": "ð",
+      "section": "Consonants",
       "phrases": {
         "beginner": [
           "This is my mother.",
@@ -1670,110 +2221,12 @@
       }
     },
     {
-      "id": "sound-ae",
-      "group": "sounds",
-      "name": "Short A",
-      "blurb": "cat, hand, after",
-      "symbol": "æ",
-      "phrases": {
-        "beginner": [
-          "A black cat.",
-          "Thanks, Dad!",
-          "That's a bad plan.",
-          "Pack my bags, Sam.",
-          "Ask the man.",
-          "A happy family."
-        ],
-        "intermediate": [
-          "Can Alice stand on that ladder?",
-          "Sam's grandmother has a fantastic laugh.",
-          "The last exam was absolutely tragic.",
-          "Pack an apple and a ham sandwich.",
-          "The manager canceled half the classes.",
-          "Dan actually ran back to the cabin."
-        ],
-        "advanced": [
-          "The ambassador's lavish banquet was a catastrophe.",
-          "Angry passengers abandoned the stranded tram.",
-          "Practically every candidate lacked a tangible plan.",
-          "A fanatical mathematician analyzed the anagram.",
-          "The bankrupt landlord adamantly attacked the tax.",
-          "Her transatlantic accent has dramatically vanished."
-        ]
-      }
-    },
-    {
-      "id": "sound-ah",
-      "group": "sounds",
-      "name": "Open O",
-      "blurb": "hot, job, father",
-      "symbol": "ɑ",
-      "phrases": {
-        "beginner": [
-          "It's a hot pot.",
-          "Stop the clock.",
-          "Not a problem, Bob.",
-          "My job is odd.",
-          "A lot of rocks.",
-          "Lock the top box."
-        ],
-        "intermediate": [
-          "John's got a lot of documents.",
-          "The doctor's office opens at one o'clock.",
-          "Probably not, but it's possible.",
-          "Tom dropped his wallet in the parking lot.",
-          "The shop was robbed around five o'clock.",
-          "Honestly, I forgot about the concert."
-        ],
-        "advanced": [
-          "The economist's hypothesis was quite controversial.",
-          "Monstrous obstacles blocked the colossal project.",
-          "A prominent scholar adopted a novel policy.",
-          "Modern technology constantly conquers common problems.",
-          "The psychologist's response was a solid compromise.",
-          "Bob's hobby is collecting exotic tropical rocks."
-        ]
-      }
-    },
-    {
-      "id": "sound-schwa",
-      "group": "sounds",
-      "name": "Schwa",
-      "blurb": "about, banana, today",
-      "symbol": "ə",
-      "phrases": {
-        "beginner": [
-          "A banana, please.",
-          "About a minute ago.",
-          "Today and tomorrow.",
-          "A cup of tea.",
-          "The sofa is comfortable.",
-          "Again and again."
-        ],
-        "intermediate": [
-          "The official decision was a surprise.",
-          "A photographer took a picture of us.",
-          "Can you recommend a comfortable hotel?",
-          "The support was better than expected.",
-          "Tomorrow's lesson is about American history.",
-          "A professional musician performed for an hour."
-        ],
-        "advanced": [
-          "The president's proposal astonished the opposition.",
-          "A considerable percentage of applicants succeeded.",
-          "Apparently, the phenomenon is fundamentally unpredictable.",
-          "Occasional confusion is a natural reaction.",
-          "The pharmacist's assistant memorized the alphabetical catalog.",
-          "An economical alternative appealed to the committee."
-        ]
-      }
-    },
-    {
       "id": "sound-w",
       "group": "sounds",
-      "name": "W",
+      "name": "w in we",
       "blurb": "we, quick, always",
       "symbol": "w",
+      "section": "Consonants",
       "phrases": {
         "beginner": [
           "We want water.",
@@ -1802,11 +2255,46 @@
       }
     },
     {
+      "id": "sound-h",
+      "group": "sounds",
+      "section": "Consonants",
+      "name": "h in hat",
+      "blurb": "hat, ahead, behind",
+      "symbol": "h",
+      "phrases": {
+        "beginner": [
+          "Happy holidays!",
+          "Hold my hand.",
+          "Who's here?",
+          "Hurry home!",
+          "How's your head?",
+          "He's behind you."
+        ],
+        "intermediate": [
+          "Harry, go ahead and help yourself.",
+          "Her husband is in the hospital.",
+          "Behind the house, he has a horse.",
+          "How high is that hill?",
+          "I heard her humming a happy song.",
+          "Perhaps he's behind the hotel."
+        ],
+        "advanced": [
+          "Perhaps Harry's hungry, so he headed home ahead of us.",
+          "Her husband has a habit of humming behind the house.",
+          "The hotel manager behaved horribly when we asked for help.",
+          "Hey, who left half a ham sandwich behind the heater?",
+          "Unhappy hikers hurried down the hill behind the old hut.",
+          "Hannah held her hat with one hand and hugged her husband."
+        ]
+      }
+    },
+    {
       "id": "sound-ng",
       "group": "sounds",
-      "name": "NG",
+      "name": "ng in sing",
       "blurb": "sing, thinking, long",
       "symbol": "ŋ",
+      "section": "Consonants",
       "phrases": {
         "beginner": [
           "Good morning, king!",
@@ -1835,68 +2323,70 @@
       }
     },
     {
-      "id": "sound-i",
+      "id": "sound-flap-t",
       "group": "sounds",
-      "name": "Short I",
-      "blurb": "sit, busy, women",
-      "symbol": "ɪ",
+      "name": "t in water",
+      "blurb": "water, better, city",
+      "symbol": "ɾ",
+      "section": "American T",
       "phrases": {
         "beginner": [
-          "Sit with him.",
-          "It's a big ship.",
-          "Six quick minutes.",
-          "Is this milk?",
-          "A busy city.",
-          "Fish and chips."
+          "A bottle of water.",
+          "What a pretty city!",
+          "Get it at eight.",
+          "A little bit better.",
+          "Not at all, buddy.",
+          "Put it on the table."
         ],
         "intermediate": [
-          "Which women live in this building?",
-          "His sister's business is in Chicago.",
-          "This is a bit difficult to fix.",
-          "Bill didn't finish his dinner quickly.",
-          "The children will visit in the winter.",
-          "Give him the tickets in the kitchen."
+          "Peter got a lot of letters.",
+          "I ought to visit my daughter later.",
+          "What a beautiful Saturday for a party!",
+          "Could you write it out a bit bigger?",
+          "The meeting started thirty minutes late.",
+          "Betty bought a better computer battery."
         ],
         "advanced": [
-          "The physician's prescription was ridiculously illegible.",
-          "Six simplistic statistics intrigued the committee.",
-          "A vigilant citizen witnessed the incident.",
-          "His initial criticism diminished considerably.",
-          "Deliberately mischievous children interrupted the minister.",
-          "Its distinctive rhythm instills vivid imagery."
+          "The editor noted a pattern of fatalities.",
+          "Pretty little cottages dotted the waterfront.",
+          "Out-of-date data creates critical liabilities.",
+          "Competitors capitalize on outdated metadata.",
+          "Whatever it is, get it out of the attic.",
+          "A veteran writer waited at the auditorium."
         ]
       }
     },
     {
-      "id": "sound-oo",
+      "id": "sound-stop-t",
       "group": "sounds",
-      "name": "Short OO",
-      "blurb": "good, could, put",
-      "symbol": "ʊ",
+      "name": "t in button",
+      "blurb": "button, mountain, right",
+      "symbol": "ʔ",
+      "section": "American T",
       "phrases": {
         "beginner": [
-          "A good book.",
-          "Look at my foot.",
-          "Could you cook?",
-          "Push, don't pull.",
-          "Good sugar cookies.",
-          "Would you look?"
+          "Press that button.",
+          "Not right now.",
+          "A white kitten.",
+          "What's that mountain?",
+          "I can't eat that.",
+          "Sit right there."
         ],
         "intermediate": [
-          "Could you put the sugar back?",
-          "She took a good look at the bush.",
-          "The woman should push the wooden door.",
-          "I would if I could, honestly.",
-          "The butcher's cookbook looks really good.",
-          "He stood by the brook and shook."
+          "I've forgotten the curtains again.",
+          "Britain's written rules are important.",
+          "The fountain sits right outside the apartment.",
+          "He hasn't eaten cotton candy yet.",
+          "Put that hat back, Martin.",
+          "Wait, that didn't quite fit."
         ],
         "advanced": [
-          "She mistook the bully's crooked look for goodwill.",
-          "The woolen cushion couldn't withstand the bushfire.",
-          "Understandably, the pudding should be cooked fully.",
-          "Brooklyn's neighborhoods wouldn't overlook a good butcher.",
-          "A crooked rookie took the bulletproof hood.",
-          "The childhood cookbook stood on a wooden footstool."
+          "The mittens were rotten and frostbitten.",
+          "Latin scholars certainly shortened the sentence.",
+          "An important patent went straight to Manhattan.",
+          "The frightened kitten bit that outstretched hand.",
+          "Fortunately, that department wasn't threatened outright.",
+          "It's not what that accountant meant, apparently."
         ]
       }
     }

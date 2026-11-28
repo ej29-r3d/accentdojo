@@ -13,7 +13,7 @@ import tempfile
 
 import numpy as np
 
-log = logging.getLogger("kole.audio")
+log = logging.getLogger("accentdojo.audio")
 
 SR = 16000
 # MP4 from iOS Safari needs a seekable input, so the upload goes to a RAM-backed temp
@@ -28,7 +28,7 @@ class DecodeError(RuntimeError):
 
 def decode(data: bytes, max_seconds: float | None = None) -> np.ndarray:
     """``max_seconds`` stops ffmpeg there, so a small file cannot expand into hours of samples."""
-    fd, path = tempfile.mkstemp(prefix="kole-", dir=_TMP_DIR)
+    fd, path = tempfile.mkstemp(prefix="accentdojo-", dir=_TMP_DIR)
     try:
         with os.fdopen(fd, "wb") as f:
             f.write(data)

@@ -67,7 +67,7 @@ const ICONS: Record<string, LucideIcon> = {
   problems: Wrench,
 }
 
-function TopicList({ topics }: { topics: Topic[] }) {
+function TopicList({ topics, blurbs = true }: { topics: Topic[]; blurbs?: boolean }) {
   return (
     <ul className="divide-y overflow-hidden rounded-2xl border md:grid md:grid-cols-2 md:gap-3 md:divide-y-0 md:overflow-visible md:rounded-none md:border-0 lg:grid-cols-3">
       {topics.map((t) => (
@@ -79,7 +79,7 @@ function TopicList({ topics }: { topics: Topic[] }) {
             <TopicIcon topic={t} />
             <span className="min-w-0 flex-1">
               <span className="block text-[17px] font-medium tracking-tight">{t.name}</span>
-              <span className="mt-0.5 block text-sm text-muted-foreground">{t.blurb}</span>
+              {blurbs && <span className="mt-0.5 block text-sm text-muted-foreground">{t.blurb}</span>}
             </span>
             <ChevronRight className="size-4 shrink-0 text-score" />
           </Link>
@@ -99,6 +99,27 @@ function TopicIcon({ topic }: { topic: Topic }) {
   )
 }
 
+/** Sounds are listed under their section headings (Vowels, Diphthongs, ...), in file order. */
+function SectionedList({ topics }: { topics: Topic[] }) {
+  const sections: [string, Topic[]][] = []
+  for (const t of topics) {
+    const name = t.section ?? "Other"
+    const last = sections.at(-1)
+    if (last && last[0] === name) last[1].push(t)
+    else sections.push([name, [t]])
+  }
+  return (
+    <div className="space-y-10">
+      {sections.map(([name, items]) => (
+        <section key={name}>
+          <h2 className="mb-3 text-xl font-semibold tracking-tight">{name}</h2>
+          <TopicList topics={items} blurbs={false} />
+        </section>
+      ))}
+    </div>
+  )
+}
+
 export function Topics({ group }: { group: TopicGroup }) {
   const { data: topics } = useLoad(() => api.listTopics(), [])
   return (
@@ -109,7 +130,13 @@ export function Topics({ group }: { group: TopicGroup }) {
           <h1 className="text-4xl font-semibold tracking-[-0.04em] md:text-5xl">{GROUP[group].title}</h1>
         </div>
         <div className="mt-8">
-          {!topics ? <Skeleton rows={6} /> : <TopicList topics={topics.filter((t) => t.group === group)} />}
+          {!topics ? (
+            <Skeleton rows={6} />
+          ) : group === "sounds" ? (
+            <SectionedList topics={topics.filter((t) => t.group === group)} />
+          ) : (
+            <TopicList topics={topics.filter((t) => t.group === group)} />
+          )}
         </div>
       </Page>
     </>

@@ -34,8 +34,8 @@ function usePersisted<T extends string>(key: string, allowed: readonly T[], fall
 }
 
 export function PrefsProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = usePersisted<Theme>("kole.theme", ["dark", "light", "system"], "dark")
-  const [level, setLevel] = usePersisted<Level>("kole.level", LEVELS, "beginner")
+  const [theme, setTheme] = usePersisted<Theme>("accentdojo.theme", ["dark", "light", "system"], "dark")
+  const [level, setLevel] = usePersisted<Level>("accentdojo.level", LEVELS, "beginner")
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-color-scheme: dark)")

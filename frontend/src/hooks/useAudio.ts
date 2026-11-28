@@ -6,7 +6,10 @@ export interface Segment {
   end: number
 }
 
-/** One shared <audio> element; only one clip plays at a time. Optionally plays just a segment. */
+/** Playback rate of the "Slow" buttons. The browser keeps the pitch, so the voice only stretches. */
+export const SLOW_RATE = 0.7
+
+/** One shared <audio> element; only one clip plays at a time. Optionally plays just a segment, or slower. */
 export function useAudio() {
   const el = useRef<HTMLAudioElement | null>(null)
   const [playing, setPlaying] = useState<string | null>(null)
@@ -45,7 +48,7 @@ export function useAudio() {
   }, [])
 
   const toggle = useCallback(
-    async (key: string, url: string, seg?: Segment) => {
+    async (key: string, url: string, seg?: Segment, rate = 1) => {
       const a = el.current
       if (!a) return
       if (playing === key) return stop()
@@ -56,6 +59,10 @@ export function useAudio() {
       if (a.src !== new URL(url, location.href).href) a.src = url
       if (seg && a.readyState < 1) await new Promise((r) => a.addEventListener("loadedmetadata", r, { once: true }))
       a.currentTime = seg ? seg.start : 0
+      // Loading a new source resets playbackRate to defaultPlaybackRate, so set both.
+      a.defaultPlaybackRate = rate
+      a.playbackRate = rate
+      a.preservesPitch = true
       setPlaying(key)
       try {
         await a.play()

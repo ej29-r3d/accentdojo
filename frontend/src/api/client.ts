@@ -5,7 +5,7 @@ import { httpBackend } from "./http"
 import { mockBackend } from "./mock"
 import type { Attempt, Level, Phrase, ReferenceAudio, ScoreResult, Topic } from "./types"
 
-export interface KoleApi {
+export interface AccentDojoApi {
   listTopics(): Promise<Topic[]>
   getTopic(topicId: string): Promise<Topic>
   listPhrases(topicId: string, level: Level): Promise<Phrase[]>
@@ -16,8 +16,8 @@ export interface KoleApi {
   scoreAttempt(phrase: Phrase, attempt: Attempt): Promise<ScoreResult>
 }
 
-const backend: KoleApi = import.meta.env.VITE_API === "mock" ? mockBackend : httpBackend
+const backend: AccentDojoApi = import.meta.env.VITE_API === "mock" ? mockBackend : httpBackend
 
-export const api: KoleApi = backend
+export const api: AccentDojoApi = backend
 
 export * from "./types"

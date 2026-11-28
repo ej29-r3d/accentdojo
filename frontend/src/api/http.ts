@@ -1,11 +1,11 @@
-// KoleApi over HTTP: the FastAPI backend in backend/, same origin under /api
+// AccentDojoApi over HTTP: the FastAPI backend in backend/, same origin under /api
 // (Vite proxies /api to it in dev). Shapes follow spec/openapi.yaml.
 
-import type { KoleApi } from "./client"
+import type { AccentDojoApi } from "./client"
 import { ApiError, type Attempt, type Level, type Phrase, type ReferenceAudio, type ScoreResult, type Topic } from "./types"
 
 const BASE = "/api"
-export const UNAUTHORIZED = "kole:unauthorized"
+export const UNAUTHORIZED = "accentdojo:unauthorized"
 
 /** Is a password needed, and does this browser already have a session? */
 export async function getSession(): Promise<{ required: boolean; authenticated: boolean }> {
@@ -63,7 +63,7 @@ function extension(type: string) {
   return "webm"
 }
 
-export const httpBackend: KoleApi = {
+export const httpBackend: AccentDojoApi = {
   listTopics: () => call<Topic[]>("/topics"),
   getTopic: (id) => call<Topic>(`/topics/${enc(id)}`),
   listPhrases: (topicId, level: Level) => call<Phrase[]>(`/topics/${enc(topicId)}/phrases${q({ level })}`),

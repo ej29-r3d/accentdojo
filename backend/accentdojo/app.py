@@ -1,4 +1,4 @@
-"""AccentDojo API (spec/openapi.yaml). One process, one inference at a time, models warmed at startup."""
+"""Accent Dojo API (spec/openapi.yaml). One process, one inference at a time, models warmed at startup."""
 
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ from . import audio, content, scoring
 from .scoring import Scorer
 from .tts import Tts
 
-log = logging.getLogger("kole")
+log = logging.getLogger("accentdojo")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 
 MAX_UPLOAD_BYTES = 2 * 1024 * 1024
@@ -33,9 +33,9 @@ MAX_UPLOAD_BYTES = 2 * 1024 * 1024
 #: plus multipart framing, and a login body that only ever holds one short password.
 MAX_BODY_BYTES = MAX_UPLOAD_BYTES + 1024 * 1024
 MAX_LOGIN_BODY_BYTES = 4096
-#: Off by default: a recording is someone's voice. KOLE_KEEP_TAKES=1 keeps every take and its
+#: Off by default: a recording is someone's voice. ACCENTDOJO_KEEP_TAKES=1 keeps every take and its
 #: result here to calibrate the detectors. Git-ignored, never committed.
-KEEP_TAKES = os.environ.get("KOLE_KEEP_TAKES") == "1"
+KEEP_TAKES = os.environ.get("ACCENTDOJO_KEEP_TAKES") == "1"
 TAKES_DIR = Path(__file__).resolve().parents[1] / ".cache" / "takes"
 MAX_SECONDS = 15.0
 #: Requests allowed to wait for the inference lane before new ones get 503.
@@ -112,22 +112,22 @@ engine: Engine
 async def lifespan(app: FastAPI):
     global engine
     if not PASSWORD:
-        log.warning("KOLE_PASSWORD is not set: running WITHOUT a password. Fine on localhost; "
+        log.warning("ACCENTDOJO_PASSWORD is not set: running WITHOUT a password. Fine on localhost; "
                     "set it before exposing this port to a network.")
     engine = Engine()
     threading.Thread(target=engine.warm, name="warm", daemon=True).start()
     yield
 
 
-app = FastAPI(title="AccentDojo API", version="0.1.0", lifespan=lifespan, docs_url="/api/docs",
+app = FastAPI(title="Accent Dojo API", version="0.1.0", lifespan=lifespan, docs_url="/api/docs",
               openapi_url="/api/openapi.json")
 
 # ---------------------------------------------------------------------------
-# Shared password (public deployment). Off when KOLE_PASSWORD is unset.
+# Shared password (public deployment). Off when ACCENTDOJO_PASSWORD is unset.
 # ---------------------------------------------------------------------------
 
-PASSWORD = os.environ.get("KOLE_PASSWORD", "")
-COOKIE = "kole_session"
+PASSWORD = os.environ.get("ACCENTDOJO_PASSWORD", "")
+COOKIE = "accentdojo_session"
 OPEN_PATHS = {"/api/health", "/api/session", "/api/login"}
 #: Wrong passwords are answered one at a time, this far apart, so guessing is slow for everyone
 #: while the right password is never refused (one global queue: a shared password has no users).
@@ -140,7 +140,7 @@ _next_fail = 0.0
 
 def _token() -> str:
     """Session cookie value: derived from the password, so changing it signs everyone out."""
-    return hmac.new(PASSWORD.encode(), b"kole-session-v1", hashlib.sha256).hexdigest()
+    return hmac.new(PASSWORD.encode(), b"accentdojo-session-v1", hashlib.sha256).hexdigest()
 
 
 def _authed(request: Request) -> bool:
@@ -377,7 +377,7 @@ def score_attempt(phrase_id: str, audio_file: UploadFile = File(..., alias="audi
 # The production build of the frontend (frontend/dist), served from the same origin.
 # ---------------------------------------------------------------------------
 
-DIST = Path(os.environ.get("KOLE_DIST", Path(__file__).resolve().parents[2] / "frontend" / "dist")).resolve()
+DIST = Path(os.environ.get("ACCENTDOJO_DIST", Path(__file__).resolve().parents[2] / "frontend" / "dist")).resolve()
 
 
 @app.api_route("/{path:path}", methods=["GET", "HEAD"], include_in_schema=False)

@@ -1,11 +1,11 @@
-"""Pronunciation scoring: OpenPronounce 1.x (AGPL-3.0-or-later) behind kole's own result model.
+"""Pronunciation scoring: OpenPronounce 1.x (AGPL-3.0-or-later) behind Accent Dojo's own result model.
 
 OpenPronounce runs one wav2vec2 phone-recogniser pass, force-aligns the expected phones,
 computes GOP features and applies its models trained on speechocean762 human ratings.
 It is called with no TTS reference, no word transcription and no prosody contours, so
 only the phone recogniser is loaded and nothing leaves the machine.
 
-kole maps its output onto the contract in spec/openapi.yaml:
+Accent Dojo maps its output onto the contract in spec/openapi.yaml:
 
 - quality gates -> ``unscorable`` with too_short / too_quiet / noisy / off_phrase;
 - utterance ``total`` (0-100 on the raters' scale; a clean adult reading is about 80)
@@ -15,7 +15,7 @@ kole maps its output onto the contract in spec/openapi.yaml:
 - every word the word model doubts -> ``words`` with a severity: ``major`` from the
   model's own error zone, ``minor`` below it but well above anything a clean native-like
   reading produces; missing words are always major;
-- the detectors in kole.analysis add their own findings per word (``kinds``: sound,
+- the detectors in accentdojo.analysis add their own findings per word (``kinds``: sound,
   swallowed, stress; ``unclear`` when only the word model doubts it) and per take
   (``pauses``, ``pace``, ``intonation``), and each finding takes points off ``score``.
 """
@@ -30,9 +30,9 @@ import numpy as np
 from . import analysis, g2p
 from .content import Phrase
 
-log = logging.getLogger("kole.scoring")
+log = logging.getLogger("accentdojo.scoring")
 
-THREADS = int(os.environ.get("KOLE_TORCH_THREADS", "6"))
+THREADS = int(os.environ.get("ACCENTDOJO_TORCH_THREADS", "6"))
 SR = 16000
 
 #: The raters' scale tops out around 80-85 even for clean native speech, so the shown score
@@ -125,7 +125,7 @@ class Scorer:
         if any(r.startswith("speech that is not in the sentence") for r in result.get("reasons", [])):
             return unscorable("off_phrase")
 
-        # Detectors (kole.analysis): strict sounds, swallowed, stress, pauses, pace, intonation.
+        # Detectors (accentdojo.analysis): strict sounds, swallowed, stress, pauses, pace, intonation.
         take = analysis.measure(phrase, wav, reports)
         found = analysis.compare(phrase, take, (ref_info or {}).get("measure"))
         by_index = {w["index"]: w for w in found["words"]}

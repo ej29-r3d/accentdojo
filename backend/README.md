@@ -1,4 +1,4 @@
-# AccentDojo backend
+# Accent Dojo backend
 
 FastAPI service implementing `spec/openapi.yaml`: topics and phrases from
 `content/topics.json`, a Kokoro reference voice, and pronunciation scoring with
@@ -25,13 +25,13 @@ Needs `ffmpeg` on PATH.
 
 | File | Role |
 |---|---|
-| `kole/app.py` | Routes, error shapes (`{code, message}`), inference lane, warm-up, pre-rendering of every built-in phrase |
-| `kole/content.py` | Loads topics; typed phrases (`custom.<base64url(text)>` ids, max 15 words / 140 chars) |
-| `kole/g2p.py` | Display words and phonemes from OpenPronounce's CMUdict mapping, plus stress marks |
-| `kole/tts.py` | Kokoro `af_heart`, WAV cache in `.cache/audio/` keyed by engine, voice, speed and text |
-| `kole/audio.py` | ffmpeg decode to 16 kHz mono through a `/dev/shm` temp file, deleted at once |
-| `kole/scoring.py` | Quality gates, OpenPronounce call, reference-relative score, band, penalties |
-| `kole/analysis.py` | Detectors compared against the reference clip: sounds, swallowed words, stress, pauses, pace, intonation |
+| `accentdojo/app.py` | Routes, error shapes (`{code, message}`), inference lane, warm-up, pre-rendering of every built-in phrase |
+| `accentdojo/content.py` | Loads topics; typed phrases (`custom.<base64url(text)>` ids, max 15 words / 140 chars) |
+| `accentdojo/g2p.py` | Display words and phonemes from OpenPronounce's CMUdict mapping, plus stress marks |
+| `accentdojo/tts.py` | Kokoro `af_heart`, WAV cache in `.cache/audio/` keyed by engine, voice, speed and text |
+| `accentdojo/audio.py` | ffmpeg decode to 16 kHz mono through a `/dev/shm` temp file, deleted at once |
+| `accentdojo/scoring.py` | Quality gates, OpenPronounce call, reference-relative score, band, penalties |
+| `accentdojo/analysis.py` | Detectors compared against the reference clip: sounds, swallowed words, stress, pauses, pace, intonation |
 
 ## Scoring
 
@@ -56,7 +56,7 @@ machine; no gTTS.
   or missing (`major`), weakest first, never dictionary guesses. On Kokoro's readings of
   those 54 phrases no word goes above 0.07; OpenPronounce's own error threshold is 0.354.
   Per-sound probabilities are too noisy to use for this (clean Kokoro speech reaches 0.84).
-- **Detectors** (`kole/analysis.py`): strict sounds, swallowed words, stress, long pauses,
+- **Detectors** (`accentdojo/analysis.py`): strict sounds, swallowed words, stress, long pauses,
   slow pace, flat intonation, plus word-aligned pitch curves. Each compares the take with the
   same measurements on the reference clip (cached with the word times, `REF_VERSION`).
   Detected problems take points off the shown score (`PENALTY`: major word 8, minor 3, pause 5, slow 8, flat 5; capped at 50), and the band follows the shown score.
@@ -67,7 +67,7 @@ machine; no gTTS.
   errors made by hand with Kokoro, not scripted in this repo (respellings and `[word](/ipa/)` stress overrides) were caught:
   w→v, ɪ→i, ð→z, ʌ→æ, wrong stress on recommend / revisit / allergic / penicillin, a missing
   word, a 0.9 s pause, speed 0.55. Missed: "I sink" (the recogniser itself heard /θ/).
-- **Takes** are discarded after scoring. With `KOLE_KEEP_TAKES=1` each take is saved with
+- **Takes** are discarded after scoring. With `ACCENTDOJO_KEEP_TAKES=1` each take is saved with
   its result in `.cache/takes/` (git-ignored) for tuning the detectors.
 - **Different phrase.** Besides OpenPronounce's own alignment check, a take whose relative
   score is below 18 (`OFF_PHRASE_RELATIVE`, before penalties) is `off_phrase`, not a score.
@@ -86,7 +86,7 @@ and dropped words were.
 ## Measurements (one home server, 2026-11-23)
 
 12 cores, no GPU, `torch.set_num_threads(6)`, taken when the content was 54 phrases (it is
-1,200 now; the figures have not been re-run on the full set). Those phrases are 1.4-3.5 s of audio
+1,452 now; the figures have not been re-run on the full set). Those phrases are 1.4-3.5 s of audio
 (median 2.2 s). Run `PYTHONPATH=. .venv/bin/python scripts/bench.py` to repeat.
 
 | Step | p50 | p95 | max |
@@ -106,7 +106,7 @@ different phrase all come back unscorable with the expected reason.
 
 ## Startup and cache
 
-Every built-in phrase (1,200) is pre-rendered at startup: Kokoro clip, word times, reference
+Every built-in phrase (1,452) is pre-rendered at startup: Kokoro clip, word times, reference
 total and detector measurements, about 1.7 s per phrase, so the first start after new
 content takes about 35 minutes (measured on a fresh install, 12 cores) while the API already serves requests. Everything lands in
 `.cache/audio/` and later starts take seconds. Bumping `scoring.REF_VERSION` recomputes the
@@ -116,14 +116,14 @@ measurements (not the clips).
 
 One process serves both the API and `frontend/dist` (built with `npm run build`). Put an
 HTTPS proxy in front for anything beyond localhost: browsers need HTTPS for the microphone.
-`deploy/kole-backend.service` is an example systemd user unit.
+`deploy/accentdojo-backend.service` is an example systemd user unit.
 
-- **Password.** With `KOLE_PASSWORD` set, every `/api` route except `health`, `session` and
-  `login` needs the `kole_session` cookie, set by `POST /api/login`. The cookie is an HMAC of
-  the password, so changing the password signs everyone out. Without `KOLE_PASSWORD` the gate
+- **Password.** With `ACCENTDOJO_PASSWORD` set, every `/api` route except `health`, `session` and
+  `login` needs the `accentdojo_session` cookie, set by `POST /api/login`. The cookie is an HMAC of
+  the password, so changing the password signs everyone out. Without `ACCENTDOJO_PASSWORD` the gate
   is off and a warning is logged at startup.
 - **Guessing.** Wrong passwords are answered one at a time, one second apart; a wrong guess
   queued more than 10 s ahead gets `429`. The right password is never refused.
 - **Request size.** Bodies over 4 KB on `/api/login` and over 3 MB elsewhere get `413` before
   anything is buffered. Recordings are capped at 2 MB and 15 s; ffmpeg stops decoding at 16 s.
-- **Recordings** are discarded after scoring unless `KOLE_KEEP_TAKES=1`.
+- **Recordings** are discarded after scoring unless `ACCENTDOJO_KEEP_TAKES=1`.

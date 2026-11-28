@@ -1,4 +1,4 @@
-"""False-alarm check for kole.analysis: clean readings by other Kokoro voices vs af_heart.
+"""False-alarm check for accentdojo.analysis: clean readings by other Kokoro voices vs af_heart.
 
     PYTHONPATH=. .venv/bin/python scripts/calibrate.py [n_phrases]
 """
@@ -8,9 +8,9 @@ import time
 
 import numpy as np
 
-from kole import analysis, audio, content
-from kole.scoring import Scorer
-from kole.tts import Tts
+from accentdojo import analysis, audio, content
+from accentdojo.scoring import Scorer
+from accentdojo.tts import Tts
 
 VOICES = ["am_michael", "am_adam", "af_bella", "af_nicole"]
 sc = Scorer(); sc.load()

@@ -11,7 +11,7 @@ import numpy as np
 import soundfile as sf
 
 ENGINE = "kokoro-82m-v1.0"
-VOICE = os.environ.get("KOLE_VOICE", "af_heart")  # American English
+VOICE = os.environ.get("ACCENTDOJO_VOICE", "af_heart")  # American English
 SPEED = 1.0
 SAMPLE_RATE = 24000
 DEFAULT_CACHE_DIR = Path(__file__).resolve().parents[1] / ".cache" / "audio"
@@ -19,7 +19,7 @@ DEFAULT_CACHE_DIR = Path(__file__).resolve().parents[1] / ".cache" / "audio"
 
 class Tts:
     def __init__(self, cache_dir: Path | None = None):
-        self.cache_dir = cache_dir or Path(os.environ.get("KOLE_AUDIO_CACHE", DEFAULT_CACHE_DIR))
+        self.cache_dir = cache_dir or Path(os.environ.get("ACCENTDOJO_AUDIO_CACHE", DEFAULT_CACHE_DIR))
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.pipeline = None
 

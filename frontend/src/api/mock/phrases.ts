@@ -7,6 +7,7 @@ export interface TopicSeed {
   name: string
   blurb: string
   symbol?: string
+  section?: string
   phrases: Record<Level, string[]>
 }
 

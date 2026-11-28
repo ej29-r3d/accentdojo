@@ -8,15 +8,15 @@ import wave
 import pytest
 from fastapi.testclient import TestClient
 
-from kole import app as app_module
-from kole import audio, content, g2p
-from kole.scoring import band_of, severity_of
+from accentdojo import app as app_module
+from accentdojo import audio, content, g2p
+from accentdojo.scoring import band_of, severity_of
 
 
 @pytest.fixture()
 def client(monkeypatch, tmp_path):
     monkeypatch.setattr(app_module.Engine, "warm", lambda self: None)
-    monkeypatch.setenv("KOLE_AUDIO_CACHE", str(tmp_path))
+    monkeypatch.setenv("ACCENTDOJO_AUDIO_CACHE", str(tmp_path))
     monkeypatch.setattr(app_module, "TAKES_DIR", tmp_path / "takes")
     monkeypatch.setattr(app_module, "KEEP_TAKES", False)
     with TestClient(app_module.app) as c:
@@ -28,6 +28,7 @@ def test_topics_and_phrases(client):
     assert {"id", "group", "name", "blurb", "symbol", "counts"} <= topics[0].keys()
     assert {t["group"] for t in topics} == set(content.GROUPS)
     assert all(bool(t["symbol"]) == (t["group"] == "sounds") for t in topics)
+    assert all(bool(t["section"]) == (t["group"] == "sounds") for t in topics)
     assert set(topics[0]["counts"]) == set(content.LEVELS) == {"beginner", "intermediate", "advanced"}
     t = topics[0]["id"]
     phrases = client.get(f"/api/topics/{t}/phrases", params={"level": "beginner"}).json()
@@ -170,10 +171,10 @@ def test_password_gate(client, monkeypatch):
     assert client.get("/api/health").status_code == 200
     assert client.post("/api/login", json={"password": "nope"}).status_code == 401
     ok = client.post("/api/login", json={"password": "open sesame"})
-    assert ok.status_code == 200 and "kole_session" in ok.headers["set-cookie"]
+    assert ok.status_code == 200 and "accentdojo_session" in ok.headers["set-cookie"]
     # A cookie that is not ASCII is refused, not a crash.
-    assert client.get("/api/topics", headers={"cookie": b"kole_session=\xff\xfe"}).status_code == 401
-    client.cookies.set("kole_session", app_module._token())
+    assert client.get("/api/topics", headers={"cookie": b"accentdojo_session=\xff\xfe"}).status_code == 401
+    client.cookies.set("accentdojo_session", app_module._token())
     assert client.get("/api/topics").status_code == 200
     assert client.get("/api/session").json()["authenticated"] is True
 
@@ -205,7 +206,7 @@ def test_spa_fallback(client, monkeypatch, tmp_path):
     monkeypatch.setattr(app_module, "DIST", tmp_path)
     assert client.get("/practice/topic/travel/0").text == "<html>app</html>"
     assert client.get("/assets/a.js").headers["cache-control"].endswith("immutable")
-    assert client.get("/../backend/kole/app.py").text == "<html>app</html>"
+    assert client.get("/../backend/accentdojo/app.py").text == "<html>app</html>"
     assert client.get("/api/nope").status_code == 404
     assert client.get("/assets/gone.js").status_code == 404
     assert client.head("/").status_code == 200

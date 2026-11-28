@@ -12,7 +12,7 @@ from . import g2p
 
 LEVELS = ("beginner", "intermediate", "advanced")
 GROUPS = ("situations", "pairs", "sounds")
-CONTENT_FILE = Path(os.environ.get("KOLE_CONTENT", Path(__file__).resolve().parents[2] / "content" / "topics.json"))
+CONTENT_FILE = Path(os.environ.get("ACCENTDOJO_CONTENT", Path(__file__).resolve().parents[2] / "content" / "topics.json"))
 
 #: Typed phrases above this many words are refused: the scorer was trained on 2-12 word sentences.
 MAX_CUSTOM_WORDS = 15
@@ -50,6 +50,8 @@ class Topic:
     group: str
     #: IPA symbol shown beside a sound topic; None elsewhere.
     symbol: str | None
+    #: Heading a sound topic is listed under (Vowels, Diphthongs, ...); None elsewhere.
+    section: str | None
     phrases: dict[str, tuple[Phrase, ...]]
 
     def to_json(self) -> dict:
@@ -59,6 +61,7 @@ class Topic:
             "name": self.name,
             "blurb": self.blurb,
             "symbol": self.symbol,
+            "section": self.section,
             "counts": {level: len(self.phrases[level]) for level in LEVELS},
         }
 
@@ -77,7 +80,7 @@ class Content:
                     items.append(p)
                     self.phrases[p.id] = p
                 by_level[level] = tuple(items)
-            self.topics[t["id"]] = Topic(t["id"], t["name"], t["blurb"], t.get("group", "situations"), t.get("symbol"), by_level)
+            self.topics[t["id"]] = Topic(t["id"], t["name"], t["blurb"], t.get("group", "situations"), t.get("symbol"), t.get("section"), by_level)
 
     def phrase(self, phrase_id: str) -> Phrase | None:
         if phrase_id.startswith(CUSTOM_PREFIX):
