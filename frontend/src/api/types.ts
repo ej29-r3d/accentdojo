@@ -22,10 +22,21 @@ export interface Topic {
   symbol: string | null
   /** Heading a sound topic is listed under (Vowels, Diphthongs, Vowels with R, Consonants, American T); null elsewhere. */
   section: string | null
+  /** How to make the sound (sound topics only; null elsewhere). */
+  guide: SoundGuide | null
   name: string
   blurb: string
   /** Number of phrases per level. */
   counts: Record<Level, number>
+}
+
+export interface SoundGuide {
+  /** Two or three plain sentences on lips, tongue and voice. */
+  how: string
+  /** The most common mistake, with an example. */
+  tip: string
+  /** Mouth diagram, served by the frontend, with its credit line. */
+  diagram?: { src: string; credit: string }
 }
 
 export interface Word {

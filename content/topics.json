@@ -1445,6 +1445,14 @@
       "name": "ee in see",
       "blurb": "see, keep, people",
       "symbol": "i",
+      "guide": {
+        "how": "Spread your lips a little, as in a small smile. Raise the front of your tongue high, close to the roof of your mouth. Make the sound long.",
+        "tip": "Don't cut it short: seat is longer than sit.",
+        "diagram": {
+          "src": "/diagrams/sound-ee.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Green tea, please.",
@@ -1479,6 +1487,14 @@
       "blurb": "sit, busy, women",
       "symbol": "ɪ",
       "section": "Vowels",
+      "guide": {
+        "how": "Relax your lips and jaw. Keep your tongue high, but a little lower and further back than for ee. Keep the sound short.",
+        "tip": "Don't say ee: sit, not seat.",
+        "diagram": {
+          "src": "/diagrams/sound-i.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Sit with him.",
@@ -1513,6 +1529,14 @@
       "name": "e in bed",
       "blurb": "bed, said, friend",
       "symbol": "ɛ",
+      "guide": {
+        "how": "Open your mouth a little more than for i in sit. Keep the front of your tongue in the middle and your lips relaxed. Keep it short.",
+        "tip": "Don't slide into ay: bed, not bayd.",
+        "diagram": {
+          "src": "/diagrams/sound-eh.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Get some rest.",
@@ -1547,6 +1571,14 @@
       "blurb": "cat, hand, after",
       "symbol": "æ",
       "section": "Vowels",
+      "guide": {
+        "how": "Drop your jaw wide open and spread your lips. Keep your tongue low and flat, with the tip behind your bottom teeth.",
+        "tip": "Open wider than for e in bed: bad and bed should sound different.",
+        "diagram": {
+          "src": "/diagrams/sound-ae.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "A black cat.",
@@ -1581,6 +1613,10 @@
       "name": "u in cup",
       "blurb": "cup, love, money",
       "symbol": "ʌ",
+      "guide": {
+        "how": "Relax your mouth and open it a little. Keep your tongue low and in the middle of your mouth. Make it short.",
+        "tip": "Don't round your lips or open too wide: cup, not cop or cap."
+      },
       "phrases": {
         "beginner": [
           "Come on, hurry up!",
@@ -1615,6 +1651,10 @@
       "blurb": "hot, job, father",
       "symbol": "ɑ",
       "section": "Vowels",
+      "guide": {
+        "how": "Open your jaw wide and relax your lips. Keep your tongue low and pulled back, as when a doctor asks you to say ah.",
+        "tip": "Don't round your lips: hot is an open ah, not an o."
+      },
       "phrases": {
         "beginner": [
           "It's a hot pot.",
@@ -1649,6 +1689,10 @@
       "blurb": "thought, walk, dog",
       "symbol": "ɔ",
       "section": "Vowels",
+      "guide": {
+        "how": "Open your jaw and round your lips a little. Keep your tongue low and back. Many Americans say it like o in hot, and both are fine.",
+        "tip": "Don't close it into oh: walk, not woke."
+      },
       "phrases": {
         "beginner": [
           "I saw a small dog.",
@@ -1683,6 +1727,14 @@
       "blurb": "good, could, put",
       "symbol": "ʊ",
       "section": "Vowels",
+      "guide": {
+        "how": "Round your lips loosely. Raise the back of your tongue, but not as high as for oo in food. Keep it short and relaxed.",
+        "tip": "Don't say the long oo: full, not fool.",
+        "diagram": {
+          "src": "/diagrams/sound-oo.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "A good book.",
@@ -1717,6 +1769,14 @@
       "name": "oo in food",
       "blurb": "food, blue, shoe",
       "symbol": "u",
+      "guide": {
+        "how": "Round your lips into a small, tight circle. Raise the back of your tongue high. Make the sound long.",
+        "tip": "Don't cut it short: fool is longer than full.",
+        "diagram": {
+          "src": "/diagrams/sound-ooo.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Two new shoes.",
@@ -1751,6 +1811,10 @@
       "blurb": "about, banana, today",
       "symbol": "ə",
       "section": "Vowels",
+      "guide": {
+        "how": "Relax your lips, jaw and tongue, and make a very short, quiet uh. It is only in syllables without stress.",
+        "tip": "Don't say the vowel the spelling shows: banana is buh-NA-nuh."
+      },
       "phrases": {
         "beginner": [
           "A banana, please.",
@@ -1785,6 +1849,10 @@
       "name": "ay in day",
       "blurb": "day, wait, great",
       "symbol": "eɪ",
+      "guide": {
+        "how": "Start with the e in bed and glide up toward ee. Your jaw closes a little as you go.",
+        "tip": "Glide all the way: late, not let."
+      },
       "phrases": {
         "beginner": [
           "Great day!",
@@ -1819,6 +1887,10 @@
       "name": "y in my",
       "blurb": "my, time, nice",
       "symbol": "aɪ",
+      "guide": {
+        "how": "Start with your jaw open, as in ah, and glide up toward ee. Your tongue moves from low to high.",
+        "tip": "Say both parts: time has a clear glide."
+      },
       "phrases": {
         "beginner": [
           "Nice try!",
@@ -1853,6 +1925,10 @@
       "name": "oy in boy",
       "blurb": "boy, coin, enjoy",
       "symbol": "ɔɪ",
+      "guide": {
+        "how": "Start with rounded lips and your tongue low and back, then glide toward ee as your lips spread.",
+        "tip": "Keep the start round: boy, not buy."
+      },
       "phrases": {
         "beginner": [
           "Toys for boys.",
@@ -1887,6 +1963,10 @@
       "name": "ow in now",
       "blurb": "now, house, about",
       "symbol": "aʊ",
+      "guide": {
+        "how": "Start with your jaw open, as in ah, then close it and round your lips toward oo.",
+        "tip": "Round your lips at the end: now, not nah."
+      },
       "phrases": {
         "beginner": [
           "How about now?",
@@ -1921,6 +2001,10 @@
       "name": "o in go",
       "blurb": "go, home, know",
       "symbol": "oʊ",
+      "guide": {
+        "how": "Start with rounded lips and round them a little more as you glide toward oo. Your lips move.",
+        "tip": "Don't hold one flat o: go glides toward oo."
+      },
       "phrases": {
         "beginner": [
           "Don't go alone.",
@@ -1955,6 +2039,10 @@
       "blurb": "her, bird, teacher",
       "symbol": "ɝ",
       "section": "Vowels with R",
+      "guide": {
+        "how": "Pull your tongue back and bunch it up, or lift the tip a little without touching anything. Round your lips slightly and hold the r for the whole vowel.",
+        "tip": "Don't put a vowel before the r: her is one sound."
+      },
       "phrases": {
         "beginner": [
           "Her first birthday.",
@@ -1989,6 +2077,10 @@
       "name": "ar in car",
       "blurb": "car, start, party",
       "symbol": "ɑɹ",
+      "guide": {
+        "how": "Start with an open ah, then move into r: pull your tongue back and up without touching the roof of your mouth.",
+        "tip": "Say the r: car ends with a clear r."
+      },
       "phrases": {
         "beginner": [
           "Start the car.",
@@ -2023,6 +2115,10 @@
       "name": "or in more",
       "blurb": "more, door, story",
       "symbol": "ɔɹ",
+      "guide": {
+        "how": "Start with rounded lips, as in o, then pull your tongue back into r.",
+        "tip": "Say the r: more, not maw."
+      },
       "phrases": {
         "beginner": [
           "Four more.",
@@ -2057,6 +2153,10 @@
       "name": "air in care",
       "blurb": "care, where, there",
       "symbol": "ɛɹ",
+      "guide": {
+        "how": "Start with the e in bed, then pull your tongue back into r.",
+        "tip": "Don't add ee or ay: care, not kay-er."
+      },
       "phrases": {
         "beginner": [
           "Where's the chair?",
@@ -2091,6 +2191,10 @@
       "name": "ear in near",
       "blurb": "near, here, year",
       "symbol": "ɪɹ",
+      "guide": {
+        "how": "Start close to ee, then pull your tongue back into r.",
+        "tip": "Keep it one syllable: near, not nee-ya."
+      },
       "phrases": {
         "beginner": [
           "Come here, dear.",
@@ -2125,6 +2229,14 @@
       "blurb": "pen, happy, stop",
       "symbol": "p",
       "section": "Consonants",
+      "guide": {
+        "how": "Close your lips, let the air build up, then open them with a puff. Hold your hand in front of your mouth and you can feel it.",
+        "tip": "Add the puff and keep your voice off: pen, not Ben.",
+        "diagram": {
+          "src": "/diagrams/sound-p.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Pass the pepper, please.",
@@ -2159,6 +2271,14 @@
       "blurb": "big, rabbit, job",
       "symbol": "b",
       "section": "Consonants",
+      "guide": {
+        "how": "Close your lips with your voice on, then open them. There is no puff of air.",
+        "tip": "Close your lips fully: big, not vig.",
+        "diagram": {
+          "src": "/diagrams/sound-b.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Bring a big bag.",
@@ -2193,6 +2313,14 @@
       "blurb": "ten, stay, cat",
       "symbol": "t",
       "section": "Consonants",
+      "guide": {
+        "how": "Press the tip of your tongue on the ridge just behind your top teeth, not on the teeth. Release it with a puff of air.",
+        "tip": "Use the ridge, not your teeth, and don't curl your tongue back.",
+        "diagram": {
+          "src": "/diagrams/sound-t.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Take two tickets.",
@@ -2227,6 +2355,14 @@
       "blurb": "day, under, good",
       "symbol": "d",
       "section": "Consonants",
+      "guide": {
+        "how": "Press the tip of your tongue on the ridge behind your top teeth with your voice on, then release it.",
+        "tip": "Keep your voice on at the end: bed, not bet.",
+        "diagram": {
+          "src": "/diagrams/sound-d.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Good day, David!",
@@ -2261,6 +2397,14 @@
       "blurb": "key, back, school",
       "symbol": "k",
       "section": "Consonants",
+      "guide": {
+        "how": "Raise the back of your tongue against the soft back part of the roof of your mouth. Release it with a puff of air.",
+        "tip": "Add the puff at the start: coat, not goat.",
+        "diagram": {
+          "src": "/diagrams/sound-k.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Coffee, black.",
@@ -2295,6 +2439,14 @@
       "blurb": "get, again, big",
       "symbol": "ɡ",
       "section": "Consonants",
+      "guide": {
+        "how": "Raise the back of your tongue against the back of the roof of your mouth with your voice on, then release it.",
+        "tip": "Keep your voice on at the end: bag, not back.",
+        "diagram": {
+          "src": "/diagrams/sound-g.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Good game, guys!",
@@ -2329,6 +2481,14 @@
       "blurb": "fun, phone, laugh",
       "symbol": "f",
       "section": "Consonants",
+      "guide": {
+        "how": "Rest your top teeth lightly on your bottom lip and blow air through. Your voice is off.",
+        "tip": "Use your teeth and lip, not both lips: fan, not pan.",
+        "diagram": {
+          "src": "/diagrams/sound-f.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Fresh fish, please.",
@@ -2363,6 +2523,14 @@
       "blurb": "very, seven, live",
       "symbol": "v",
       "section": "Consonants",
+      "guide": {
+        "how": "Rest your top teeth on your bottom lip, as for f, and turn your voice on. You should feel a buzz.",
+        "tip": "Don't close both lips: very, not berry. Don't round them either: vest, not west.",
+        "diagram": {
+          "src": "/diagrams/sound-v.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Very, very good.",
@@ -2397,6 +2565,14 @@
       "blurb": "three, both, nothing",
       "symbol": "θ",
       "section": "Consonants",
+      "guide": {
+        "how": "Put the tip of your tongue lightly between your teeth and blow air out. Your voice is off.",
+        "tip": "Don't say s, t or f: think, not sink, tink or fink.",
+        "diagram": {
+          "src": "/diagrams/sound-th.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Thirty-three, thanks.",
@@ -2431,6 +2607,14 @@
       "blurb": "the, mother, breathe",
       "symbol": "ð",
       "section": "Consonants",
+      "guide": {
+        "how": "Put the tip of your tongue between your teeth, as for th in think, and turn your voice on.",
+        "tip": "Don't say d or z: then, not den or zen.",
+        "diagram": {
+          "src": "/diagrams/sound-th-voiced.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "This is my mother.",
@@ -2465,6 +2649,14 @@
       "blurb": "sun, city, bus",
       "symbol": "s",
       "section": "Consonants",
+      "guide": {
+        "how": "Hold the tip of your tongue close to the ridge behind your top teeth and push air through the narrow gap, so it hisses. Your voice is off.",
+        "tip": "Keep it sharp: see, not she.",
+        "diagram": {
+          "src": "/diagrams/sound-s.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Six small snacks.",
@@ -2499,6 +2691,14 @@
       "blurb": "zoo, easy, is",
       "symbol": "z",
       "section": "Consonants",
+      "guide": {
+        "how": "Make an s and turn your voice on, so it buzzes like a bee.",
+        "tip": "Keep the buzz, also at the end of words: eyes, not ice.",
+        "diagram": {
+          "src": "/diagrams/sound-z.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Is it easy?",
@@ -2533,6 +2733,14 @@
       "blurb": "ship, nation, sure",
       "symbol": "ʃ",
       "section": "Consonants",
+      "guide": {
+        "how": "Round your lips and push them forward. Hold your tongue a little further back than for s and push air through. Your voice is off.",
+        "tip": "Don't start with a t: share, not chair.",
+        "diagram": {
+          "src": "/diagrams/sound-sh.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Shut the shop.",
@@ -2567,6 +2775,14 @@
       "blurb": "vision, usually, garage",
       "symbol": "ʒ",
       "section": "Consonants",
+      "guide": {
+        "how": "Make sh and turn your voice on.",
+        "tip": "Keep it smooth, with no d before it: usually, not u-joo-ally.",
+        "diagram": {
+          "src": "/diagrams/sound-zh.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Usually, it's a pleasure.",
@@ -2601,6 +2817,10 @@
       "name": "h in hat",
       "blurb": "hat, ahead, behind",
       "symbol": "h",
+      "guide": {
+        "how": "Open your mouth for the next vowel and breathe out gently. Nothing touches.",
+        "tip": "Keep it soft, with no scrape in the throat, and don't drop it: hat, not at."
+      },
       "phrases": {
         "beginner": [
           "Happy holidays!",
@@ -2635,6 +2855,10 @@
       "blurb": "chip, watch, nature",
       "symbol": "tʃ",
       "section": "Consonants",
+      "guide": {
+        "how": "Start with a t, tongue on the ridge behind your teeth, and release it straight into sh. It is one quick sound, voice off.",
+        "tip": "Start with the stop: chair, not share."
+      },
       "phrases": {
         "beginner": [
           "Cheese sandwich, please.",
@@ -2669,6 +2893,10 @@
       "blurb": "job, page, gym",
       "symbol": "dʒ",
       "section": "Consonants",
+      "guide": {
+        "how": "Start with a d and release it straight into the s of vision, voice on. It is one quick sound.",
+        "tip": "Start with the stop: job, not yob."
+      },
       "phrases": {
         "beginner": [
           "Just a jacket.",
@@ -2703,6 +2931,14 @@
       "blurb": "man, summer, home",
       "symbol": "m",
       "section": "Consonants",
+      "guide": {
+        "how": "Close your lips and hum through your nose.",
+        "tip": "Close your lips fully, also at the end of words: time.",
+        "diagram": {
+          "src": "/diagrams/sound-m.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "My mom is home.",
@@ -2737,6 +2973,14 @@
       "blurb": "no, dinner, sun",
       "symbol": "n",
       "section": "Consonants",
+      "guide": {
+        "how": "Press the tip of your tongue on the ridge behind your top teeth and hum through your nose.",
+        "tip": "Keep the sound in your nose: night, not light.",
+        "diagram": {
+          "src": "/diagrams/sound-n.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Not now, Nina.",
@@ -2771,6 +3015,14 @@
       "blurb": "sing, thinking, long",
       "symbol": "ŋ",
       "section": "Consonants",
+      "guide": {
+        "how": "Raise the back of your tongue against the roof of your mouth, as for g, and hum through your nose. Don't add a g at the end.",
+        "tip": "End on the hum: sing, not sin or sing-g.",
+        "diagram": {
+          "src": "/diagrams/sound-ng.svg",
+          "credit": "Richard Wright and Dan McCloy, public domain (CC0)"
+        }
+      },
       "phrases": {
         "beginner": [
           "Good morning, king!",
@@ -2805,6 +3057,10 @@
       "blurb": "let, blue, hello",
       "symbol": "l",
       "section": "Consonants",
+      "guide": {
+        "how": "Touch the tip of your tongue to the ridge behind your top teeth and let the sound flow around the sides of your tongue.",
+        "tip": "The tip must touch: light, not right."
+      },
       "phrases": {
         "beginner": [
           "Lovely light rain.",
@@ -2839,6 +3095,10 @@
       "blurb": "full, people, world",
       "symbol": "ɫ",
       "section": "Consonants",
+      "guide": {
+        "how": "Touch the ridge with the tip of your tongue, as for l, and raise the back of your tongue too, so it sounds darker.",
+        "tip": "Don't drop it or turn it into oo: full, not foo."
+      },
       "phrases": {
         "beginner": [
           "A full bottle.",
@@ -2873,6 +3133,14 @@
       "blurb": "red, around, sorry",
       "symbol": "ɹ",
       "section": "Consonants",
+      "guide": {
+        "how": "Pull your tongue back and bunch it up, or lift the tip a little. Don't touch the roof of your mouth. Round your lips slightly.",
+        "tip": "Don't tap or roll it: right, with nothing touching.",
+        "diagram": {
+          "src": "/diagrams/sound-r.svg",
+          "credit": "Tavin and Nardog, Wikimedia Commons, CC BY-SA 4.0"
+        }
+      },
       "phrases": {
         "beginner": [
           "Really? Are you sure?",
@@ -2907,6 +3175,14 @@
       "blurb": "we, quick, always",
       "symbol": "w",
       "section": "Consonants",
+      "guide": {
+        "how": "Round your lips into a small circle, then open them into the next vowel. Your teeth don't touch your lip.",
+        "tip": "Use only your lips, not your teeth: west, not vest.",
+        "diagram": {
+          "src": "/diagrams/sound-w.svg",
+          "credit": "Tavin and Nardog, Wikimedia Commons, CC BY-SA 4.0"
+        }
+      },
       "phrases": {
         "beginner": [
           "We want water.",
@@ -2941,6 +3217,10 @@
       "blurb": "yes, you, music",
       "symbol": "j",
       "section": "Consonants",
+      "guide": {
+        "how": "Raise the front of your tongue close to the roof of your mouth, as for ee, and glide into the next vowel.",
+        "tip": "Don't let your tongue touch: yes, not jes."
+      },
       "phrases": {
         "beginner": [
           "Yes, you can.",
@@ -2975,6 +3255,10 @@
       "blurb": "water, better, city",
       "symbol": "ɾ",
       "section": "American T",
+      "guide": {
+        "how": "Between vowels, tap the tip of your tongue once, very quickly, on the ridge behind your top teeth. It sounds like a quick, soft d.",
+        "tip": "Make it quick and voiced: water sounds like wa-der."
+      },
       "phrases": {
         "beginner": [
           "A bottle of water.",
@@ -3009,6 +3293,10 @@
       "blurb": "button, mountain, right",
       "symbol": "ʔ",
       "section": "American T",
+      "guide": {
+        "how": "Stop the air in your throat for a moment, as in uh-oh, then go straight on to the n.",
+        "tip": "Don't release a full t: button has a short catch before the n."
+      },
       "phrases": {
         "beginner": [
           "Press that button.",

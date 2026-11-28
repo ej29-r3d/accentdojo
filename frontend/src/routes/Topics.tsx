@@ -99,6 +99,26 @@ function TopicIcon({ topic }: { topic: Topic }) {
   )
 }
 
+/** Sound tiles show only the IPA symbol; the name ("u in cup") is the accessible label. */
+function SoundGrid({ topics }: { topics: Topic[] }) {
+  return (
+    <ul className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-6 md:gap-3 lg:grid-cols-8">
+      {topics.map((t) => (
+        <li key={t.id}>
+          <Link
+            to={`/practice/topic/${t.id}/0`}
+            aria-label={t.name}
+            title={t.name}
+            className="grid h-20 place-items-center rounded-2xl border transition-colors hover:border-border-strong hover:bg-muted/60"
+          >
+            <span aria-hidden className="font-ipa text-3xl leading-none text-score">{t.symbol}</span>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
 /** Sounds are listed under their section headings (Vowels, Diphthongs, ...), in file order. */
 function SectionedList({ topics }: { topics: Topic[] }) {
   const sections: [string, Topic[]][] = []
@@ -113,7 +133,7 @@ function SectionedList({ topics }: { topics: Topic[] }) {
       {sections.map(([name, items]) => (
         <section key={name}>
           <h2 className="mb-3 text-xl font-semibold tracking-tight">{name}</h2>
-          <TopicList topics={items} blurbs={false} />
+          <SoundGrid topics={items} />
         </section>
       ))}
     </div>

@@ -1,4 +1,4 @@
-import type { Level } from "../types"
+import type { Level, SoundGuide } from "../types"
 import content from "../../../../content/topics.json"
 
 export interface TopicSeed {
@@ -8,6 +8,7 @@ export interface TopicSeed {
   blurb: string
   symbol?: string
   section?: string
+  guide?: SoundGuide
   phrases: Record<Level, string[]>
 }
 

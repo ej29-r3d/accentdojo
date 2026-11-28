@@ -142,7 +142,12 @@ later items (voice, speed, accent).
     Diphthongs: eɪ aɪ ɔɪ aʊ oʊ. Vowels with R: ɝ (her), ɑɹ, ɔɹ, ɛɹ, ɪɹ. Consonants: p b t d k ɡ
     f v θ ð s z ʃ ʒ h tʃ dʒ m n ŋ l ɫ ɹ w j. American T: ɾ (water), ʔ (button). /ɔ/ is shown
     apart from /ɑ/ because the reference voice keeps them apart; the scorer merges them, so
-    saying /ɑ/ there is not flagged. 6 phrases per level, loaded with that sound.
+    saying /ɑ/ there is not flagged. 6 phrases per level, loaded with that sound. The list
+    shows each sound as its symbol only (the name, e.g. "u in cup", is the accessible label).
+    Each sound has a `guide`: two or three plain sentences on lips, tongue and voice, the most
+    common mistake with an example (written for any first language), and a mouth diagram for
+    25 of them (credited under the picture; see THIRD_PARTY_LICENSES.md). On the practice
+    screen a "How to say it" chip opens it.
   - Written by AI, not yet reviewed by a native speaker.
 - **A harder level means harder sounds and words, not longer phrases** (a first, easier set proved too simple). Beginner keeps A1–A2 vocabulary but picks words that are hard to
   say (Thursday, throat, vegetables, thirty/thirteen); Intermediate uses B1–B2 words with

@@ -53,6 +53,8 @@ class Topic:
     #: Heading a sound topic is listed under (Vowels, Diphthongs, ...); None elsewhere.
     section: str | None
     phrases: dict[str, tuple[Phrase, ...]]
+    #: How to make the sound: {how, tip, diagram?: {src, credit}}; sound topics only.
+    guide: dict | None = None
 
     def to_json(self) -> dict:
         return {
@@ -62,6 +64,7 @@ class Topic:
             "blurb": self.blurb,
             "symbol": self.symbol,
             "section": self.section,
+            "guide": self.guide,
             "counts": {level: len(self.phrases[level]) for level in LEVELS},
         }
 
@@ -80,7 +83,7 @@ class Content:
                     items.append(p)
                     self.phrases[p.id] = p
                 by_level[level] = tuple(items)
-            self.topics[t["id"]] = Topic(t["id"], t["name"], t["blurb"], t.get("group", "situations"), t.get("symbol"), t.get("section"), by_level)
+            self.topics[t["id"]] = Topic(t["id"], t["name"], t["blurb"], t.get("group", "situations"), t.get("symbol"), t.get("section"), by_level, t.get("guide"))
 
     def phrase(self, phrase_id: str) -> Phrase | None:
         if phrase_id.startswith(CUSTOM_PREFIX):
