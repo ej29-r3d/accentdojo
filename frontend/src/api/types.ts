@@ -35,8 +35,6 @@ export interface SoundGuide {
   how: string
   /** The most common mistake, with an example. */
   tip: string
-  /** Mouth diagram, served by the frontend, with its credit line. */
-  diagram?: { src: string; credit: string }
 }
 
 export interface Word {

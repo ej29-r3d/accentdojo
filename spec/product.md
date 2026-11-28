@@ -145,8 +145,8 @@ later items (voice, speed, accent).
     saying /ɑ/ there is not flagged. 6 phrases per level, loaded with that sound. The list
     shows each sound as its symbol only (the name, e.g. "u in cup", is the accessible label).
     Each sound has a `guide`: two or three plain sentences on lips, tongue and voice, the most
-    common mistake with an example (written for any first language), and a mouth diagram for
-    25 of them (credited under the picture; see THIRD_PARTY_LICENSES.md). The practice
+    common mistake with an example (written for any first language). No mouth diagrams: the
+    openly licensed ones look alike for most sounds. The practice
     screen shows it below the phrase until the first take is scored; after that a "How to
     say it" header chip opens it.
   - Written by AI, not yet reviewed by a native speaker.

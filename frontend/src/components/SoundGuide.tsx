@@ -2,19 +2,11 @@ import { BookOpen } from "lucide-react"
 import type { Topic } from "@/api/types"
 import { ResponsiveMenu, chipClass } from "@/components/Sheet"
 
-/** Mouth diagram, how to make the sound, the common mistake. */
+/** How to make the sound, and the common mistake. */
 function GuideBody({ topic }: { topic: Topic }) {
   const guide = topic.guide!
   return (
     <>
-      {guide.diagram && (
-        <figure>
-          <div className="grid place-items-center rounded-2xl bg-white p-3">
-            <img src={guide.diagram.src} alt={`Side view of the mouth saying ${topic.symbol}`} className="h-48 w-auto" />
-          </div>
-          <figcaption className="mt-1.5 text-xs text-muted-foreground">Diagram: {guide.diagram.credit}</figcaption>
-        </figure>
-      )}
       <p className="text-[17px] leading-snug">{guide.how}</p>
       <div className="rounded-2xl border p-4">
         <p className="text-sm font-medium">Common mistake</p>

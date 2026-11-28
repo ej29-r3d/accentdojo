@@ -15,8 +15,7 @@ runs on an ordinary CPU.
 
 Phrases for everyday situations, word pairs like sheep and ship, each of the 47 American
 sounds on its own, random phrases, or any text you type. There are three levels: beginner,
-intermediate and advanced. Each sound has a short guide on how to make it, most with a
-diagram of the mouth.
+intermediate and advanced. Each sound has a short guide on how to make it.
 
 After each try you see your score, the words you got wrong and what went wrong in each one.
 A score of 100 means you sounded as clear as the app's voice. Treat the score as a rough

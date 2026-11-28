@@ -53,7 +53,7 @@ class Topic:
     #: Heading a sound topic is listed under (Vowels, Diphthongs, ...); None elsewhere.
     section: str | None
     phrases: dict[str, tuple[Phrase, ...]]
-    #: How to make the sound: {how, tip, diagram?: {src, credit}}; sound topics only.
+    #: How to make the sound: {how, tip}; sound topics only.
     guide: dict | None = None
 
     def to_json(self) -> dict:
