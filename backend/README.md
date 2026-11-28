@@ -114,8 +114,9 @@ different phrase all come back unscorable with the expected reason.
 ## Startup and cache
 
 Every built-in phrase (1,794) is pre-rendered at startup: Kokoro clip, word times, reference
-total and detector measurements, about 1.7 s per phrase, so the first start after new
-content takes about 35 minutes (measured on a fresh install, 12 cores) while the API already serves requests. Everything lands in
+total and detector measurements, about 1.5 to 1.8 s per phrase, so a first start takes about
+45 minutes on 12 cores while the API already serves requests (35 minutes measured for the
+first 1,452 phrases on a fresh install, 10 minutes for the 342 added on 2026-11-28). Everything lands in
 `.cache/audio/` and later starts take seconds. Bumping `scoring.REF_VERSION` recomputes the
 measurements (not the clips).
 
